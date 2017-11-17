@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Users">
+    <id column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="userPwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="userTel" jdbcType="VARCHAR" property="userTel" />
+    <result column="userState" jdbcType="BIT" property="userState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, userName, userPwd, userTel, userState
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where userId = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from users
+    where userId = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Users">
+    insert into users (userId, userName, userPwd, 
+      userTel, userState)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, 
+      #{userTel,jdbcType=VARCHAR}, #{userState,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="userName != null">
+        userName,
+      </if>
+      <if test="userPwd != null">
+        userPwd,
+      </if>
+      <if test="userTel != null">
+        userTel,
+      </if>
+      <if test="userState != null">
+        userState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null">
+        #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userState != null">
+        #{userState,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Users">
+    update users
+    <set>
+      <if test="userName != null">
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        userPwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null">
+        userTel = #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userState != null">
+        userState = #{userState,jdbcType=BIT},
+      </if>
+    </set>
+    where userId = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Users">
+    update users
+    set userName = #{userName,jdbcType=VARCHAR},
+      userPwd = #{userPwd,jdbcType=VARCHAR},
+      userTel = #{userTel,jdbcType=VARCHAR},
+      userState = #{userState,jdbcType=BIT}
+    where userId = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

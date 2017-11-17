@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.LinkmanMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Linkman">
+    <id column="linkManId" jdbcType="INTEGER" property="linkManId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userCardId" jdbcType="INTEGER" property="userCardId" />
+    <result column="linkManName" jdbcType="VARCHAR" property="linkManName" />
+    <result column="linkManTel" jdbcType="VARCHAR" property="linkManTel" />
+    <result column="linkManContent" jdbcType="VARCHAR" property="linkManContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    linkManId, userId, userCardId, linkManName, linkManTel, linkManContent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from linkman
+    where linkManId = #{linkManId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from linkman
+    where linkManId = #{linkManId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Linkman">
+    insert into linkman (linkManId, userId, userCardId, 
+      linkManName, linkManTel, linkManContent
+      )
+    values (#{linkManId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userCardId,jdbcType=INTEGER}, 
+      #{linkManName,jdbcType=VARCHAR}, #{linkManTel,jdbcType=VARCHAR}, #{linkManContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Linkman">
+    insert into linkman
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="linkManId != null">
+        linkManId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="userCardId != null">
+        userCardId,
+      </if>
+      <if test="linkManName != null">
+        linkManName,
+      </if>
+      <if test="linkManTel != null">
+        linkManTel,
+      </if>
+      <if test="linkManContent != null">
+        linkManContent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="linkManId != null">
+        #{linkManId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userCardId != null">
+        #{userCardId,jdbcType=INTEGER},
+      </if>
+      <if test="linkManName != null">
+        #{linkManName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManTel != null">
+        #{linkManTel,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManContent != null">
+        #{linkManContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Linkman">
+    update linkman
+    <set>
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userCardId != null">
+        userCardId = #{userCardId,jdbcType=INTEGER},
+      </if>
+      <if test="linkManName != null">
+        linkManName = #{linkManName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManTel != null">
+        linkManTel = #{linkManTel,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManContent != null">
+        linkManContent = #{linkManContent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where linkManId = #{linkManId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Linkman">
+    update linkman
+    set userId = #{userId,jdbcType=INTEGER},
+      userCardId = #{userCardId,jdbcType=INTEGER},
+      linkManName = #{linkManName,jdbcType=VARCHAR},
+      linkManTel = #{linkManTel,jdbcType=VARCHAR},
+      linkManContent = #{linkManContent,jdbcType=VARCHAR}
+    where linkManId = #{linkManId,jdbcType=INTEGER}
+  </update>
+</mapper>

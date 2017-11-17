@@ -1,0 +1,400 @@
+.qyer_upload {
+	width: 580px;
+	border: 1px solid #7e7e7e;
+	position: relative;
+	background: #fff;
+	margin: 0 auto;
+}
+.qyer_upload_head {
+	height: 29px;
+	padding-top: 8px;
+	background: url(//static.qyer.com/images/common/upload/qyer_upload_head_bg.png) repeat-x;
+}
+.qyer_upload_head ul {
+	border-left: 1px solid #e8e8e8;
+}
+.qyer_upload_head ul li {
+	float: left;
+	border-right: 1px solid #e8e8e8;
+	padding: 2px 10px 0;
+	height: 25px;
+	line-height: 24px;
+	border-top: 1px solid #e8e8e8;
+	cursor: pointer;
+	background: #fff;
+}
+.qyer_upload_head ul .ui_tab_trigger_item_current {
+	color: #077345;
+	padding: 0 10px;
+	border-top: 3px solid #0ca46c;
+	height: 26px;
+}
+.qyer_upload_item_tit {
+	color: #636363;
+	border-bottom: 1px solid #e8e5df;
+	padding: 10px;
+	position: relative;
+	z-index: 16;
+	height: 22px;
+}
+.qyer_upload_item_tit strong {
+	line-height: 22px;
+	float: left;
+}
+.qyer_upload_item_tit span {
+	line-height: 22px;
+	padding-left: 10px;
+}
+.qyer_upload_item_tit span a {
+	color: #006aad;
+}
+.qyer_upload_item_tit select {
+	float: left;
+	height: 22px;
+	border: 1px solid #ccc;
+	width: 148px;
+}
+.qyer_upload_t_item {
+	float: left;
+	width: 173px;
+	border: 1px solid #e8e5e0;
+	height: 20px;
+	margin-left: 10px;
+	display: inline;
+	position: relative;
+}
+.qyer_upload_t_item a {
+	margin: 4px 4px 4px 4px;
+	float: left;
+}
+.qyer_upload_t_item a img {
+	float: left;
+}
+.qyer_upload_t_item input {
+	width: 150px;
+	border: 0;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 5px 0 1px;
+}
+.ui_album_poiSelect_div {
+	position: absolute;
+	left: -1px;
+	top: 20px;
+	width: 316px;
+	border: 1px solid #e8e5e0;
+	background: #fff;
+	display: none;
+}
+.ui_album_poiSelect_search {
+	overflow: hidden;
+	zoom: 1;
+}
+.ui_album_poiSelect_search_title {
+	float: left;
+	width: 60px;
+	text-align: center;
+	line-height: 28px;
+	padding: 0 0;
+}
+.ui_album_poiSelect_search_item {
+	width: 255px;
+	float: right;
+	color: #323232;
+	border-left: 1px solid #ebebeb;
+	border-top: 1px solid #ebebeb;
+	line-height: 28px;
+}
+.ui_album_poiSelect_search_list {
+	display: block;
+	float: none;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.ui_album_poiSelect_search_list:hover {
+	background: #e6f4d9;
+}
+.qyer_upload_item_tit .ui_album_poiSelect_search_list span {
+	line-height: 28px;
+	padding: 0;
+}
+.ui_album_poiSelect_search_item_none {
+	border-top: 0;
+}
+.qyer_upload_new {
+	float: left;
+	position: relative;
+}
+.qyer_upload_new input {
+	width: 160px;
+	height: 20px;
+	border: 1px solid #e8e5e0;
+	padding: 0 5px;
+	color: #636363;
+}
+.qyer_upload_new_error {
+	border: 1px solid #ffd088;
+	background: #ffffe5;
+	position: absolute;
+	left: 0;
+	top: 27px;
+	width: 152px;
+	padding: 4px 9px;
+	color: #323232;
+	display: none;
+	box-shadow: 1px 1px 2px #ccc;
+}
+.qyer_upload_new_error span {
+	background: url(//place.qyerstatic.com/common/basic/old/images/upload/qyer_upload_new_error_bg.png) no-repeat;
+	width: 9px;
+	height: 5px;
+	display: block;
+	position: absolute;
+	left: 60px;
+	top: -5px;
+}
+.qyer_upload_item_con {
+	height: 300px;
+	position: relative;
+	z-index: 15;
+}
+.qyer_upload_upbtn {
+	padding-top: 100px;
+	text-align: center;
+}
+.qyer_upload_upbtn_hide {
+	padding: 0;
+	height: 0;
+	overflow: hidden;
+}
+.qyer_upload_upbtn div {
+	position: relative;
+	height: 38px;
+}
+.qyer_upload_upbtn object {
+	position: absolute;
+	left: 226px;
+	top: 0;
+	width: 126px;
+	height: 38px;
+	z-index: 18;
+	cursor: pointer;
+}
+.qyer_upload_upbtn a {
+	position: absolute;
+	left: 226px;
+	top: 0;
+	width: 124px;
+	height: 38px;
+	z-index: 17;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #4f7c1a;
+	border-radius: 3px;
+	overflow: hidden;
+	background: #087346;
+	font: bold 20px/38px arial, "Microsoft YaHei", \5b8b\4f53, sans-serif;
+	color: #fff;
+	cursor: pointer;
+	overflow: visible;
+	text-shadow: 0 -1px 0 #00395b;
+	border-color: #0073b6;
+	background-color: #0073b6;
+}
+.qyer_upload_upbtn_hide object {
+	left: -9999px;
+}
+.qyer_upload_upbtn_hide a {
+	left: -9999px;
+}
+.qyer_upload_list {
+	height: 236px;
+	padding: 15px 0 0 15px;
+	border-bottom: 1px solid #dbdbdb;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.qyer_upload_list_status {
+	padding-bottom: 15px;
+	width: 100%;
+	float: left;
+}
+.qyer_upload_list_status div {
+	height: 22px;
+	margin-right: 10px;
+	position: relative;
+	margin-bottom: 15px;
+}
+.qyer_upload_list_status div .filebg {
+	border: 1px solid #ccc;
+	display: inline-block;
+	width: 330px;
+	height: 20px;
+	float: none;
+}
+.qyer_upload_list_status div em {
+	background: #02734a;
+	display: block;
+	margin: 0;
+	height: 20px;
+}
+.qyer_upload_list_status div strong {
+	color: #fff;
+	padding-left: 10px;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+}
+.qyer_upload_list_status span {
+	vertical-align: middle;
+}
+.qyer_upload_list_status span.fr {
+	width: 90px;
+	float: right;
+	line-height: 22px;
+	margin-top: 0
+}
+.qyer_upload_list_status .fstatus {
+	margin-left: 10px;
+}
+.qyer_upload_list_status .icon_finish {
+	color: #323232;
+}
+.qyer_upload_list_file {
+	width: 100%;
+	float: left;
+	margin-bottom: 15px;
+}
+.qyer_upload_list_file .fl {
+	line-height: 22px;
+	margin-right: 10px;
+}
+.qyer_upload_list_file input {
+	float: left;
+	height: 22px;
+}
+.qyer_upload_list_file .fr {
+	width: 240px;
+}
+.qyer_upload_list_file .fr span {
+	float: left;
+}
+.qyer_upload_list_file .fr .qcz {
+	width: 130px;
+	float: right;
+}
+.qyer_upload_network_url {
+	padding: 70px 0 0 35px;
+	height: 230px;
+}
+.qyer_upload_network_url .fl .ui_input {
+	width: 438px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+}
+.qyer_upload_network_url .qyer_upload_new_error {
+	top: 33px;
+}
+.qyer_upload_layout_error {
+	border: 5px solid #e6e6e6;
+	border-color: rgba(102, 102, 102, 0.4);
+	border-radius: 5px;
+	background: #fff;
+	width: 350px;
+	padding: 10px;
+	position: absolute;
+	left: 100px;
+	top: 150px;
+	z-index: 40;
+	display: none;
+}
+.qyer_upload_layout_form {
+	border: 5px solid #e6e6e6;
+	border-color: rgba(102, 102, 102, 0.4);
+	border-radius: 5px;
+	background: #fff;
+	width: 220px;
+	text-align: center;
+	position: absolute;
+	left: 170px;
+	top: 120px;
+	z-index: 41;
+	padding: 15px 0;
+	display: none;
+}
+.qyer_upload_layout_form input {
+	margin: 0 5px;
+}
+.qyer_upload_mylist .qyer_upload_photo_list {
+	height: 216px;
+	margin: 15px 0 20px 5px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.qyer_upload_mylist .qyer_upload_photo_list li {
+	float: left;
+	margin: 5px 0 0 5px;
+	display: inline;
+	height: 80px;
+	width: 80px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.qyer_upload_photo_list li .icon_current {
+	margin-top: -80px;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: url(//static.qyer.com/images/common/upload/icon_current.png) repeat;
+	float: left;
+}
+.qyer_upload_photo_list .current .icon_current {
+	display: block;
+}
+.qyer_upload_photo_list li img {
+	float: left;
+}
+.qyer_upload_photo_list li .icon_current span {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: url(//static.qyer.com/images/common/upload/icon_current_draw.png) no-repeat center center;
+}
+.qyer_upload_mylist .qyer_upload_btn {
+	border-top: 1px solid #e8e5df;
+}
+.uploadpopup .qui-popup2-box-content {
+	padding: 0;
+}
+.uploadpopup .qui-popup2-box-bottom {
+	display: none;
+}
+.uploadpopup .qui-popup2-closeIcon {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	right: 5px;
+	width: 26px;
+	height: 26px;
+	background: url(//static.qyer.com/images/common/tpl/pup_close.png) no-repeat 0 0;
+	cursor: pointer;
+	border-radius: 0;
+}
+.uploadpopup .qui-popup2-closeIcon:hover {
+	background-position: 0 -26px;
+}
+.uploadpopup .qui-popup2-box {
+	border: 5px solid #aeadad;
+	border-color: rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+}
+.x-loading-page {
+	margin-top: 16px;
+	height: 32px;
+	clear: both;
+	background: url(//static.qyer.com/images/common/londing32.gif) no-repeat center;
+}

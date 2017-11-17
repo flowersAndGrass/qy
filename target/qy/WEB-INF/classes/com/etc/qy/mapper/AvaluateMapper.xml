@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.AvaluateMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Avaluate">
+    <id column="avaluateId" jdbcType="INTEGER" property="avaluateId" />
+    <result column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="avaluateContent" jdbcType="VARCHAR" property="avaluateContent" />
+    <result column="avaluateState" jdbcType="INTEGER" property="avaluateState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    avaluateId, scenicId, userId, avaluateContent, avaluateState
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from avaluate
+    where avaluateId = #{avaluateId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from avaluate
+    where avaluateId = #{avaluateId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Avaluate">
+    insert into avaluate (avaluateId, scenicId, userId, 
+      avaluateContent, avaluateState)
+    values (#{avaluateId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{avaluateContent,jdbcType=VARCHAR}, #{avaluateState,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Avaluate">
+    insert into avaluate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="avaluateId != null">
+        avaluateId,
+      </if>
+      <if test="scenicId != null">
+        scenicId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="avaluateContent != null">
+        avaluateContent,
+      </if>
+      <if test="avaluateState != null">
+        avaluateState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="avaluateId != null">
+        #{avaluateId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null">
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="avaluateContent != null">
+        #{avaluateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="avaluateState != null">
+        #{avaluateState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Avaluate">
+    update avaluate
+    <set>
+      <if test="scenicId != null">
+        scenicId = #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="avaluateContent != null">
+        avaluateContent = #{avaluateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="avaluateState != null">
+        avaluateState = #{avaluateState,jdbcType=INTEGER},
+      </if>
+    </set>
+    where avaluateId = #{avaluateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Avaluate">
+    update avaluate
+    set scenicId = #{scenicId,jdbcType=INTEGER},
+      userId = #{userId,jdbcType=INTEGER},
+      avaluateContent = #{avaluateContent,jdbcType=VARCHAR},
+      avaluateState = #{avaluateState,jdbcType=INTEGER}
+    where avaluateId = #{avaluateId,jdbcType=INTEGER}
+  </update>
+</mapper>

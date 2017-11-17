@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.TicketMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Ticket">
+    <id column="ticketId" jdbcType="INTEGER" property="ticketId" />
+    <result column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="ticketStock" jdbcType="INTEGER" property="ticketStock" />
+    <result column="ticketPrice" jdbcType="INTEGER" property="ticketPrice" />
+    <result column="ticketIntroduction" jdbcType="VARCHAR" property="ticketIntroduction" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ticketId, scenicId, ticketStock, ticketPrice, ticketIntroduction
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ticket
+    where ticketId = #{ticketId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ticket
+    where ticketId = #{ticketId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Ticket">
+    insert into ticket (ticketId, scenicId, ticketStock, 
+      ticketPrice, ticketIntroduction)
+    values (#{ticketId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{ticketStock,jdbcType=INTEGER}, 
+      #{ticketPrice,jdbcType=INTEGER}, #{ticketIntroduction,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Ticket">
+    insert into ticket
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        ticketId,
+      </if>
+      <if test="scenicId != null">
+        scenicId,
+      </if>
+      <if test="ticketStock != null">
+        ticketStock,
+      </if>
+      <if test="ticketPrice != null">
+        ticketPrice,
+      </if>
+      <if test="ticketIntroduction != null">
+        ticketIntroduction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ticketId != null">
+        #{ticketId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null">
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="ticketStock != null">
+        #{ticketStock,jdbcType=INTEGER},
+      </if>
+      <if test="ticketPrice != null">
+        #{ticketPrice,jdbcType=INTEGER},
+      </if>
+      <if test="ticketIntroduction != null">
+        #{ticketIntroduction,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Ticket">
+    update ticket
+    <set>
+      <if test="scenicId != null">
+        scenicId = #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="ticketStock != null">
+        ticketStock = #{ticketStock,jdbcType=INTEGER},
+      </if>
+      <if test="ticketPrice != null">
+        ticketPrice = #{ticketPrice,jdbcType=INTEGER},
+      </if>
+      <if test="ticketIntroduction != null">
+        ticketIntroduction = #{ticketIntroduction,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ticketId = #{ticketId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Ticket">
+    update ticket
+    set scenicId = #{scenicId,jdbcType=INTEGER},
+      ticketStock = #{ticketStock,jdbcType=INTEGER},
+      ticketPrice = #{ticketPrice,jdbcType=INTEGER},
+      ticketIntroduction = #{ticketIntroduction,jdbcType=VARCHAR}
+    where ticketId = #{ticketId,jdbcType=INTEGER}
+  </update>
+</mapper>

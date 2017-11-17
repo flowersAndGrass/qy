@@ -1,0 +1,5593 @@
+@charset "utf-8";
+body {
+	color: #323232;
+	background: #fff;
+	text-align: left
+}
+
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+	margin: 0;
+	padding: 0;
+	outline: none
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font: 12px/1.5 Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, \5b8b\4f53, sans-serif;
+	-webkit-font-smoothing: antialiased
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	color: #636363;
+	outline: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+fieldset,
+img {
+	border: 0
+}
+
+iframe {
+	display: block
+}
+
+abbr,
+acronym {
+	border: 0;
+	font-variant: normal
+}
+
+del {
+	text-decoration: line-through
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: 500
+}
+
+ol,
+ul {
+	list-style: none
+}
+
+caption,
+th {
+	text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: 500
+}
+
+q:after,
+q:before {
+	content: ""
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+
+sup {
+	top: -.5em
+}
+
+sub {
+	bottom: -.25em
+}
+
+a {
+	text-decoration: none;
+	color: #0073b6
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+a:focus,
+input:focus {
+	outline: none
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	outline: none;
+	border: 0;
+	padding: 0
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #959595!important
+}
+
+input:-moz-placeholder,
+input::-moz-placeholder,
+textarea:-moz-placeholder,
+textarea::-moz-placeholder {
+	color: #959595!important
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #959595!important
+}
+
+.cb {
+	clear: both
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	overflow: hidden
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.fr {
+	float: right
+}
+
+.fl {
+	float: left
+}
+
+.fontTahoma {
+	font-family: tahoma, \5b8b\4f53, sans-serif
+}
+
+.fontArial {
+	font-family: helvetica, arial, \5b8b\4f53, sans-serif
+}
+
+.fontSong {
+	font-family: \5b8b\4f53, sans-serif
+}
+
+.fontYaHei {
+	font-family: Hiragino Sans GB, Microsoft YaHei, \9ED1\4F53, \5b8b\4f53, sans-serif
+}
+
+.cBlack {
+	color: #323232
+}
+
+.cGray {
+	color: #636363
+}
+
+.cLightgray {
+	color: #959595
+}
+
+.cWhite {
+	color: #fff
+}
+
+.cRed {
+	color: #790000
+}
+
+.cBlue {
+	color: #0073b6
+}
+
+.cGreen {
+	color: #077345
+}
+
+.cRed_caution {
+	color: #ed1c24
+}
+
+.qyWrap {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.qySide {
+	width: 270px
+}
+
+.qyMain {
+	width: 680px
+}
+
+.ui2_input {
+	height: 24px;
+	overflow: hidden;
+	padding: 3px 7px;
+	border: 1px solid silver;
+	font-size: 14px;
+	line-height: 24px
+}
+
+.ui2_textarea {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	font-family: Helvetica, Arial, Hiragino Sans GB, 宋体, sans-serif;
+	padding: 2px 5px
+}
+
+.ui2_focus,
+.ui2_input:focus,
+.ui2_textarea:focus {
+	border-color: #5fa678;
+	box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, .05)
+}
+
+.ui2_error {
+	border-color: #cb0900;
+	box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, .05)
+}
+
+.ui3_input {
+	height: 32px;
+	line-height: 32px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	overflow: hidden;
+	padding: 3px 7px;
+	border: 1px solid silver;
+	font-size: 14px
+}
+
+.ui3_input:focus {
+	border-color: #5fa678;
+	box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, .05)
+}
+
+.ui3_input_icon_cal,
+.ui3_input_icon_error,
+.ui3_input_icon_loading,
+.ui3_input_icon_ok {
+	background-image: url(//static.qyer.com/models/common/images/input_icons.png);
+	background-repeat: no-repeat;
+	background-position: right 3px;
+	padding-right: 28px
+}
+
+.ui3_input_icon_ok {
+	background-position: right -143px
+}
+
+.ui3_input_icon_error {
+	background-position: right -218px;
+	border-color: #bc0003!important
+}
+
+.ui3_input_icon_loading {
+	background-image: url(//static.qyer.com/models/common/images/wait_16_2.gif);
+	background-position: 100%
+}
+
+.ui3_input_icon_cal {
+	background-position: right 2px
+}
+
+.ui3_input_icon_cal:hover {
+	background-position: right -77px
+}
+
+.ui3_input_disabled[disabled=disabled],
+.ui3_textarea[disabled=disabled] {
+	border-color: #cecece;
+	background-color: #e7e7e7
+}
+
+.ui3_textarea {
+	background-color: #fff;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid #ccc;
+	font-family: Helvetica, Arial, Hiragino Sans GB, 宋体, sans-serif;
+	padding: 2px 5px
+}
+
+.ui3_textarea:focus {
+	border-color: #5fa678;
+	box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, .05)
+}
+
+.ui_button,
+.ui_button_cancel,
+.ui_button_disabled,
+.ui_button_load,
+.ui_button_warning,
+.ui_buttonA,
+.ui_buttonB,
+.ui_buttonC {
+	display: inline-block;
+	height: 28px;
+	padding: 0 15px;
+	border: none;
+	border-radius: 3px;
+	overflow: visible;
+	font-size: 14px;
+	line-height: 28px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer
+}
+
+.ui_button {
+	background-color: #3f9f5f
+}
+
+.ui_button:hover {
+	background-color: #5cad77;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_button:active {
+	background-color: #3f9f5f;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_buttonA {
+	background-color: #1995dd
+}
+
+.ui_buttonA:hover {
+	background-color: #3ba5e2;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_buttonA:active {
+	background-color: #1995dd;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_buttonC {
+	background-color: #f26622
+}
+
+.ui_buttonC:hover {
+	background-color: #f5802d;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_buttonC:active {
+	background-color: #f26622;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_button_warning {
+	background-color: #cb0900
+}
+
+.ui_button_warning:hover {
+	background-color: #e50e04;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_button_warning:active {
+	background-color: #b90800;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_button_cancel {
+	height: 26px;
+	line-height: 26px;
+	background-color: #f5f5f5;
+	border: 1px solid silver;
+	padding: 0 14px;
+	color: #323232
+}
+
+.ui_button_cancel:hover {
+	background-color: #fff;
+	border-color: #959595;
+	text-decoration: none;
+	color: #323232
+}
+
+.ui_button_cancel:active {
+	background-color: #f5f5f5;
+	border-color: #959595;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_button_disabled {
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #d7d7d7;
+	padding: 0 14px;
+	background-color: #eaeaea;
+	cursor: default;
+	color: silver
+}
+
+.ui_button_disabled,
+.ui_button_disabled:hover {
+	text-decoration: none
+}
+
+.ui_button_load {
+	height: 26px;
+	padding: 0 28px;
+	line-height: 26px;
+	border: 1px solid #d7d7d7;
+	background: #fff url(//static.qyer.com/models/common/images/wait_16.gif) no-repeat 50%;
+	color: #999;
+	text-indent: -200px;
+	cursor: default
+}
+
+.ui_button_load:hover {
+	text-decoration: none;
+	color: #999;
+	cursor: default
+}
+
+button.ui_button_cancel,
+button.ui_button_disabled,
+button.ui_button_load,
+input.ui_button_cancel,
+input.ui_button_disabled,
+input.ui_button_load {
+	height: 28px;
+	line-height: normal
+}
+
+.ui_btn_big,
+.ui_btn_big_cancel,
+.ui_btn_big_disabled,
+.ui_btn_big_load,
+.ui_btn_big_warning,
+.ui_btn_bigA,
+.ui_btn_bigC {
+	display: inline-block;
+	height: 36px;
+	padding: 0 25px;
+	border: none;
+	border-radius: 3px;
+	overflow: visible;
+	font-size: 18px;
+	line-height: 36px;
+	font-family: Hiragino Sans GB, Microsoft YaHei, \9ED1\4F53, \5b8b\4f53, sans-serif;
+	color: #fff;
+	text-align: center;
+	cursor: pointer
+}
+
+.ui_btn_big {
+	background-color: #3f9f5f
+}
+
+.ui_btn_big:hover {
+	background-color: #5cad77;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_big:active {
+	background-color: #3f9f5f;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_bigA {
+	background-color: #1995dd
+}
+
+.ui_btn_bigA:hover {
+	background-color: #3ba5e2;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_bigA:active {
+	background-color: #1995dd;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_bigC {
+	background-color: #f26622
+}
+
+.ui_btn_bigC:hover {
+	background-color: #f5802d;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_bigC:active {
+	background-color: #f26622;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_big_warning {
+	background-color: #cb0900
+}
+
+.ui_btn_big_warning:hover {
+	background-color: #e50e04;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_big_warning:active {
+	background-color: #b90800;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_big_cancel {
+	height: 34px;
+	line-height: 34px;
+	background-color: #f5f5f5;
+	border: 1px solid silver;
+	padding: 0 24px;
+	color: #323232
+}
+
+.ui_btn_big_cancel:hover {
+	background-color: #fff;
+	border-color: #959595;
+	text-decoration: none;
+	color: #323232
+}
+
+.ui_btn_big_cancel:active {
+	background-color: #f5f5f5;
+	border-color: #959595;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_big_disabled {
+	height: 34px;
+	line-height: 34px;
+	border: 1px solid #d7d7d7;
+	padding: 0 24px;
+	background-color: #eaeaea;
+	text-decoration: none;
+	cursor: default;
+	color: silver
+}
+
+.ui_btn_big_disabled:hover {
+	text-decoration: none
+}
+
+.ui_btn_big_load {
+	height: 34px;
+	padding: 0 42px;
+	line-height: 34px;
+	border: 1px solid #ccc;
+	background: #fff url(//static.qyer.com/models/common/images/wait_16.gif) no-repeat 50%;
+	color: #999;
+	text-indent: -200px;
+	cursor: default
+}
+
+.ui_btn_big_load:hover {
+	text-decoration: none;
+	color: #999;
+	cursor: default
+}
+
+button.ui_btn_big_cancel,
+button.ui_btn_big_disabled,
+button.ui_btn_big_load,
+input.ui_btn_big_cancel,
+input.ui_btn_big_disabled,
+input.ui_btn_big_load {
+	height: 36px;
+	line-height: normal
+}
+
+.ui_btn_small,
+.ui_btn_small_cancel,
+.ui_btn_small_disabled,
+.ui_btn_small_load,
+.ui_btn_small_warning,
+.ui_btn_smallA,
+.ui_btn_smallB,
+.ui_btn_smallC {
+	display: inline-block;
+	height: 24px;
+	padding: 0 13px;
+	border: none;
+	border-radius: 3px;
+	overflow: visible;
+	font-size: 12px;
+	line-height: 24px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer
+}
+
+.ui_btn_small {
+	background-color: #3f9f5f
+}
+
+.ui_btn_small:hover {
+	background-color: #5cad77;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_small:active {
+	background-color: #3f9f5f;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_smallA {
+	background-color: #1995dd
+}
+
+.ui_btn_smallA:hover {
+	background-color: #3ba5e2;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_smallA:active {
+	background-color: #1995dd;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_smallC {
+	background-color: #f26622
+}
+
+.ui_btn_smallC:hover {
+	background-color: #f5802d;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_smallC:active {
+	background-color: #f26622;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_small_warning {
+	background-color: #cb0900
+}
+
+.ui_btn_small_warning:hover {
+	background-color: #e50e04;
+	color: #fff;
+	text-decoration: none
+}
+
+.ui_btn_small_warning:active {
+	background-color: #b90800;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_small_cancel {
+	height: 22px;
+	line-height: 22px;
+	background-color: #f5f5f5;
+	border: 1px solid silver;
+	padding: 0 12px;
+	color: #323232
+}
+
+.ui_btn_small_cancel:hover {
+	background-color: #fff;
+	border-color: #959595;
+	text-decoration: none;
+	color: #323232
+}
+
+.ui_btn_small_cancel:active {
+	background-color: #f5f5f5;
+	border-color: #959595;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+}
+
+.ui_btn_small_disabled {
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #d7d7d7;
+	padding: 0 12px;
+	background-color: #eaeaea;
+	text-decoration: none;
+	cursor: default;
+	color: silver
+}
+
+.ui_btn_small_disabled:hover {
+	text-decoration: none
+}
+
+.ui_btn_small_load {
+	height: 22px;
+	padding: 0 24px;
+	line-height: 22px;
+	border: 1px solid #d7d7d7;
+	background: #fff url(//static.qyer.com/models/common/images/wait_16.gif) no-repeat 50%;
+	color: #999;
+	text-indent: -200px;
+	cursor: default
+}
+
+.ui_btn_small_load:hover {
+	text-decoration: none;
+	color: #999;
+	cursor: default
+}
+
+button.ui_btn_small_cancel,
+button.ui_btn_small_disabled,
+button.ui_btn_small_load,
+input.ui_btn_small_cancel,
+input.ui_btn_small_disabled,
+input.ui_btn_small_load {
+	height: 24px;
+	line-height: normal
+}
+
+@font-face {
+	font-family: bbs_iconfont;
+	src: url(//static.qyer.com/models/basic/font/bbs/web/fonts/iconfont.eot?v=1470218853598);
+	src: url(//static.qyer.com/models/basic/font/bbs/web/fonts/iconfont.eot#iefix) format('embedded-opentype'), url(//static.qyer.com/models/basic/font/bbs/web/fonts/iconfont.woff?v=1470218853598) format('woff'), url(//static.qyer.com/models/basic/font/bbs/web/fonts/iconfont.ttf?v=1470218853598) format('truetype'), url(//static.qyer.com/models/basic/font/bbs/web/fonts/iconfont.svg#bbs_iconfont?v=1470218853598) format('svg')
+}
+
+.bicf {
+	font-family: bbs_iconfont!important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: .2px;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.borderbox {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box
+}
+
+.ui_tab_cnt_item {
+	display: none
+}
+
+.ui_tab_cnt_item_current {
+	display: block
+}
+
+.qyer_head_crumbg {
+	width: 100%;
+	min-width: 960px;
+	font-size: 12px;
+	line-height: 14px;
+	margin: 20px 0;
+	text-align: left
+}
+
+.qyer_head_crumb {
+	width: 960px;
+	height: 14px;
+	margin: 0 auto;
+	color: #636363
+}
+
+.qyer_head_crumb .text {
+	float: left;
+	display: inline;
+	position: relative
+}
+
+.qyer_head_crumb .space {
+	float: left;
+	display: inline;
+	padding: 0 7px;
+	font-family: \5b8b\4f53, sans-serif
+}
+
+.qyer_head_crumb .drop {
+	padding-right: 12px
+}
+
+.qyer_head_crumb em.arrow {
+	position: absolute;
+	top: 2px;
+	right: 0;
+	height: 9px;
+	width: 9px;
+	background: url(//static.qyer.com/images/common/head/crumb_arrow.png) no-repeat 0 0
+}
+
+.qyer_head_crumb em.hover {
+	background-position: 0 -14px
+}
+
+.qyer_head_crumb .current {
+	display: inline;
+	font-weight: 400
+}
+
+.qyer_head_crumb a {
+	font-weight: 700;
+	color: #0073b6;
+	text-decoration: none
+}
+
+.qyer_head_crumb a:hover {
+	color: #0073b6;
+	text-decoration: underline
+}
+
+.qyer_head_crumb_pulldown {
+	display: none;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 320px;
+	padding: 5px;
+	background-color: #fff;
+	border: 1px solid #c2c2c2
+}
+
+.qyer_head_crumb_pulldown ul {
+	float: left;
+	width: 160px
+}
+
+.qyer_head_crumb_pulldown ul li {
+	line-height: 24px
+}
+
+.qyer_head_crumb_pulldown ul a {
+	display: block;
+	padding: 0 5px;
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #636363;
+	font-weight: 400
+}
+
+.qyer_head_crumb_pulldown ul a:hover {
+	text-decoration: none;
+	background-color: #ececec;
+	color: #0073b6
+}
+
+.qyer_head_crumb_pulldown .more {
+	display: block;
+	padding-right: 5px;
+	line-height: 24px;
+	text-align: right
+}
+
+.qui-popup-box-title .lookmore {
+	float: right;
+	margin: 0 20px 0 0;
+	color: #636363;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.qui-popup-box-title .lookmore:hover {
+	color: #10b041
+}
+
+.x-draftp-title .savetime {
+	margin-left: 12px;
+	color: silver;
+	font-size: 12px
+}
+
+.planItinerary {
+	position: relative;
+	z-index: 1
+}
+
+#planItinerary_datepickerDiv {
+	position: absolute;
+	display: none;
+	z-index: 20;
+	left: 21px;
+	top: 50px
+}
+
+.planItinerary>.contentTable {
+	border-collapse: collapse;
+	background-color: #fff;
+	width: 100%
+}
+
+.planItinerary>.contentTable td {
+	border: 1px solid #f1f1f1;
+	vertical-align: top
+}
+
+.planItinerary>.contentTable .tHead {
+	height: 68px;
+	line-height: 68px;
+	box-sizing: border-box;
+	background-color: #f9f9f9;
+	padding: 0 20px
+}
+
+.planItinerary .tHead .b_title {
+	color: #000;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	font-size: 12px;
+	padding: 3px 0 0 25px;
+	cursor: default
+}
+
+.planItinerary .tHead .b_copyPlan,
+.planItinerary .tHead .e_include {
+	float: right;
+	background-color: #0095db;
+	height: 35px;
+	line-height: 35px;
+	width: 127px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	font-size: 14px;
+	margin-top: 18px;
+	text-decoration: none
+}
+
+.planItinerary .tHead .b_copyPlan:hover,
+.planItinerary .tHead .e_include:hover {
+	background-color: #3ba5e2
+}
+
+.planItinerary .tHead .b_details,
+.planItinerary .tHead .e_del {
+	float: right;
+	margin: 18px 0 0 15px;
+	font-size: 14px;
+	color: #959595;
+	height: 35px;
+	line-height: 35px
+}
+
+.planItinerary .tHead .b_details-self {
+	background-color: #f3661f;
+	border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	margin-top: 18px;
+	text-align: center;
+	width: 127px;
+	margin-left: 20px;
+	text-decoration: none
+}
+
+.planItinerary .tHead .b_details-self:hover {
+	background-color: #f5802d
+}
+
+.planItinerary .tHead .e_startTime {
+	width: 200px;
+	border: 1px solid #d8d8d8;
+	height: 35px;
+	line-height: 35px;
+	float: left;
+	background-color: #fff;
+	border-radius: 3px;
+	margin-top: 15px;
+	padding-left: 15px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.planItinerary .tHead .e_startTime .icon {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	width: 38px;
+	height: 100%;
+	background-color: #5cad77;
+	background-repeat: no-repeat;
+	background-position: 0 -10px;
+	background-position: 10px -1240px;
+	top: 0;
+	right: 0;
+	position: absolute
+}
+
+.planItinerary .tTitle {
+	background-color: #656c7e;
+	height: 40px;
+	line-height: 40px;
+	color: #d4d9e2;
+	font-size: 16px
+}
+
+.planItinerary .tTitle td {
+	border: none;
+	text-align: center
+}
+
+.planItinerary .tTitle td span {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/evecticon.png);
+	background-repeat: no-repeat;
+	padding-left: 26px;
+	background-position: 0 -1px;
+	cursor: default;
+	color: #d4d9e2;
+	font-size: 16px;
+	line-height: 40px
+}
+
+.planItinerary .tTitle td span.city {
+	background-position: -135px -1px
+}
+
+.planItinerary .tTitle td span.traffic {
+	background-position: -256px 0
+}
+
+.planItinerary .tTitle td span.poi {
+	background-position: -389px 0
+}
+
+.planItinerary .tTitle td span.hotel {
+	background-position: -518px 0
+}
+
+.planItinerary .tBottom .b_toggle,
+.planItinerary .tBottom .e_addoneday {
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	background-color: #f9f9f9;
+	font-size: 14px;
+	color: #696969
+}
+
+.planItinerary .tBottom .b_toggle span {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	padding-left: 17px;
+	cursor: pointer;
+	background-position: 0 -410px
+}
+
+.planItinerary .tBottom .b_toggle span.close {
+	background-position: 0 -338px
+}
+
+.planItinerary .tBottom .e_addoneday {
+	text-align: left;
+	padding-left: 30px
+}
+
+.planItinerary .tBottom .e_addoneday span {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	padding: 4px 0 3px 24px;
+	background-position: 0 -1149px;
+	cursor: pointer
+}
+
+.planItinerary .tBottom .e_addoneday span:hover {
+	color: #5cad77
+}
+
+.planItinerary .record .time {
+	padding: 20px 0 10px 5px;
+	vertical-align: inherit
+}
+
+.planItinerary .record .time>a {
+	text-decoration: none;
+	line-height: 1
+}
+
+.planItinerary .record .time>a>div,
+.planItinerary .record .time>a>span {
+	float: left;
+	color: #636363;
+	font-size: 16px;
+	margin-right: 4px
+}
+
+.planItinerary .record .time .day {
+	font-size: 48px;
+	font-family: arial
+}
+
+.planItinerary .record .time>a>div {
+	margin-top: 6px
+}
+
+.planItinerary .record .time>a>div .line {
+	background-color: #cacaca;
+	height: 1px;
+	margin: 2px 0
+}
+
+.planItinerary .record .time .e_null {
+	text-align: center;
+	float: none;
+	margin-left: -10px;
+	min-height: 70px;
+	box-sizing: border-box;
+	padding-top: 17px;
+	cursor: pointer
+}
+
+.planItinerary .record .time .e_null span {
+	color: #b0b1b2;
+	padding: 17px 12px 12px 10px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 2px -1364px
+}
+
+.planItinerary .record .lift {
+	vertical-align: inherit
+}
+
+.planItinerary .record .lift>a {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 9px -83px;
+	cursor: pointer;
+	position: relative;
+	height: 19px;
+	display: block;
+	text-decoration: none
+}
+
+.planItinerary .record .lift>a:hover>div {
+	display: block
+}
+
+.planItinerary .record .lift>a>div {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 9px -172px;
+	position: absolute;
+	top: -35px;
+	width: 69px;
+	left: -19px;
+	height: 29px;
+	display: none
+}
+
+.planItinerary .record .city {
+	padding: 10px 0
+}
+
+.planItinerary .record .city>p {
+	overflow: hidden;
+	width: 90px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 14px;
+	margin-left: 10px
+}
+
+.planItinerary .record .city>p>a {
+	color: #636363;
+	text-decoration: none
+}
+
+.planItinerary .record .poi {
+	padding: 10px 0
+}
+
+.planItinerary .record .poi>p {
+	overflow: hidden;
+	width: 135px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 14px;
+	margin-left: 10px
+}
+
+.planItinerary .record .poi>p>a {
+	color: #636363;
+	text-decoration: none
+}
+
+.planItinerary .record .poi>.note {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 0 -250px;
+	cursor: pointer;
+	display: inline;
+	padding: 6px 10px 10px 6px
+}
+
+.planItinerary .record .poi .notewrapTap {
+	position: relative;
+	z-index: 5;
+	display: none
+}
+
+.planItinerary .record .poi .notewrap {
+	left: 30px;
+	padding: 0 0 0 24px;
+	position: absolute;
+	top: -7px
+}
+
+.planItinerary .record .poi .notewrap .arrow {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/arrow.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 4px;
+	width: 24px;
+	height: 24px;
+	z-index: 2
+}
+
+.planItinerary .record .poi .notewrap .content {
+	background-color: #fff;
+	border: 1px solid #d5d5d5;
+	border-radius: 3px;
+	padding: 20px;
+	width: 196px;
+	box-sizing: border-box;
+	color: #636363;
+	box-shadow: 0 2px 5px #ccc
+}
+
+.planItinerary .record .poi .notewrap .del {
+	text-align: right
+}
+
+.planItinerary .record .poi .notewrap .del a {
+	padding: 7px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 0 -922px;
+	text-decoration: none;
+	cursor: pointer
+}
+
+.planItinerary .record .poi .notewrap .del a:hover {
+	background-position: -1px -1033px
+}
+
+.planItinerary .record .hotel {
+	padding: 10px
+}
+
+.planItinerary .record .hotel>a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #636363;
+	display: block;
+	word-break: break-all
+}
+
+.planItinerary .record .hotel>a>span {
+	border-bottom: 1px dotted #0073b6
+}
+
+.planItinerary .record .hotel>a.linkIcon .icon {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-position: 7px -1692px;
+	background-repeat: no-repeat;
+	padding: 0 10px
+}
+
+.planItinerary .record .hotel>a:hover {
+	color: #0073b6
+}
+
+.planItinerary .record .hotel>p {
+	overflow: hidden;
+	width: 100px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #959595;
+	margin-top: 5px
+}
+
+.planItinerary .record .traffic {
+	padding: 10px;
+	font-size: 14px;
+	color: #636363
+}
+
+.planItinerary .record .traffic>p {
+	overflow: hidden;
+	width: 100px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #959595;
+	margin: -18px 0 25px
+}
+
+.planItinerary .record .traffic>div {
+	position: relative;
+	margin-bottom: 20px;
+	word-break: break-all
+}
+
+.planItinerary .record .traffic>div>span {
+	top: 0;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.planItinerary .record .traffic>div>span.start {
+	left: 0
+}
+
+.planItinerary .record .traffic>div>.icon {
+	left: 45px;
+	width: 25px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/trafficicon.png);
+	background-repeat: no-repeat
+}
+
+.planItinerary .record .traffic>div>span.end {
+	left: 67px
+}
+
+.planItinerary .record .traffic>div>.plane {
+	background-position: -228px 0
+}
+
+.planItinerary .record .traffic>div>.steamer {
+	background-position: -180px 0;
+	width: 24px;
+	left: 42px
+}
+
+.planItinerary .record .traffic>div>.taxi {
+	background-position: -124px 0;
+	width: 30px
+}
+
+.planItinerary .record .traffic>div>.bus {
+	background-position: -76px 0
+}
+
+.planItinerary .record .traffic>div>.walk {
+	background-position: -34px 0;
+	width: 20px
+}
+
+.planItinerary .record .traffic>div>.train {
+	background-position: 6px 0
+}
+
+.planItinerary .recordedit .city,
+.planItinerary .recordedit .hotel,
+.planItinerary .recordedit .poi,
+.planItinerary .recordedit .setting,
+.planItinerary .recordedit .time,
+.planItinerary .recordedit .traffic {
+	background-color: #fff;
+	cursor: pointer
+}
+
+.planItinerary .recordedit .city:hover,
+.planItinerary .recordedit .hotel:hover,
+.planItinerary .recordedit .poi:hover,
+.planItinerary .recordedit .traffic:hover {
+	background-color: #e6f4fb
+}
+
+.planItinerary .record .null {
+	color: #d9d9d9;
+	text-align: center;
+	font-size: 16px;
+	vertical-align: inherit;
+	cursor: pointer
+}
+
+.planItinerary .record .null:hover {
+	color: #8fcacc
+}
+
+.planItinerary .record .null:hover span {
+	background-position: 0 -596px
+}
+
+.planItinerary .record .null span {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	background-position: 0 -505px;
+	position: relative
+}
+
+.planItinerary .record .setting {
+	vertical-align: inherit
+}
+
+.planItinerary .record .setting>div {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 9px -703px;
+	cursor: pointer;
+	position: relative;
+	height: 19px;
+	z-index: 5
+}
+
+.planItinerary .record .setting>.liftSeted,
+.planItinerary .record .setting>div:hover {
+	background-position: 9px -812px
+}
+
+.planItinerary .record .setting>div>div {
+	position: absolute;
+	top: 10px;
+	width: 145px;
+	left: -130px;
+	background-color: #fff;
+	border: 1px solid #d5d5d5;
+	border-radius: 3px;
+	box-shadow: 3px 5px 10px #ccc;
+	font-size: 16px;
+	color: #636363;
+	display: none
+}
+
+.planItinerary .record .setting ul li {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 35px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/menuicons.png);
+	background-repeat: no-repeat;
+	background-position: 9px 11px;
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff
+}
+
+.planItinerary .record .setting ul li:hover {
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee
+}
+
+.planItinerary .record .setting ul li.after,
+.planItinerary .record .setting ul li.before {
+	background-position: 9px 11px
+}
+
+.planItinerary .record .setting ul li.del {
+	background-position: 9px -98px
+}
+
+.planItinerary .record .setting ul li.lift {
+	background-position: 9px -61px
+}
+
+.planItinerary__copyPlan input {
+	height: 35px;
+	width: 100%;
+	margin: 10px 0 20px
+}
+
+.planItinerary .Empty {
+	box-sizing: border-box;
+	height: 65px;
+	width: 100%;
+	line-height: 65px;
+	border: 1px solid #dadada;
+	background-color: #f9f9f9;
+	padding: 15px 15px 0 20px
+}
+
+.planItinerary .Empty .left {
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 0 -1534px;
+	padding-left: 25px;
+	font-size: 12px;
+	color: #959595;
+	line-height: 40px;
+	height: 40px
+}
+
+.planItinerary .Empty .right {
+	background-color: #349f66;
+	padding: 0 15px
+}
+
+.includeFromPlanList,
+.planItinerary .Empty .right {
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 3px;
+	font-size: 14px
+}
+
+.includeFromPlanList {
+	float: right;
+	background-color: #0095db;
+	width: 127px;
+	text-align: center;
+	margin-right: 18px
+}
+
+.copyCompleteExClassName .qui-popup-box-bottom {
+	display: none
+}
+
+.planItinerary .record .city>p>a:hover,
+.planItinerary .record .poi>p>a:hover {
+	color: #0073b6
+}
+
+.noLink {
+	cursor: default!important;
+	color: #636363!important;
+	text-decoration: none!important
+}
+
+.b_copyPlan {
+	background-color: #f3661f!important
+}
+
+.b_copyPlan:hover {
+	background-color: #f5802d!important
+}
+
+.b_details-self {
+	background-color: #0095db!important
+}
+
+.b_details-self:hover {
+	background-color: #3ba5e2!important
+}
+
+.createMyPlan {
+	float: right;
+	background-color: #0095db;
+	height: 35px;
+	line-height: 35px;
+	width: 127px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	font-size: 14px;
+	margin-top: 18px;
+	text-decoration: none;
+	margin-left: 16px
+}
+
+.createMyPlan:hover {
+	background-color: #3ba5e2;
+	text-decoration: none
+}
+
+.createMyPlan_span {
+	font-size: 18px;
+	margin: 0 3px 0 0;
+	position: relative;
+	top: -1px
+}
+
+.m_exClass .qui-popup-box-content,
+.m_exClass .qui-popup-box-title {
+	background-color: #f5f5f5
+}
+
+.m_boxsizing {
+	box-sizing: border-box
+}
+
+.hide {
+	display: none
+}
+
+.searchInputAutocompleteDiv {
+	position: absolute;
+	width: 100%
+}
+
+.m_exGuidanceClass .qui-popup-box-bottom {
+	display: none
+}
+
+.m_exGuidanceClass .qui-popup-box-title {
+	color: #999
+}
+
+.m_city {
+	padding: 1px 0 30px
+}
+
+.m_city>.citylist {
+	margin: -11px 0 0 -20px
+}
+
+.m_city>.citylist>div {
+	background-color: #fff;
+	float: left;
+	height: 57px;
+	border: 1px solid #72af8b;
+	border-radius: 3px;
+	margin: 10px 0 0 20px;
+	text-align: center;
+	max-width: 150px;
+	padding: 5px 20px;
+	position: relative;
+	cursor: move
+}
+
+.m_city>.citylist>div>p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #72af8b;
+	font-size: 16px
+}
+
+.m_city>.citylist>div.onetitle {
+	padding: 15px 20px
+}
+
+.m_city>.citylist>div>.close {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: -10px;
+	right: -14px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	cursor: pointer
+}
+
+.m_city>.search {
+	margin-top: 20px;
+	position: relative
+}
+
+.m_city>.search>input {
+	width: 100%;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	height: 35px;
+	padding-left: 35px;
+	background-position: 10px -47px
+}
+
+.m_city .tools {
+	margin-top: 20px;
+	font-size: 16px;
+	color: #636363;
+	float: none;
+	display: block;
+	width: auto;
+	padding: 0
+}
+
+.m_city .cards {
+	margin: -8px 0 0 -20px
+}
+
+.m_city .cards>div {
+	float: left;
+	width: 280px;
+	height: 80px;
+	margin: 18px 0 0 20px;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 1px 1px 5px #ccc;
+	white-space: nowrap;
+	word-break: normal;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.m_city .cards>div:hover {
+	background-color: #efefef
+}
+
+.m_city .cards>div>* {
+	float: left
+}
+
+.m_city .cards>div>img {
+	width: 80px;
+	height: 80px
+}
+
+.m_city .cards>div>div {
+	width: 200px;
+	overflow: hidden;
+	height: 80px;
+	padding: 25px 10px 0
+}
+
+.m_city .cards>div>div>.title {
+	font-size: 14px;
+	font-weight: 700;
+	color: #323232;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.m_city .cards>div>div>.info {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 12px;
+	color: #959595
+}
+
+.m_hotel {
+	padding-bottom: 30px
+}
+
+.m_hotel>.line {
+	border-bottom: 1px solid #d1d1d1;
+	padding-top: 30px;
+	background: none;
+	background-color: inherit
+}
+
+.m_hotel>.item {
+	margin-top: 30px
+}
+
+.m_hotel>.item>* {
+	vertical-align: middle
+}
+
+.m_hotel>.item>.title {
+	font-size: 14px;
+	color: #636363;
+	margin-right: 30px
+}
+
+.m_hotel>.item>.price {
+	width: 65px;
+	vertical-align: top
+}
+
+.m_hotel>.item>.priceSelect {
+	position: relative;
+	left: -1px
+}
+
+.m_hotel>.item>.counts {
+	font-size: 14px;
+	color: #636363;
+	margin: 0 20px
+}
+
+.m_hotel>.item>.totalPrice {
+	color: #5ea768;
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 20px
+}
+
+.m_hotel_del {
+	color: #3f7aba;
+	position: absolute;
+	bottom: 25px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/other.png);
+	background-repeat: no-repeat;
+	background-position: 0 -922px;
+	cursor: pointer;
+	padding: 3px 0 0 25px
+}
+
+.m_hotel .hotelinfo .search {
+	margin-left: 90px;
+	padding-top: 20px;
+	position: relative
+}
+
+.m_hotel .hotelinfo .search input {
+	height: 35px;
+	width: 100%
+}
+
+.m_hotel .hotelinfo>img {
+	width: 80px;
+	height: 80px
+}
+
+.m_hotel .hotelinfo>.name {
+	margin-left: 15px;
+	padding-top: 10px;
+	cursor: pointer
+}
+
+.m_hotel .hotelinfo>.onetitle {
+	padding-top: 25px
+}
+
+.m_hotel .hotelinfo>.name:hover {
+	color: #65a982
+}
+
+.m_hotel .hotelinfo>.name>p {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 26px
+}
+
+.m_traffic>.record {
+	margin: -20px 0 0 -30px;
+	padding-bottom: 40px
+}
+
+.m_traffic>.record:last-child {
+	padding-bottom: 10px
+}
+
+.m_traffic>.record>.item {
+	height: 32px;
+	margin-top: 20px
+}
+
+.m_traffic>.record>.item .qui-select {
+	vertical-align: middle
+}
+
+.m_traffic>.record>.item>.left,
+.m_traffic>.record>.item>.right {
+	font-size: 14px;
+	color: #636363;
+	float: left;
+	margin-left: 30px;
+	position: relative
+}
+
+.m_traffic>.record>.item>.left>.qui-inputAutocomplete,
+.m_traffic>.record>.item>.right>.qui-inputAutocomplete {
+	left: 95px
+}
+
+.m_traffic>.record>.item>.left>span,
+.m_traffic>.record>.item>.right>span {
+	margin-right: 25px;
+	vertical-align: middle;
+	position: relative
+}
+
+.m_traffic>.record>.item>.left>span>span,
+.m_traffic>.record>.item>.right>span>span {
+	color: #fc2501;
+	font-size: 20px;
+	position: absolute;
+	left: -10px
+}
+
+.m_traffic>.record .fromplace,
+.m_traffic>.record .toplace {
+	width: 150px
+}
+
+.m_traffic>.record .price {
+	width: 45px;
+	vertical-align: top;
+	position: relative;
+	z-index: 1
+}
+
+.m_traffic>.record .priceSelect {
+	position: relative;
+	left: -1px
+}
+
+.m_traffic>.record>.del {
+	border-bottom: 1px solid #d1d1d1;
+	text-align: right;
+	height: 45px;
+	line-height: 45px;
+	margin: 0 27px 0 28px
+}
+
+.m_traffic>.record>.del>span {
+	font-size: 12px;
+	color: #0073b6;
+	cursor: pointer
+}
+
+.m_traffic>.record:last-child>.del {
+	border-bottom: none
+}
+
+.m_traffic_addone {
+	color: #3f7aba;
+	position: absolute;
+	bottom: 25px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	background-position: 0 -179px;
+	padding-left: 15px;
+	cursor: pointer
+}
+
+.m_poi {
+	padding: 1px 0 30px
+}
+
+.m_poi>.poilist {
+	margin: -11px 0 0 -20px
+}
+
+.m_poi>.poilist>div {
+	background-color: #fff;
+	float: left;
+	height: 57px;
+	border: 1px solid #72af8b;
+	border-radius: 3px;
+	margin: 10px 0 0 20px;
+	text-align: center;
+	max-width: 150px;
+	padding: 5px 10px;
+	position: relative;
+	cursor: move
+}
+
+.m_poi>.poilist>div>p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #72af8b;
+	font-size: 14px
+}
+
+.m_poi>.poilist>div.onetitle {
+	padding: 15px 20px
+}
+
+.m_poi>.poilist>div>.close {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: -10px;
+	right: -14px;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	cursor: pointer
+}
+
+.m_poi>.search {
+	margin-top: 20px
+}
+
+.m_poi>.search>input {
+	width: 100%;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	height: 35px;
+	padding-left: 35px;
+	background-position: 10px -47px
+}
+
+.m_poi>.js_recommend>.tools {
+	margin-top: 20px;
+	font-size: 16px;
+	color: #636363;
+	width: auto;
+	float: none;
+	padding: 0;
+	display: block
+}
+
+.m_poi>.js_recommend>.tools>.refresh {
+	float: right;
+	color: #72af8b;
+	background-image: url(//static.qyer.com/models/common/component/planItinerary/images/modelicons.png);
+	background-repeat: no-repeat;
+	padding-left: 26px;
+	background-position: 0 -114px;
+	cursor: pointer
+}
+
+.m_poi>.js_recommend>.cards {
+	margin: 0 0 0 -20px
+}
+
+.m_poi>.js_recommend>.cards>div {
+	float: left;
+	width: 280px;
+	height: 80px;
+	margin: 18px 0 0 20px;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 1px 1px 5px #ccc;
+	white-space: nowrap;
+	word-break: normal;
+	overflow: hidden;
+	cursor: pointer;
+	vertical-align: top
+}
+
+.m_poi>.js_recommend>.cards>div:hover {
+	background-color: #efefef
+}
+
+.m_poi>.js_recommend>.cards>div>* {
+	float: left
+}
+
+.m_poi>.js_recommend>.cards>div>img {
+	width: 80px;
+	height: 80px
+}
+
+.m_poi>.js_recommend>.cards>div>div {
+	width: 200px;
+	overflow: hidden;
+	height: 80px;
+	padding: 25px 10px 0
+}
+
+.m_poi>.js_recommend>.cards>div>div>.title {
+	font-size: 14px;
+	font-weight: 700;
+	color: #323232;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.m_poi>.js_recommend>.cards>div>div>.info {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 12px;
+	color: #959595
+}
+
+.edit_lift>p {
+	font-size: 14px;
+	color: #636363
+}
+
+.edit_lift>input {
+	height: 35px;
+	width: 100%;
+	margin: 10px 0 20px
+}
+
+.m_includeExClass .qui-popup-box-content,
+.m_includeExClass .qui-popup-box-title {
+	background-color: #f5f5f5
+}
+
+.m_includeExClass .qui-popup-box-bottom {
+	display: none
+}
+
+.m_include .infoText {
+	font-size: 16px;
+	color: #636363;
+	padding-bottom: 20px
+}
+
+.m_include .qui-select,
+.m_include .ui_button {
+	vertical-align: middle
+}
+
+.m_include .ui_button {
+	margin-left: 10px
+}
+
+.m_guidance {
+	margin-left: -30px
+}
+
+.m_guidance>div {
+	border: 1px dotted #e5e5e5;
+	background-color: #fcfcfc;
+	width: 250px;
+	height: 250px;
+	text-align: center;
+	margin: 0 0 40px 40px;
+	cursor: pointer
+}
+
+.m_guidance>div>img {
+	margin-top: 55px
+}
+
+.m_guidance>div>.p1 {
+	font-size: 22px;
+	margin: 20px 0 10px
+}
+
+.m_guidance>div>.p2 {
+	font-size: 14px;
+	color: silver
+}
+
+.qui-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(//static.qyer.com/models/common/images/bg_255_255_255_0.7.png);
+	z-index: 1000;
+	overflow-y: auto;
+	opacity: 0
+}
+
+.qui-popup>div {
+	display: table;
+	height: 100%;
+	margin: 0 auto
+}
+
+.qui-popup-dt {
+	display: table-cell;
+	vertical-align: middle
+}
+
+.qui-popup-box {
+	margin: 0 auto;
+	background-color: #fff;
+	position: relative;
+	box-shadow: 0 0 6px #aaa;
+	border: 1px solid #ccc;
+	opacity: 0
+}
+
+.qui-popup-box-title {
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	font-weight: 700;
+	padding-left: 20px
+}
+
+.qui-popup-box-content {
+	box-sizing: border-box;
+	padding: 0 20px
+}
+
+.qui-popup-box-content>iframe {
+	width: 100%;
+	border: none
+}
+
+.qui-popup-box-bottom {
+	text-align: right;
+	height: 70px;
+	line-height: 70px;
+	padding-right: 20px
+}
+
+.qui-popup-closeIcon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+	background-image: url(//static.qyer.com/models/common/ui/popup/ico.png);
+	height: 32px;
+	width: 32px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	border-radius: 5px
+}
+
+.qui-popup-closeIcon:hover {
+	background-position: 0 -38px
+}
+
+.qui-popup-cancelBtn,
+.qui-popup-loadingBtn,
+.qui-popup-okBtn {
+	vertical-align: middle;
+	margin-left: 10px
+}
+
+.qui-popup-loadingBtn,
+.qui-tip {
+	display: none
+}
+
+.qui-tip {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 1100
+}
+
+.qui-tip-box {
+	display: inline-block;
+	min-width: 120px;
+	max-width: 390px;
+	padding: 20px 30px;
+	background-color: #fff;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+	border: 1px solid silver;
+	text-align: left;
+	font-size: 18px;
+	line-height: 32px
+}
+
+.qui-tip-text {
+	display: block;
+	position: relative;
+	padding-left: 34px
+}
+
+.qui-tip-text:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 24px;
+	height: 24px;
+	background: #fff url(//static.qyer.com/models/common/ui/tip/icons2.png) no-repeat
+}
+
+.qui-tip-box-error .qui-tip-text:before {
+	background-position: 0 -80px
+}
+
+.qui-tip-box-warning .qui-tip-text:before {
+	background-position: 0 -40px
+}
+
+.ui-datepicker {
+	display: none;
+	width: 218px;
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 3px #ccc;
+	z-index: 1299!important
+}
+
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	height: 34px;
+	background-color: #34914c;
+	color: #fff;
+	line-height: 34px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px
+}
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev {
+	position: absolute;
+	top: 0;
+	width: 24px;
+	height: 34px;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.ui-datepicker .ui-datepicker-prev {
+	left: 0;
+	border-right: none!important
+}
+
+.ui-datepicker .ui-datepicker-next {
+	right: 0;
+	border-left: none!important
+}
+
+.ui-datepicker .ui-datepicker-next-hover,
+.ui-datepicker .ui-datepicker-prev-hover {
+	background-color: #038250
+}
+
+.ui-datepicker .ui-state-disabled {
+	opacity: .5;
+	background-color: transparent;
+	cursor: default
+}
+
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+	display: block;
+	width: 23px;
+	height: 34px;
+	background: url(//static.qyer.com/models/common/ui/datepicker/icon.png) no-repeat 8px 11px;
+	overflow: hidden;
+	line-height: 200px
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+	border-right: none!important
+}
+
+.ui-datepicker .ui-datepicker-next span {
+	background-position: -35px 11px;
+	border-left: none!important
+}
+
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 24px;
+	text-align: center;
+	font-size: 14px
+}
+
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+	width: 100%
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 60px;
+	margin-right: 5px
+}
+
+.ui-datepicker table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #e6e6e6;
+	border-top: none
+}
+
+.ui-datepicker th {
+	padding: 4px 0;
+	text-align: center;
+	border: 0;
+	color: #9e9e9e
+}
+
+.ui-datepicker td {
+	border: 1px solid #e6e6e6
+}
+
+.ui-datepicker td a,
+.ui-datepicker td span {
+	display: block;
+	padding: 6px;
+	text-decoration: none;
+	text-align: center;
+	background-color: #fff;
+	border: 999999;
+	color: #323232
+}
+
+.ui-datepicker td span {
+	color: #959595
+}
+
+.ui-datepicker td .ui-state-space {
+	background-color: #d6e8e1
+}
+
+.ui-datepicker td .ui-state-hover {
+	background-color: #e7e7e7
+}
+
+.ui-datepicker td .ui-state-highlight {
+	background: #fff894;
+	color: #636363
+}
+
+.ui-datepicker td .ui-state-active {
+	background: #34914c;
+	color: #fff
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em;
+	width: auto;
+	overflow: visible
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left
+}
+
+.ui-datepicker.ui-datepicker-multi {
+	width: auto
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 100%;
+	margin: 0 auto
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group,
+.ui-datepicker-multi-3 .ui-datepicker-group,
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 218px
+}
+
+.ui-datepicker-multi .ui-datepicker-group-first,
+.ui-datepicker-multi .ui-datepicker-group-middle {
+	margin-right: 10px
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left
+}
+
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0
+}
+
+.ui-datepicker-rtl {
+	direction: rtl
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px
+}
+
+.ui-datepicker-cover {
+	display: none;
+	display: block;
+	position: absolute;
+	z-index: -1;
+	-webkit-filter: mask();
+	filter: mask();
+	top: -4px;
+	left: -4px;
+	width: 200px;
+	height: 200px
+}
+
+.qui-select {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	overflow: visible
+}
+
+.qui-select-disable>.titles {
+	background-color: #eee!important;
+	cursor: default!important
+}
+
+.qui-select .titles {
+	background: url(//static.qyer.com/models/common/ui/select/icons.png);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-color: #fff;
+	border: 1px solid silver;
+	color: #636363;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 10px 0 5px;
+	width: 100%;
+	height: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.qui-select .titles .title-text {
+	background-position: 0 -4px;
+	margin-left: 5px;
+	white-space: nowrap
+}
+
+.qui-select .contents {
+	background-color: #fff;
+	border: 1px solid silver;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	display: none;
+	line-height: 38px;
+	position: absolute;
+	top: 31px;
+	width: 180px;
+	max-height: 235px;
+	overflow: auto;
+	z-index: 10
+}
+
+.qui-select .contents ul li:first-child {
+	border-top: 0 none
+}
+
+.qui-select .contents ul li {
+	border-top: 1px solid #ebebeb;
+	font-size: 14px;
+	line-height: 38px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.qui-select .contents ul li:hover {
+	background-color: #d9eed7
+}
+
+.qui-select .contents ul li a {
+	padding-left: 10px;
+	color: #636363;
+	text-decoration: none
+}
+
+.qui-errorip {
+	border: 1px solid #d0312b!important
+}
+
+.qui-errorip-textDiv {
+	border: 1px solid #d0312b;
+	background-color: #ffcccd;
+	color: #88777c;
+	position: absolute;
+	z-index: 2000
+}
+
+.qui-errorip-textDiv>.tip {
+	display: block;
+	position: absolute;
+	left: 5px;
+	top: 0
+}
+
+.qui-errorip-textDiv>.tip>p {
+	position: absolute;
+	width: 0;
+	height: 0
+}
+
+.qui-errorip-textDiv>.tip>.a1 {
+	top: -5px;
+	border-bottom: 5px solid #cb0013
+}
+
+.qui-errorip-textDiv>.tip>.a1,
+.qui-errorip-textDiv>.tip>.a2 {
+	left: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent
+}
+
+.qui-errorip-textDiv>.tip>.a2 {
+	top: -4px;
+	border-bottom: 5px solid #ffcccd
+}
+
+.qui-errorip-textDiv>.text {
+	padding: 0 5px
+}
+
+.qui-errorip-textDiv1 {
+	border: 1px solid #ebb75a;
+	background-color: #fff894;
+	color: #222;
+	position: absolute;
+	z-index: 2000;
+	border-radius: 3px
+}
+
+.qui-errorip-textDiv1>.tip {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	margin-left: -5px
+}
+
+.qui-errorip-textDiv1>.tip>p {
+	position: absolute;
+	width: 0;
+	height: 0
+}
+
+.qui-errorip-textDiv1>.tip>.a1 {
+	top: -4px;
+	border-top: 5px solid #ebb75a
+}
+
+.qui-errorip-textDiv1>.tip>.a1,
+.qui-errorip-textDiv1>.tip>.a2 {
+	left: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent
+}
+
+.qui-errorip-textDiv1>.tip>.a2 {
+	top: -5px;
+	border-top: 5px solid #fff894
+}
+
+.qui-errorip-textDiv1>.text {
+	max-width: 300px;
+	overflow: hidden;
+	padding: 0 8px;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.qui-slidConfirm {
+	position: absolute;
+	z-index: 1300;
+	top: 100px;
+	left: 100px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 6px #aaa
+}
+
+.qui-slidConfirm-bottom {
+	margin-top: 10px;
+	text-align: center
+}
+
+.qui-slidConfirm-text {
+	background-image: url(//static.qyer.com/models/common/ui/slidConfirm/icons.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	padding-left: 20px;
+	background-position: 0 -79px;
+	text-align: center
+}
+
+.qui-confirm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(//static.qyer.com/models/common/images/bg_255_255_255_0.7.png);
+	display: table;
+	z-index: 1200;
+	display: none;
+	opacity: 0
+}
+
+.qui-confirm>div {
+	display: table-cell;
+	vertical-align: middle
+}
+
+.qui-confirm-box {
+	margin: 0 auto;
+	width: 300px;
+	position: relative;
+	top: -50px;
+	opacity: 0;
+	overflow: hidden;
+	box-shadow: 0 0 6px #aaa;
+	border: 1px solid #ccc;
+	background-color: #fff
+}
+
+.qui-confirm-box-title {
+	height: 30px;
+	color: #666;
+	line-height: 30px;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	font-weight: 700
+}
+
+.qui-confirm-box-content {
+	position: relative
+}
+
+.qui-confirm-box-content-icon {
+	float: left;
+	background-image: url(//static.qyer.com/models/common/ui/confirm/icons.png);
+	background-repeat: no-repeat;
+	height: 32px;
+	margin: -16px 0 0 10px;
+	position: absolute;
+	top: 50%;
+	vertical-align: middle;
+	width: 32px
+}
+
+.qui-confirm-box-content-iconOK {
+	background-position: 0 -67px
+}
+
+.qui-confirm-box-content-iconError {
+	background-position: 0 -12px
+}
+
+.qui-confirm-box-content-iconWarning {
+	background-position: 0 -121px
+}
+
+.qui-confirm-box-content-text {
+	color: #666;
+	height: 100%;
+	margin: 0 20px 0 60px
+}
+
+.qui-confirm-box-bottom {
+	background-color: #fff;
+	text-align: right;
+	height: 50px;
+	line-height: 50px;
+	padding-right: 20px
+}
+
+.qui-confirm-closeIcon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+	background-image: url(//static.qyer.com/models/common/ui/confirm/icons.png);
+	height: 32px;
+	width: 32px;
+	background-repeat: no-repeat;
+	background-position: 0 -192px;
+	border-radius: 5px
+}
+
+.qui-confirm-closeIcon:hover {
+	background-position: 0 -230px
+}
+
+.qui-confirm-box-clearFloat {
+	clear: both;
+	height: 0;
+	overflow: hidden
+}
+
+.qui-inputAutocomplete {
+	position: absolute;
+	z-index: 1100;
+	background-color: #fff;
+	border: 1px solid #eee
+}
+
+.qui-inputAutocomplete-ul li {
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #eee;
+	background-color: #fff;
+	cursor: pointer;
+	word-break: keep-all;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.qui-inputAutocomplete-ul li:hover,
+.qui-inputAutocomplete-ul li[data-select=true] {
+	background-color: #e0f1de
+}
+
+.qui-inputAutocomplete-ul li.disableDefalut {
+	background-color: #fff!important;
+	cursor: default
+}
+
+.qui-inputAutocomplete-noResult {
+	color: red
+}
+
+.qyer_inputAutocomplete_name {
+	padding: 0 5px 0 10px
+}
+
+.qyer_inputAutocomplete_name .current {
+	color: #077345
+}
+
+.qyer_inputAutocomplete_en {
+	padding-right: 10px;
+	font-family: Tahoma, Geneva, sans-serif
+}
+
+.qyer_inputAutocomplete_found {
+	color: #959595;
+	padding-right: 10px
+}
+
+.qyer_inputAutocomplete_creat {
+	padding: 10px
+}
+
+.qui-loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(//static.qyer.com/models/common/images/bg_255_255_255_0.7.png);
+	display: table;
+	z-index: 1000;
+	display: none;
+	opacity: 0
+}
+
+.qui-loading>div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center
+}
+
+.qui-loading-box {
+	display: inline-block;
+	margin: 0 auto;
+	background-color: #ebeaef;
+	border: 3px solid #cfcfcf;
+	color: #555;
+	padding: 10px;
+	border-radius: 5px;
+	min-width: 100px;
+	font-weight: 700;
+	background: -moz-linear-gradient(#fff, #eee 100%);
+	box-shadow: 0 0 5px #999
+}
+
+body,
+input,
+textarea {
+	-webkit-font-smoothing: antialiased
+}
+
+body {
+	min-width: 980px
+}
+
+.line {
+	background: red;
+	margin: 15px 0 0
+}
+
+.borderLine,
+.line {
+	height: 1px;
+	overflow: hidden
+}
+
+.borderLine {
+	background: #ececec;
+	margin: 20px 0
+}
+
+.qy_issue_wrap {
+	max-width: 600px;
+	margin: 0 auto;
+	min-width: 560px
+}
+
+.qy_issue_wrap_titles {
+	padding-top: 60px
+}
+
+.qy_issue_wrap_titles .iText::-moz-placeholder {
+	color: #10b041!important
+}
+
+.qy_issue_wrap_titles .iText {
+	border: 0;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+	padding: 5px 0;
+	color: #10b041;
+	font-size: 28px
+}
+
+.qy_issue_box_title {
+	margin: 40px 0 8px
+}
+
+.qy_issue_box_title .title {
+	font-size: 18px
+}
+
+.qy_issue_box_title .plantitle {
+	float: left;
+	font-size: 18px;
+	line-height: 22px;
+	cursor: default
+}
+
+.qy_issue_box_title .help {
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 17px;
+	height: 17px;
+	margin: 3px 0 0 5px;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) no-repeat 0 0;
+	cursor: pointer
+}
+
+.qy_issue_box_title .help:hover {
+	position: relative
+}
+
+.qy_issue_box_title .mask {
+	display: none;
+	white-space: nowrap;
+	border: 1px solid #d7d7d7;
+	background: #f5f5f5;
+	border-radius: 3px;
+	position: absolute;
+	left: -26px;
+	top: -33px;
+	padding: 3px 8px;
+	line-height: 16px;
+	color: #959595
+}
+
+.qy_issue_box_title .help:hover .mask {
+	display: block
+}
+
+.qy_issue_box_title .mask .arrow0 {
+	position: absolute;
+	bottom: -6px;
+	left: 40%;
+	height: 6px;
+	display: inline-block
+}
+
+.qy_issue_box_title .mask .arrow0 span {
+	display: inline-block;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0
+}
+
+.qy_issue_box_title .mask .arrow1 {
+	left: 1px;
+	z-index: 1;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #f5f5f5
+}
+
+.qy_issue_box_title .mask .arrow2 {
+	left: 0;
+	z-index: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #d7d7d7
+}
+
+.qy_issue_showHide {
+	float: right;
+	margin-top: 3px
+}
+
+.qy_issue_showHide span {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	text-indent: -9999px;
+	float: left;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) no-repeat
+}
+
+.qy_issue_showHide .tHide {
+	background-position: -27px 0
+}
+
+.qy_issue_showHide .tHide:hover {
+	background-position: -75px 0
+}
+
+.qy_issue_showHide .tShow {
+	background-position: -43px 0
+}
+
+.qy_issue_showHide .tShow:hover {
+	background-position: -59px 0
+}
+
+.qy_issue_plan {
+	margin-top: 36px;
+	position: relative
+}
+
+.qy_issue_plan .delete {
+	position: absolute;
+	right: 0;
+	top: 40px;
+	display: inline-block;
+	color: #959595
+}
+
+.qy_issue_plan .delete:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+.qy_issue_planLoad a {
+	display: block;
+	line-height: 32px;
+	background: #f6f6f6;
+	border: 1px solid #ececec;
+	text-align: center;
+	color: #959595
+}
+
+.qy_issue_planLoad a:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+#__planItinerary__ {
+	margin-top: 18px
+}
+
+#__planItinerary__ .planItinerary {
+	z-index: 1000
+}
+
+#__planItinerary__>div {
+	width: auto!important
+}
+
+.qy_issue_radios {
+	padding-top: 20px
+}
+
+.qy_issue_radios label {
+	float: left;
+	padding-right: 20px
+}
+
+.qy_issue_radios input {
+	margin: 2px 6px 0 0;
+	float: left;
+	width: 14px;
+	height: 14px
+}
+
+.qy_issue_radios p {
+	float: left;
+	line-height: 18px;
+	color: #959595
+}
+
+.qy_issue_date,
+.qy_issue_select {
+	padding-top: 20px
+}
+
+.qy_issue_date .text {
+	float: left;
+	color: #636363;
+	line-height: 34px;
+	font-size: 14px;
+	margin-right: 15px
+}
+
+.qy_issue_date .text.jbText {
+	margin: 0 15px
+}
+
+.qy_issue_date .text.jbLine {
+	border-top: 1px solid #d7d7d7;
+	width: 15px;
+	height: 0;
+	overflow: 0;
+	margin: 18px 15px 0
+}
+
+.qy_issue_date .iText {
+	width: 160px;
+	border: 0;
+	border-bottom: 1px solid #ececec;
+	float: left;
+	height: 34px;
+	font-size: 14px;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) no-repeat right 10px
+}
+
+.qy_issue_date .iFocus {
+	background-position: right -15px
+}
+
+.qy_issue_date .day {
+	float: right;
+	line-height: 28px;
+	padding: 3px 0;
+	color: #636363;
+	font-size: 14px
+}
+
+.qy_issue_date .day em {
+	display: inline-block;
+	border-bottom: 1px solid #ececec;
+	min-width: 30px;
+	text-align: center
+}
+
+.qy_issue_dayList {
+	padding-top: 20px
+}
+
+.qy_issue_dayList .items {
+	width: 100%;
+	float: left;
+	padding: 0 240px 0 60px;
+	min-height: 60px;
+	padding-bottom: 10px;
+	box-sizing: border-box
+}
+
+.qy_issue_dayList .title {
+	margin-left: -60px;
+	float: left;
+	line-height: 32px
+}
+
+.qy_issue_dayList span.title {
+	color: #636363;
+	font-size: 16px
+}
+
+.qy_issue_dayList span.title a {
+	font-size: 14px;
+	color: #10b041;
+	display: inline-block;
+	margin-top: 10px
+}
+
+.qy_issue_dayList strong.title {
+	color: #959595;
+	font-size: 12px;
+	line-height: 20px
+}
+
+.qy_issue_dayList .border {
+	border-bottom: 1px solid #ececec
+}
+
+.qy_issue_dayList .city {
+	float: left;
+	width: 100%
+}
+
+.qy_issue_dayList .city .addBtn {
+	font-size: 14px;
+	color: #959595;
+	line-height: 32px;
+	display: inline-block
+}
+
+.qy_issue_dayList .city .addBtn:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+.qy_issue_dayList .hotel {
+	float: right;
+	width: 230px;
+	margin-right: -240px
+}
+
+.qy_issue_dayList .hotel .addBtn {
+	color: #959595;
+	font-size: 14px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 32px;
+	display: block
+}
+
+.qy_issue_dayList .hotel .addBtn:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+.qy_issue_dayList .hotel .iText {
+	float: left;
+	border: 0;
+	width: 100%;
+	padding: 4px 0;
+	height: 24px;
+	line-height: 24px;
+	color: #636363;
+	font-size: 14px
+}
+
+.qy_issue_dayList .pois {
+	margin: 10px -240px 0 0
+}
+
+.qy_issue_dayList .pois .addBtn {
+	font-size: 12px;
+	color: #959595;
+	line-height: 20px;
+	display: inline-block
+}
+
+.qy_issue_dayList .pois .addBtn:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+.qy_issue_dayList .pois .text {
+	color: #959595
+}
+
+.qy_issue_dayList .addDay a {
+	font-size: 14px;
+	color: #959595
+}
+
+.qy_issue_dayList .addDay a:hover {
+	text-decoration: none;
+	color: #10b041
+}
+
+.qy_issue_dayList .items:hover {
+	position: relative
+}
+
+.qy_issue_dayList .items:hover .qy_issue_seting {
+	display: block;
+	position: absolute;
+	left: -50px;
+	top: 7px
+}
+
+.qy_issue_seting {
+	display: none;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) no-repeat 17px -160px;
+	width: 50px;
+	padding-top: 21px;
+	min-height: 21px
+}
+
+.qy_issue_seting:hover {
+	background-position: 17px -120px
+}
+
+.qy_issue_seting ul {
+	border: 1px solid #d7d7d7;
+	background: #fff;
+	width: 92px;
+	margin-left: -22px;
+	line-height: 32px;
+	display: none
+}
+
+.qy_issue_seting:hover ul {
+	display: block
+}
+
+.qy_issue_seting ul li {
+	border-top: 1px solid #ececec
+}
+
+.qy_issue_seting ul li:first-child {
+	border-top: 0
+}
+
+.qy_issue_seting ul li a {
+	display: block;
+	color: #636363;
+	padding: 0 10px
+}
+
+.qy_issue_seting ul li a:hover {
+	text-decoration: none;
+	background: #e3fae1
+}
+
+.qy_issue_poiTag {
+	font-size: 12px;
+	line-height: 20px;
+	color: #959595
+}
+
+.qy_issue_poiTag .parts,
+.qy_issue_poiTag .styles,
+.qy_issue_poiTag .tags {
+	float: left
+}
+
+.qy_issue_poiTag .iText {
+	float: left;
+	border: 0;
+	width: 120px;
+	padding: 0;
+	height: 20px;
+	line-height: 20px;
+	color: #959595;
+	font-size: 12px;
+	margin-left: 5px
+}
+
+.qy_issue_cityTag {
+	font-size: 14px;
+	color: #636363;
+	line-height: 32px
+}
+
+.qy_issue_cityTag .tags {
+	float: left
+}
+
+.qy_issue_cityTag:hover .tags {
+	color: #10b041
+}
+
+.qy_issue_cityTag .parts {
+	float: left
+}
+
+.qy_issue_cityTag .styles {
+	float: left;
+	position: relative
+}
+
+.qy_issue_cityTag .styles span {
+	text-indent: -9999px;
+	cursor: pointer;
+	background: url(//static.qyer.com/models/project/bbs/images/traffic-style.png) no-repeat;
+	height: 32px;
+	width: 36px;
+	display: block
+}
+
+.qy_issue_cityTag .styles .sTraffic {
+	display: none;
+	border: 1px solid #d7d7d7;
+	position: absolute;
+	top: 32px;
+	left: 0;
+	z-index: 8;
+	width: 68px;
+	background: #fff
+}
+
+.qy_issue_cityTag .styles a {
+	font-size: 12px;
+	color: #636363;
+	background: url(//static.qyer.com/models/project/bbs/images/traffic-style.png) no-repeat;
+	line-height: 32px;
+	display: block;
+	padding-left: 30px
+}
+
+.qy_issue_cityTag .styles a:hover {
+	text-decoration: none;
+	background-color: #e3fae1
+}
+
+.qy_issue_cityTag .styles .plane {
+	background-position: 10px 0
+}
+
+.qy_issue_cityTag .styles .plane:hover {
+	background-position: 10px -32px
+}
+
+.qy_issue_cityTag .styles .train {
+	background-position: 10px -192px
+}
+
+.qy_issue_cityTag .styles .train:hover {
+	background-position: 10px -224px
+}
+
+.qy_issue_cityTag .styles .steamer {
+	background-position: 10px -256px
+}
+
+.qy_issue_cityTag .styles .steamer:hover {
+	background-position: 10px -288px
+}
+
+.qy_issue_cityTag .styles .bus {
+	background-position: 10px -64px
+}
+
+.qy_issue_cityTag .styles .bus:hover {
+	background-position: 10px -96px
+}
+
+.qy_issue_cityTag .styles .car {
+	background-position: 10px -128px
+}
+
+.qy_issue_cityTag .styles .car:hover {
+	background-position: 10px -160px
+}
+
+.qy_issue_cityTag .styles .walk {
+	background-position: 10px -320px
+}
+
+.qy_issue_cityTag .styles .walk:hover {
+	background-position: 10px -352px
+}
+
+.qy_issue_cityTag .styles .other {
+	background-position: 10px -384px
+}
+
+.qy_issue_cityTag .styles .other:hover {
+	background-position: 10px -416px
+}
+
+.qy_issue_cityTag .iText {
+	float: left;
+	border: 0;
+	width: 120px;
+	padding: 4px 0;
+	height: 24px;
+	line-height: 24px;
+	color: #636363;
+	font-size: 14px;
+	margin-left: 5px
+}
+
+.qy_issue_travel {
+	margin-top: 40px
+}
+
+.qy_issue_travel_title {
+	font-size: 18px;
+	line-height: 22px;
+	cursor: default
+}
+
+.qy_issue_travel_content {
+	margin-top: 10px;
+	position: relative
+}
+
+.qy_issue_travel_content .tool_right {
+	position: absolute;
+	right: -242px;
+	width: 240px;
+	top: 0
+}
+
+.qy_issue_travel_content .tool_right .tools {
+	padding: 0 20px
+}
+
+.qy_issue_travel_content .editHolder {
+	position: absolute;
+	left: 0;
+	top: 2px;
+	z-index: 1000;
+	font-size: 14px;
+	color: silver;
+	cursor: text
+}
+
+.qy_issue_place {
+	margin-top: 50px
+}
+
+.qy_issue_place .content {
+	padding-top: 20px
+}
+
+.qy_issue_place .content textarea {
+	width: 100%;
+	height: 24px;
+	font-size: 14px;
+	color: #636363;
+	line-height: 24px;
+	padding: 3px 0;
+	border: 0;
+	border-bottom: 1px solid #fb6850;
+	display: block;
+	margin-bottom: 10px
+}
+
+.qy_issue_place .content label {
+	float: left;
+	padding-right: 20px;
+	line-height: 24px
+}
+
+.qy_issue_place .content label input {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin: 4px 6px 0 0
+}
+
+.qy_issue_place .content label span {
+	color: #959595
+}
+
+.qy_issue_place .content .error {
+	padding-left: 20px;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) 0 -77px;
+	font-size: 12px;
+	color: #fb6850;
+	float: left;
+	line-height: 24px
+}
+
+.qy_issue_place .qy_issue_cityTag {
+	border-bottom: 1px solid #d7d7d7;
+	margin-bottom: 5px
+}
+
+.qy_issue_place .errorBox {
+	border-bottom: 1px solid #fb6850
+}
+
+.qy_issue_dates,
+.qy_issue_styles {
+	margin-top: 50px
+}
+
+.qy_issue_popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 900;
+	background: #fff;
+	background: hsla(0, 0%, 100%, .8);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto
+}
+
+. {
+	padding-bottom: 65px
+}
+
+.qy_issue_popup_sbm {
+	padding-top: 59px;
+	text-align: center;
+	height: 60px
+}
+
+.qy_issue_popup_sbm a {
+	padding: 0;
+	line-height: 40px;
+	height: 40px;
+	width: 134px;
+	text-align: center;
+	margin: 0 10px
+}
+
+.qy_issue_popup_sbm a.ui_btn_big_cancel {
+	background: #ececec;
+	border: 0
+}
+
+.qy_issue_popup_sbm a.ui_btn_big {
+	background: #10b041
+}
+
+.qy_issue_popup_content .pBlock,
+.qy_issue_popup_content .pShares,
+.qy_issue_popup_content .ptags,
+.qy_issue_popup_content .pTitle,
+.qy_issue_popup_content .pTransmit {
+	width: 642px;
+	margin: 0 auto
+}
+
+.qy_issue_popup_content .pTitle {
+	padding: 60px 0 43px;
+	border-bottom: 1px solid #ececec
+}
+
+.qy_issue_popup_content .pTitle .title {
+	font-size: 28px;
+	line-height: 32px
+}
+
+.qy_issue_popup_content .pTitle .text {
+	line-height: 18px;
+	margin-top: 11px;
+	color: #959595
+}
+
+.qy_issue_popup_content .pBlock .text,
+.qy_issue_popup_content .pTransmit .text {
+	line-height: 22px;
+	font-size: 14px;
+	color: #636363
+}
+
+.qy_issue_popup_content .pTransmit .text a,
+.qy_issue_popup_content .pTransmit .text a:hover {
+	color: #10b041
+}
+
+.qy_issue_popup_content .pTransmit .text .error {
+	padding-left: 30px;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) 10px -77px;
+	font-size: 12px;
+	display: none;
+	color: #fb6850
+}
+
+.qy_issue_block_list {
+	margin-bottom: 22px;
+	border: solid #d7d7d7;
+	border-width: 1px 0;
+	background-color: #ececec;
+	display: none
+}
+
+.qy_issue_block_list_content {
+	width: 507px;
+	margin: 0 auto;
+	padding-left: 93px
+}
+
+.qy_issue_block_list .menu {
+	width: 93px;
+	float: left;
+	margin-left: -93px;
+	padding: 15px 0
+}
+
+.qy_issue_block_list .menu li {
+	font-size: 16px;
+	line-height: 44px
+}
+
+.qy_issue_block_list .menu li a {
+	color: #636363
+}
+
+.qy_issue_block_list .menu .active a,
+.qy_issue_block_list .menu li a:hover {
+	color: #10b041;
+	text-decoration: none
+}
+
+.qy_issue_block_list .content {
+	min-width: 700px;
+	padding: 15px 0;
+	position: relative;
+	border-left: 1px solid #d7d7d7;
+	min-height: 352px
+}
+
+.qy_issue_block_list .content li {
+	width: 33%;
+	padding-left: 16px;
+	float: left;
+	box-sizing: border-box
+}
+
+.qy_issue_block_list .content li label {
+	display: block;
+	height: 22px;
+	margin: 11px 0;
+	line-height: 22px
+}
+
+.qy_issue_block_list .content li input {
+	float: left;
+	width: 14px;
+	height: 14px;
+	margin: 4px 10px 0 0
+}
+
+.qy_issue_block_list .content li span {
+	color: #959595;
+	font-size: 14px
+}
+
+.qy_issue_block_list .content .arrow0 {
+	position: absolute;
+	top: 75px;
+	left: 0;
+	height: 0;
+	display: inline-block
+}
+
+.qy_issue_block_list .content .arrow0 span {
+	display: inline-block;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0
+}
+
+.qy_issue_block_list .content .arrow1 {
+	top: 1px;
+	z-index: 1;
+	border-bottom: 6px solid transparent;
+	border-top: 6px solid transparent;
+	border-right: 6px solid #f8f8f8
+}
+
+.qy_issue_block_list .content .arrow2 {
+	top: 0;
+	z-index: 0;
+	border-bottom: 7px solid transparent;
+	border-top: 7px solid transparent;
+	border-right: 7px solid #ececec
+}
+
+.qy_issue_popup_content .ptags .lists {
+	border-bottom: 1px solid #969696;
+	margin-top: 7px
+}
+
+.qy_issue_popup_content .ptags .list .tag {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	line-height: 22px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	border: 1px solid #10b041;
+	border-radius: 13px;
+	padding: 0 10px;
+	font-size: 14px;
+	color: #10b041
+}
+
+.qy_issue_popup_content .ptags .list .tag:hover {
+	text-decoration: line-through
+}
+
+.qy_issue_popup_content .ptags .addBtn {
+	width: 100%;
+	border: 0;
+	background: none;
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px
+}
+
+.qy_issue_popup_content .ptags .tips {
+	line-height: 18px;
+	margin-top: 5px;
+	color: #959595
+}
+
+.qy_issue_popup_content .ptags .tips span {
+	color: #636363
+}
+
+.qy_issue_popup_content .pShares .textarea {
+	margin: 15px 0 0
+}
+
+.qy_issue_popup_content .pShares textarea {
+	display: block;
+	margin-bottom: 12px;
+	width: 100%;
+	border: 1px solid #d7d7d7;
+	border-radius: 2px;
+	padding: 3px 7px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #636363;
+	min-height: 100px;
+	box-sizing: border-box
+}
+
+.qy_issue_popup_content .pShares textarea:focus {
+	border: 1px solid #3f9f5f;
+	box-shadow: inset 0 3px 5px -3px #3f9f5f
+}
+
+.qy_issue_popup_content .pShares label {
+	float: left;
+	padding-right: 28px
+}
+
+.qy_issue_popup_content .pShares input {
+	margin: 5px 5px 0 0;
+	float: left;
+	width: 14px;
+	height: 14px
+}
+
+.qy_issue_popup_content .pShares span {
+	float: left;
+	line-height: 24px
+}
+
+.qy_issue_popup_content .pShares .error {
+	padding-left: 20px;
+	background: url(//static.qyer.com/models/project/bbs/images/issue-back.png) 0 -77px;
+	font-size: 12px;
+	display: inline-block;
+	color: #fb6850
+}
+
+@media screen and (max-width:980px) {
+	.qy_issue_block_list_content,
+	.qy_issue_popup_content .pBlock,
+	.qy_issue_popup_content .pShares,
+	.qy_issue_popup_content .ptags,
+	.qy_issue_popup_content .pTitle,
+	.qy_issue_popup_content .pTransmit,
+	.qy_issue_wrap {
+		width: auto;
+		margin: 0 210px
+	}
+	.qy_issue_travel_content .tool_right {
+		width: 204px;
+		right: -210px
+	}
+	.qy_issue_travel_content .tool_right .tools {
+		padding: 0 10px 0 0
+	}
+}
+
+@media screen and (min-width:981px) and (max-width:1019px) {
+	.qy_issue_block_list_content,
+	.qy_issue_popup_content .pBlock,
+	.qy_issue_popup_content .pShares,
+	.qy_issue_popup_content .ptags,
+	.qy_issue_popup_content .pTitle,
+	.qy_issue_popup_content .pTransmit,
+	.qy_issue_wrap {
+		width: auto;
+		margin: 0 210px
+	}
+	.qy_issue_travel_content .tool_right {
+		width: 204px;
+		right: -210px
+	}
+	.qy_issue_travel_content .tool_right .tools {
+		padding: 0 10px 0 0
+	}
+}
+
+.qy_issue_wrap .title {
+	color: #10b041;
+	font-size: 28px;
+	position: relative;
+	padding-top: 100px
+}
+
+.qy_issue_wrap .title .txt {
+	word-break: break-all;
+	word-wrap: break-word;
+	line-height: 36px
+}
+
+.qy_issue_wrap .title textarea {
+	color: #10b041
+}
+
+.qy_issue_wrap .title textarea::-webkit-input-placeholder {
+	color: #10b041!important;
+	font-family: Hiragino Sans GB, Microsoft YaHei, \9ED1\4F53, \5b8b\4f53, sans-serif!important;
+	font-weight: 100!important
+}
+
+.qy_issue_wrap .title textarea:-moz-placeholder,
+.qy_issue_wrap .title textarea::-moz-placeholder {
+	color: #10b041!important
+}
+
+.qy_issue_wrap .title textarea:-ms-input-placeholder {
+	color: #10b041!important
+}
+
+.qy_issue_wrap .title .info {
+	color: #ff654c;
+	font-size: 12px;
+	display: none
+}
+
+.qy_issue_wrap .title .info .error {
+	float: left;
+	margin-right: 4px
+}
+
+.popup_list_ul {
+	display: none
+}
+
+.blockitem .cmd {
+	margin: 0 10px
+}
+
+.blockitem .cmd,
+.blockitem .error {
+	display: none
+}
+
+.blockitem:hover .cmd {
+	display: inline-block
+}
+
+#js_searchTagContainer li {
+	padding-left: 15px
+}
+
+#js_searchTagContainer .qui-inputAutocomplete-noResult {
+	padding-left: 15px;
+	border: 1px solid #d7d7d7;
+	line-height: 32px;
+	color: #959595
+}
+
+.planItinerary .Empty {
+	width: auto
+}
+
+.planItinerary>.contentTable {
+	width: 100%
+}
+
+.qy_issue_travel .editBottom {
+	background: transparent;
+	height: 40px;
+	width: 100%
+}
+
+.qy_issue_mask {
+	position: fixed;
+	background: #f8f8f8;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	z-index: 1000;
+	border-bottom: 1px solid #f2f2f2;
+	top: 0
+}
+
+.qy_issue_mask .text {
+	margin-right: 324px
+}
+
+.editreply .qy_issue_mask .text,
+.qy_issue_mask .text {
+	color: silver;
+	font-size: 12px;
+	line-height: 52px;
+	float: right;
+	margin-top: -1px
+}
+
+.editreply .qy_issue_mask .text,
+.qy_issue_mask .text.detail-savedraft {
+	margin-right: 221px
+}
+
+.qy_issue_mask .saveBtns {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 14px
+}
+
+.qy_issue_mask .saveBtns span {
+	display: inline-block;
+	width: 123px;
+	line-height: 50px;
+	cursor: pointer;
+	float: left
+}
+
+.qy_issue_mask .saveBtns .save {
+	margin-right: 103px;
+	color: #636363
+}
+
+.editreply .qy_issue_mask .saveBtns .save {
+	margin-right: 0
+}
+
+.qy_issue_mask .saveBtns .save.detail-savedraft {
+	margin-right: 0;
+	color: #636363
+}
+
+.qy_issue_mask .saveBtns .save:hover {
+	color: #10b041
+}
+
+.qy_issue_mask .saveBtns .submit {
+	line-height: 51px;
+	background: #10b041;
+	color: #fff
+}
+
+.qy_issue_mask .saveBtns .submit:hover {
+	background: #3f9f5f
+}
+
+.pub-title-qr {
+	width: 100%;
+	border: none;
+	color: #10b041
+}
+
+.x-dn {
+	display: none
+}
+
+.x-c10b041 {
+	color: #10b041
+}
+
+.x-fz14 {
+	font-size: 14px
+}
+
+.x-c63 {
+	color: #636363
+}
+
+#js_popup_shearTextTip {
+	display: none;
+	width: 20px;
+	height: 20px;
+	white-space: nowrap
+}
+
+.x-issue-planLoad {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: 1px;
+	margin-left: 16px;
+	font-size: 14px;
+	color: #10b041
+}
+
+.x-issue-planLoad:hover {
+	text-decoration: underline
+}
+
+#threadTitle {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	border-bottom: 1px solid #a5e4b3;
+	font-family: Hiragino Sans GB, Microsoft YaHei, \9ED1\4F53, \5b8b\4f53, sans-serif
+}
+
+.m_exClass .qui-inputAutocomplete {
+	top: -1px;
+	left: -1px
+}
+
+#addPhotoWrap {
+	width: 166px
+}
+
+#addPhotoWrap a {
+	display: block;
+	padding: 0
+}
+
+#addPhotoWrap .add {
+	margin: 7px 0 0 16px
+}
+
+.thread-title-placeholder {
+	position: absolute;
+	left: 0;
+	line-height: 40px;
+	color: #a5e4b3;
+	font-family: Hiragino Sans GB, Microsoft YaHei, \9ED1\4F53, \5b8b\4f53, sans-serif
+}
+
+#tagTipLoad a {
+	margin-right: 3px;
+	color: #10b041
+}
+
+#tagTipLoad a:hover {
+	text-decoration: underline
+}
+
+#js_searchTagContainer {
+	position: relative
+}
+
+#js_searchTagContainer .qui-inputAutocomplete {
+	top: 0;
+	border: none
+}
+
+#contactPlaceCon .qui-inputAutocomplete {
+	border: none
+}
+
+#__planItinerary__ .tTitle span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle
+}
+
+#__planItinerary__ .time {
+	background-position: 0 9px
+}
+
+#__planItinerary__ .city {
+	background-position: -135px 10px
+}
+
+#__planItinerary__ .poi {
+	background-position: -389px 10px
+}
+
+#__planItinerary__ .hotel {
+	background-position: -515px 9px
+}
+
+.qy_issue_travel_content .tools a {
+	position: relative
+}
+
+.template-textarea {
+	position: absolute;
+	line-height: 40px;
+	word-wrap: break-word;
+	word-break: break-all;
+	visibility: hidden
+}
+
+.tool_content .lift_cont .lift_body li {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+a,
+a:focus,
+button,
+button:focus,
+input,
+input:focus,
+textarea,
+textarea:focus {
+	outline: none
+}
+
+textarea {
+	resize: none
+}
+
+.x-pub-blur {
+	-webkit-filter: blur(20px);
+	-moz-filter: blur(20px);
+	-ms-filter: blur(20px);
+	filter: blur(20px);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=20, MakeShadow=false);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden
+}
+
+.x-popup-draftitle {
+	line-height: 30px;
+	color: silver;
+	font-size: 12px
+}
+
+.x-popup-draftitle strong {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	max-width: 430px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 24px;
+	margin-right: 20px;
+	color: #636363;
+	vertical-align: -7px
+}
+
+.x-draft-popup .qui-popup-box-title {
+	font-weight: 400
+}
+
+#js_blockContainer p {
+	margin-bottom: 19px
+}
+
+.textarea span {
+	color: #959595
+}
+
+.x-tac {
+	text-align: center
+}
+
+#js_tagContainer {
+	margin: 14px 0 10px
+}
+
+#selectMainModule,
+#selectMainValueArea {
+	margin-bottom: 18px
+}
+
+.popup_list_ul label {
+	white-space: nowrap
+}
+
+#js_searchTagContainer li.qyer_inputAutocomplete_creat {
+	border-top: 1px solid #ececec
+}
+
+#js_searchTagContainer .qui-inputAutocomplete-ul {
+	width: 600px;
+	border: 1px solid #d7d7d7
+}
+
+#contactPlaceCon .qui-inputAutocomplete-ul {
+	border: 1px solid #d7d7d7
+}
+
+#contactPlaceCon .qui-inputAutocomplete li,
+#js_searchTagContainer .qui-inputAutocomplete li {
+	height: 32px;
+	line-height: 32px;
+	border-bottom: none;
+	color: #959595
+}
+
+#contactPlaceCon .qui-inputAutocomplete a,
+#js_searchTagContainer .qui-inputAutocomplete a {
+	color: #959595
+}
+
+#contactPlaceCon .qui-inputAutocomplete li:hover,
+#contactPlaceCon .qui-inputAutocomplete li[data-select=true],
+#js_searchTagContainer .qui-inputAutocomplete li:hover,
+#js_searchTagContainer .qui-inputAutocomplete li[data-select=true] {
+	background: #e3fae1 url(//static.qyer.com/models/project/bbs/images/enter-icon.png) no-repeat 100%
+}
+
+#contactPlaceCon .disableDefalut,
+#js_searchTagContainer .disableDefalut {
+	width: 100%
+}
+
+#threadTitle::-moz-selection {
+	background: #e3fae1
+}
+
+#threadTitle::selection {
+	background: #e3fae1
+}
+
+.x-pub-mask {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: hsla(0, 0%, 100%, .3)
+}
+
+#contactPlaceCon .qui-inputAutocomplete li.disableDefalut:hover,
+#js_searchTagContainer .qui-inputAutocomplete li.disableDefalut:hover {
+	background: none
+}
+
+.x-pr {
+	position: relative
+}
+
+.x-popup-close {
+	position: fixed;
+	width: 24px!important;
+	height: 24px!important;
+	right: 60px;
+	top: 60px;
+	background-image: url(//static.qyer.com/models/project/bbs/css/images/editor_icon.png);
+	background-repeat: no-repeat;
+	background-position: -40px -418px
+}
+
+.x-popup-close:hover {
+	background-position: -67px -418px
+}
+
+.x-edithread-info {
+	position: absolute;
+	z-index: 1;
+	right: 152px;
+	top: 15px;
+	height: 18px;
+	font-size: 14px;
+	color: #636363;
+	cursor: pointer;
+	border-left: 1px solid #ccc;
+	padding-left: 16px
+}
+
+.x-edithread-info:hover {
+	text-decoration: none;
+	color: #10b041
+}
+
+.x-edithread-info:hover .xei-setting {
+	background-position: -12px 0
+}
+
+.xei-setting {
+	display: inline-block;
+	margin-right: 7px;
+	width: 12px;
+	height: 12px;
+	vertical-align: -1px;
+	background: url(//common1.qyerstatic.com/bbs/old/images/issue_settag.png) no-repeat
+}
+
+.qui-loading {
+	z-index: 2000!important
+}
+
+.loadingPublishZy {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(//static.qyer.com/models/common/images/bg_255_255_255_0.7.png);
+	z-index: 2000
+}
+
+.x-pubLogo {
+	float: left;
+	margin: 13px 0 0 30px;
+	width: 96px;
+	height: 40px;
+	background: url(//static.qyer.com/models/project/bbs/css/images/pubLogo.png) no-repeat
+}
+
+.issue-gowith-wrap {
+	width: 560px;
+	font: 12px/1.5 Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, \5b8b\4f53, sans-serif;
+	color: #323232
+}
+
+.jieban-mask a {
+	float: right;
+	width: 120px;
+	line-height: 51px;
+	font-size: 14px;
+	color: #959595;
+	text-decoration: none
+}
+
+.pub-jieban.disabled {
+	background-color: #eaeaea
+}
+
+.pub-jieban.active {
+	background-color: #10b041;
+	color: #fff
+}
+
+.gowith-editor .bbs_simple_editor {
+	border: 1px solid #d7d7d7;
+	color: silver
+}
+
+.gowith-editor .bbs_simple_Btn {
+	display: none
+}
+
+.jiebandes-wrap {
+	position: relative;
+	border-bottom: 1px solid #ececec
+}
+
+.jieban-des {
+	margin: 32px 0 10px;
+	font-size: 18px
+}
+
+#jbDesel {
+	float: left;
+	position: relative;
+	width: 100px;
+	font-size: 14px;
+	color: #636363
+}
+
+#jbDesel .titles {
+	padding: 0 1px 0 0;
+	border: none
+}
+
+#jbDesel .contents {
+	top: 30px;
+	width: 99px!important;
+	border: 1px solid #ececec;
+	border-top: none
+}
+
+#destComplete {
+	width: 30px;
+	display: inline-block;
+	border: none;
+	font-size: 14px
+}
+
+#destCompleteContainer {
+	position: relative
+}
+
+.xdib {
+	display: inline-block
+}
+
+#destCompleteContainer li {
+	border: none
+}
+
+#destCompleteContainer li:hover,
+#destCompleteContainer li[data-select=true] {
+	background: #e3fae1 url(//static.qyer.com/models/project/bbs/images/enter-icon.png) no-repeat 100%
+}
+
+#destCompleteContainer .disableDefalut:hover {
+	background: none
+}
+
+#destCompleteContainer a {
+	color: #636363;
+	text-decoration: none
+}
+
+#destCompleteContainer .cGreen {
+	color: #10b041
+}
+
+#destCompleteContainer .property {
+	margin-left: 9px;
+	color: #959595
+}
+
+#destCompleteContainer .qui-inputAutocomplete {
+	top: 6px;
+	left: -10px
+}
+
+#destCompleteContainer .qui-inputAutocomplete ul {
+	border-top: none
+}
+
+#destCompleteContainer .null {
+	padding-left: 9px;
+	line-height: 26px;
+	color: #959595
+}
+
+.xerror {
+	visibility: hidden;
+	width: 16px;
+	margin-top: 11px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 17px;
+	color: #fb6850;
+	background: url(//static.qyer.com/models/project/bbs/css/images/editor_icon.png) no-repeat 0 -385px;
+	white-space: nowrap
+}
+
+.title-error {
+	margin-top: 0
+}
+
+.gowithdate-wrap {
+	padding-bottom: 8px
+}
+
+.gowithdate-wrap h3 {
+	margin: 31px 0 17px;
+	font-size: 18px
+}
+
+.date-area {
+	position: relative;
+	font-size: 14px;
+	color: #636363
+}
+
+.date-area input {
+	margin-left: 12px;
+	width: 163px;
+	border: none;
+	border-bottom: 1px solid #ececec;
+	background: url(//static.qyer.com/models/project/bbs/images/popupdate.png) no-repeat 100%;
+	color: silver;
+	cursor: pointer
+}
+
+.date-area .ui-datepicker-trigger {
+	margin-left: -13px;
+	cursor: pointer
+}
+
+.xml46 {
+	margin-left: 46px
+}
+
+.date-area .datecount {
+	float: right;
+	display: none
+}
+
+.contactway-wrap h3 {
+	font-size: 18px;
+	margin: 53px 0 19px
+}
+
+.contactway-wrap textarea {
+	padding: 2px 10px;
+	box-sizing: border-box;
+	width: 560px;
+	height: 67px;
+	border: 1px solid #d7d7d7;
+	border-radius: 3px;
+	font-size: 14px;
+	line-height: 26px
+}
+
+.editor-h3 {
+	margin: 51px 0 23px;
+	font-size: 18px
+}
+
+.jieban-mask .savetip {
+	font-size: 12px
+}
+
+.jiebandes-wrap .destinput-wrap {
+	position: relative;
+	padding-left: 9px;
+	width: 448px;
+	float: left;
+	margin: 5px 0 8px 100px;
+	border-left: 1px solid #ececec
+}
+
+.jiebandes-wrap .xdel-dest {
+	padding-right: 9px;
+	color: #636363;
+	font-size: 14px
+}
+
+.jiebandes-wrap .xdel-dest:hover {
+	background-color: #f5f5f5;
+	color: #959595;
+	text-decoration: line-through
+}
+
+.xcb {
+	clear: both
+}
+
+.dest-placeholder {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	color: silver;
+	font-size: 14px
+}
+
+.destinputval {
+	display: none
+}
+
+.gowith-nodest {
+	display: none;
+	float: left;
+	padding-left: 9px;
+	width: 448px;
+	margin: 5px 0 8px 100px;
+	font-size: 14px;
+	border-left: 1px solid #ececec;
+	color: silver
+}
+
+#jbDesel .xcontents-li {
+	height: 30px;
+	padding: 0 5px;
+	line-height: 30px
+}
+
+.gowith-destwrap {
+	position: absolute
+}
+
+#jbDesel .contents a {
+	display: block;
+	padding-left: 0;
+	border-top: 1px solid #ececec
+}
+
+#destCompleteContainer .qui-inputAutocomplete {
+	width: 458px!important;
+	top: 13px
+}
+
+#destCompleteContainer a em {
+	color: #10b041
+}
+
+#destCompleteContainer a span {
+	margin-right: 8px
+}
+
+#destCompleteContainer a .parentx {
+	color: #959595
+}
+
+#jbDesel .destsel-wrap {
+	position: absolute;
+	padding: 0 5px;
+	top: -2px;
+	z-index: 999;
+	left: -16px;
+	line-height: 36px;
+	background-color: #fff;
+	cursor: pointer
+}
+
+.xdestle-wrap {
+	padding-left: 11px
+}
+
+#jbDesel .xtitle {
+	padding-right: 25px;
+	background: url(//static.qyer.com/models/common/ui/select/icons.png)100% no-repeat
+}
+
+.xcontent-wrap {
+	display: none;
+	padding-left: 11px;
+	border-top: 1px solid #f5f5f5
+}
+
+.xcontent-wrap a {
+	color: #959595
+}
+
+.xcontent-wrap a:hover {
+	text-decoration: none;
+	color: #636363
+}
+
+.destinput-inner {
+	cursor: text
+}
+
+.issue-gowith-wrap #__planItinerary__ {
+	margin-top: 21px
+}
+
+.issue-gowith-wrap #__planItinerary__ .planItinerary {
+	padding-bottom: 6px
+}
+
+.issue-gowith-wrap .qy_issue_box_title {
+	margin: 53px 0 8px
+}
+
+.issue-gowith-wrap .editor-h3 {
+	position: relative;
+	margin: 28px 0 19px
+}
+
+.xdate-validate.xerror {
+	position: absolute
+}
+
+.datecount span {
+	margin: 0 8px
+}
+
+.contact-error {
+	margin-top: 9px
+}
+
+.x-draft-popup .qui-popup-box-title {
+	height: 50px;
+	line-height: 50px
+}
+
+.x-draftp-title {
+	padding: 16px 0 12px;
+	font-size: 14px;
+	line-height: 16px;
+	color: #323232;
+	font-weight: 400
+}
+
+.x-draftp-content,
+.x-draftp-title {
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.x-draftp-content {
+	font-size: 12px;
+	color: #959595
+}
+
+.x-draft-confirm .qui-confirm-box-content-icon,
+.x-draft-confirm .qui-confirm-closeIcon {
+	display: none
+}
+
+.x-draft-confirm .qui-confirm-box-title {
+	padding-top: 18px;
+	margin-bottom: 5px;
+	color: #323232;
+	font-size: 18px;
+	font-weight: 400
+}
+
+.x-draft-confirm .qui-confirm-box-content-text {
+	margin: 0 0 6px 20px;
+	font-size: 14px;
+	color: #959595
+}
+
+.x-draft-confirm .qui-confirm-okBtn {
+	float: right;
+	margin: 9px 0 0 13px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #cb0900
+}
+
+.x-draft-confirm .qui-confirm-cancelBtn {
+	margin-top: 9px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #323232;
+	background-color: #f5f5f5
+}
+
+.loadnew-draft-confirm .qui-confirm-box-content-icon,
+.loadnew-draft-confirm .qui-confirm-closeIcon {
+	display: none
+}
+
+.loadnew-draft-confirm .qui-confirm-box-title {
+	padding-top: 18px;
+	margin-bottom: 5px;
+	color: #323232;
+	font-size: 18px;
+	font-weight: 400
+}
+
+.loadnew-draft-confirm .qui-confirm-box-content-text {
+	margin: 0 0 6px 20px;
+	font-size: 14px;
+	color: #959595
+}
+
+.loadnew-draft-confirm .qui-confirm-okBtn {
+	float: right;
+	margin: 9px 0 0 13px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #cb0900
+}
+
+.loadnew-draft-confirm .qui-confirm-cancelBtn {
+	margin-top: 9px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #323232;
+	background-color: #f5f5f5
+}
+
+.x-draft-popup .qui-popup-box-content {
+	padding: 0;
+	margin: 0 20px;
+	border-top: 1px solid #ececec
+}
+
+.x-draft-popup .new-content {
+	margin-top: 4px;
+	line-height: 16px;
+	color: #959595;
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.loadnew-draft-confirm .qui-confirm-box {
+	width: 476px
+}
+
+.x-draft-popup .qpbc {
+	margin-top: 10px;
+	line-height: 22px
+}
+
+.x-draft-confirm .qui-confirm-box-bottom {
+	height: 57px
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:2),
+screen and (max-moz-device-pixel-ratio:2) {
+	.xei-setting {
+		background: url(//common1.qyerstatic.com/bbs/old/images/issue_settag.png) no-repeat 0 -7px/12px auto
+	}
+	.x-edithread-info:hover .xei-setting {
+		background-position: 0 -20px
+	}
+}
+
+.xissue-tooltip {
+	position: relative;
+	display: inline-block;
+	left: 4px
+}
+
+.xit-i {
+	font-style: normal;
+	font-size: 12px;
+	position: absolute;
+	top: 6px;
+	color: #d7d7d7
+}
+
+.xit-i.xsec {
+	color: #f5f5f5;
+	left: 1px
+}
+
+.xit-content {
+	display: inline-block;
+	border: 1px solid #d7d7d7;
+	margin-left: 6px;
+	min-height: 28px;
+	line-height: 28px;
+	padding: 0 8px;
+	background-color: #f5f5f5;
+	color: #959595;
+	border-radius: 3px
+}
+
+.autotag-title {
+	display: none;
+	padding: 5px 0 1px;
+	line-height: 14px;
+	font-size: 14px;
+	color: #959595
+}
+
+.autotag-load {
+	display: none;
+	height: 73px;
+	background: url(//common1.qyerstatic.com/bbs/old/images/loading.gif) no-repeat 50%
+}
+
+.ge-placeholder {
+	top: 51px;
+	left: 7px;
+	z-index: 1000;
+	color: #999
+}
+
+.ge-placeholder,
+.save-back {
+	position: absolute;
+	font-size: 14px
+}
+
+.save-back {
+	left: 14px;
+	line-height: 50px;
+	cursor: pointer;
+	color: #636363
+}
+
+.save-back .btn:hover {
+	color: #10b041
+}
+
+.save-back .sts {
+	display: none;
+	margin-left: 6px;
+	color: silver
+}
+
+.editreply .qy_issue_travel {
+	margin-top: 100px
+}
+
+.detail-draft {
+	margin-left: 8px;
+	vertical-align: 1px;
+	color: #636363
+}
+
+.detail-draft:hover {
+	color: #10b041;
+	text-decoration: underline
+}
+
+.ptags .main-tags {
+	display: none
+}
+
+.ptags .item {
+	cursor: pointer
+}
+
+.ptags .group,
+.ptags .group .wrap {
+	overflow: hidden
+}
+
+.ptags .group .ico {
+	position: absolute;
+	left: 12px;
+	bottom: 1px;
+	background-image: url(//common1.qyerstatic.com/bbs/old/images/detail/groups.png);
+	background-repeat: no-repeat;
+	background-size: 45px auto
+}
+
+.ptags .group .item {
+	position: relative;
+	float: left;
+	margin: 33px 25px 0 0
+}
+
+.ptags .group .item.last {
+	margin-right: 0
+}
+
+.ptags .group .item.selected .des,
+.ptags .group .item:hover .des {
+	background: #10b041;
+	color: #fff
+}
+
+.ptags .group .des {
+	display: inline-block;
+	*display: inline;
+	padding-right: 13px;
+	line-height: 33px;
+	border: 1px solid #10b041;
+	border-radius: 20px
+}
+
+.ptags .title {
+	margin-top: 40px;
+	line-height: 20px;
+	font-size: 20px;
+	color: #323232
+}
+
+.ptags .des {
+	font-size: 14px;
+	color: #10b041
+}
+
+.ptags .couple .ico {
+	bottom: 1px;
+	width: 40px;
+	height: 56px
+}
+
+.ptags .couple .des {
+	padding-left: 61px
+}
+
+.ptags .parentchild .ico {
+	width: 43px;
+	height: 53px;
+	background-position: 0 -56px
+}
+
+.ptags .parentchild .des {
+	padding-left: 56px
+}
+
+.ptags .family .ico {
+	width: 46px;
+	height: 54px;
+	background-position: 0 -109px
+}
+
+.ptags .family .des {
+	padding-left: 64px
+}
+
+.ptags .friends .ico {
+	width: 40px;
+	height: 54px;
+	background-position: 0 -163px
+}
+
+.ptags .friends .des {
+	padding-left: 60px
+}
+
+.ptags .travel .ico {
+	width: 35px;
+	height: 54px;
+	background-position: 0 -217px
+}
+
+.ptags .travel .des {
+	padding-left: 56px
+}
+
+.ptags .theme .ico {
+	display: block;
+	width: 60px;
+	height: 60px
+}
+
+.ptags .theme .des {
+	line-height: 16px
+}
+
+.ptags .theme .title {
+	margin-bottom: 15px
+}
+
+.ptags .theme .item {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 102px;
+	vertical-align: middle;
+	margin: 10px 23px 0 0;
+	overflow: hidden
+}
+
+.ptags .theme .item.last {
+	margin-right: 0
+}
+
+.ptags .theme .item:after {
+	position: absolute;
+	display: none;
+	content: '';
+	width: 56px;
+	height: 56px;
+	background: rgba(0, 0, 0, .5);
+	border: 2px solid #10b041;
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000, 0, endcolorstr=#7F000000, 0);
+	left: 0;
+	top: 0
+}
+
+.ptags .theme .item:hover:after {
+	display: block
+}
+
+.ptags .theme .item.selected:after {
+	display: block;
+	background: rgba(0, 0, 0, .5) url(//common1.qyerstatic.com/bbs/old/images/detail/tagselected.png) 50% no-repeat
+}
+
+.ptags .theme .des {
+	display: block;
+	margin-top: 10px;
+	text-align: center;
+	-moz-text-align-last: center;
+	text-align-last: center
+}
+
+.ptags .others .title {
+	margin-top: 24px
+}
+
+.arrowUp {
+	position: absolute;
+	height: 7px;
+	width: 12px
+}
+
+.arrowUp .arrow1 {
+	bottom: 0;
+	border-bottom: 6px solid #f5f5f5;
+	z-index: 10
+}
+
+.arrowUp .arrow1,
+.arrowUp .arrow2 {
+	position: absolute;
+	left: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent
+}
+
+.arrowUp .arrow2 {
+	bottom: 1px;
+	border-bottom: 6px solid #d7d7d7;
+	z-index: 9
+}
+
+.arrowDown {
+	position: absolute;
+	height: 7px;
+	width: 12px
+}
+
+.arrowDown .arrow1 {
+	bottom: 0;
+	border-top: 6px solid #f5f5f5;
+	z-index: 10
+}
+
+.arrowDown .arrow1,
+.arrowDown .arrow2 {
+	position: absolute;
+	left: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent
+}
+
+.arrowDown .arrow2 {
+	bottom: -1px;
+	border-top: 6px solid #d7d7d7;
+	z-index: 9
+}
+
+.icon {
+	background: url(//static.qyer.com/models/project/bbs/css/images/editor_icon.png) no-repeat;
+	display: inline-block
+}
+
+.reload {
+	background: url(//static.qyer.com/models/project/bbs/css/images/reload.png) no-repeat;
+	width: 16px;
+	height: 13px;
+	display: block;
+	cursor: pointer
+}
+
+.error {
+	width: 16px;
+	height: 16px;
+	background-position: 0 -385px
+}
+
+.edui-fontstyle .edit_font_box {
+	position: relative;
+	background: #282828;
+	border-radius: 3px;
+	text-align: center;
+	height: 46px;
+	opacity: .95;
+	Filter: alpha(opacity=95)
+}
+
+.edit_font_box .arrow {
+	position: absolute;
+	left: 50%;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	margin-left: -3px
+}
+
+.edit_font_box_up .arrow {
+	top: -6px;
+	border-bottom: 6px solid #282828
+}
+
+.edit_font_box_down .arrow,
+.edit_font_box_up .arrow {
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent
+}
+
+.edit_font_box_down .arrow {
+	bottom: -6px;
+	border-top: 6px solid #282828
+}
+
+.edit_font_box p {
+	display: inline-block;
+	margin: 0 auto;
+	white-space: nowrap;
+	padding: 0 10px
+}
+
+.edit_font_box a {
+	background: url(//static.qyer.com/models/project/bbs/css/images/editor_icon.png) no-repeat;
+	text-indent: -9999px;
+	margin: 7px 3px 0;
+	display: inline-block
+}
+
+.edit_font_box .enable .weight {
+	width: 32px;
+	height: 32px;
+	background-position: 10px -42px
+}
+
+.edit_font_box .enable .weight:hover,
+.edit_font_box .enable .weight_active {
+	background-position: 10px -121px
+}
+
+.edit_font_box .enable .color {
+	width: 32px;
+	height: 32px;
+	background-position: -26px -42px
+}
+
+.edit_font_box .enable .color:hover {
+	background-position: -26px -121px
+}
+
+.edit_font_box .enable .color span {
+	display: block;
+	margin: 0 8px;
+	border-bottom: 2px solid #fff;
+	height: 26px
+}
+
+.edit_font_box .enable .color:hover span {
+	border-bottom-color: #10b041
+}
+
+.edit_font_box .enable .title1 {
+	width: 60px;
+	height: 32px;
+	background-position: -64px -42px
+}
+
+.edit_font_box .enable .title1:hover,
+.edit_font_box .enable .title1_active {
+	background-position: -64px -121px
+}
+
+.edit_font_box .enable .title2 {
+	width: 60px;
+	height: 32px;
+	background-position: -132px -42px
+}
+
+.edit_font_box .enable .title2:hover,
+.edit_font_box .enable .title2_active {
+	background-position: -132px -121px
+}
+
+.edit_font_box .enable .text {
+	width: 48px;
+	height: 32px;
+	background-position: -196px -42px
+}
+
+.edit_font_box .enable .text:hover,
+.edit_font_box .enable .text_active {
+	background-position: -196px -121px
+}
+
+.edit_font_box .enable .link {
+	width: 32px;
+	height: 32px;
+	background-position: -250px -42px
+}
+
+.edit_font_box .enable .link:hover {
+	background-position: -250px -121px
+}
+
+.edit_font_box .enable .line {
+	width: 1px;
+	height: 20px;
+	background: #636363;
+	margin: 13px 10px 0;
+	vertical-align: middle;
+	overflow: hidden
+}
+
+.edit_font_box .disabled a {
+	cursor: default
+}
+
+.edit_font_box .disabled .weight {
+	width: 32px;
+	height: 32px;
+	background-position: 10px -81px
+}
+
+.edit_font_box .disabled .color {
+	width: 32px;
+	height: 32px;
+	background-position: -26px -81px
+}
+
+.edit_font_box .disabled .color span {
+	display: block;
+	margin: 0 8px;
+	border-bottom: 2px solid #636363;
+	height: 26px
+}
+
+.edit_font_box .disabled .title1 {
+	width: 60px;
+	height: 32px;
+	background-position: -64px -81px
+}
+
+.edit_font_box .disabled .title2 {
+	width: 60px;
+	height: 32px;
+	background-position: -132px -81px
+}
+
+.edit_font_box .disabled .text {
+	width: 48px;
+	height: 32px;
+	background-position: -196px -81px
+}
+
+.edit_font_box .disabled .link {
+	width: 32px;
+	height: 32px;
+	background-position: -250px -81px
+}
+
+.text_color {
+	margin: 0 auto;
+	display: block;
+	white-space: nowrap;
+	padding: 0 10px
+}
+
+.text_color a {
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	margin: 15px 5px 0;
+	border: 1px solid #959595
+}
+
+.text_color .active {
+	width: 14px;
+	height: 14px;
+	border: 2px solid #fff
+}
+
+.linkInput {
+	position: relative;
+	text-align: left
+}
+
+.linkInput .ipt_link {
+	padding: 0 0 0 10px;
+	color: #fff;
+	border: 0;
+	background: none;
+	height: 32px;
+	line-height: 32px;
+	margin: 7px 0 0 10px;
+	width: 270px
+}
+
+.linkInput .icon_tips {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 20px;
+	top: 14px
+}
+
+.linkInput .icon_tips span {
+	display: block;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	background: url(//static.qyer.com/models/project/bbs/css/images/editor_icon.png) no-repeat
+}
+
+.linkInput .icon_tips .error {
+	background-position: 2px -383px
+}
+
+.linkInput .icon_tips .delete {
+	background-position: -72px -383px
+}
+
+.linkInput .icon_tips .delete:hover {
+	background-position: -25px -383px
+}
+
+.linkInput .icon_tips .enter {
+	background-position: -50px -383px
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.TourInfoMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.TourInfo">
+    <id column="infoId" jdbcType="INTEGER" property="infoId" />
+    <result column="tourId" jdbcType="INTEGER" property="tourId" />
+    <result column="cityId" jdbcType="INTEGER" property="cityId" />
+    <result column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="cityStartDate" jdbcType="DATE" property="cityStartDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    infoId, tourId, cityId, scenicId, cityStartDate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tourinfo
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tourinfo
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.TourInfo">
+    insert into tourinfo (infoId, tourId, cityId, 
+      scenicId, cityStartDate)
+    values (#{infoId,jdbcType=INTEGER}, #{tourId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, 
+      #{scenicId,jdbcType=INTEGER}, #{cityStartDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.TourInfo">
+    insert into tourinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        infoId,
+      </if>
+      <if test="tourId != null">
+        tourId,
+      </if>
+      <if test="cityId != null">
+        cityId,
+      </if>
+      <if test="scenicId != null">
+        scenicId,
+      </if>
+      <if test="cityStartDate != null">
+        cityStartDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        #{infoId,jdbcType=INTEGER},
+      </if>
+      <if test="tourId != null">
+        #{tourId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null">
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="cityStartDate != null">
+        #{cityStartDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.TourInfo">
+    update tourinfo
+    <set>
+      <if test="tourId != null">
+        tourId = #{tourId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        cityId = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicId != null">
+        scenicId = #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="cityStartDate != null">
+        cityStartDate = #{cityStartDate,jdbcType=DATE},
+      </if>
+    </set>
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.TourInfo">
+    update tourinfo
+    set tourId = #{tourId,jdbcType=INTEGER},
+      cityId = #{cityId,jdbcType=INTEGER},
+      scenicId = #{scenicId,jdbcType=INTEGER},
+      cityStartDate = #{cityStartDate,jdbcType=DATE}
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </update>
+</mapper>
