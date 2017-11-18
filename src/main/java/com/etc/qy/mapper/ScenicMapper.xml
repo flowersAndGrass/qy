@@ -3,6 +3,7 @@
 <mapper namespace="com.etc.qy.dao.ScenicMapper">
   <resultMap id="BaseResultMap" type="com.etc.qy.entity.Scenic">
     <id column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="scenicName" jdbcType="VARCHAR" property="scenicName" />
     <result column="cityId" jdbcType="INTEGER" property="cityId" />
     <result column="scenicInfoAddress" jdbcType="VARCHAR" property="scenicInfoAddress" />
     <result column="scenicIntroduction" jdbcType="VARCHAR" property="scenicIntroduction" />
@@ -10,7 +11,7 @@
     <result column="scenicState" jdbcType="BIT" property="scenicState" />
   </resultMap>
   <sql id="Base_Column_List">
-    scenicId, cityId, scenicInfoAddress, scenicIntroduction, isFree, scenicState
+    scenicId, scenicName, cityId, scenicInfoAddress, scenicIntroduction, isFree, scenicState
   </sql>
   
   <!-- 根据id查找景点 -->
@@ -27,10 +28,10 @@
     where scenicId = #{scenicId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.etc.qy.entity.Scenic">
-    insert into scenic (scenicId, cityId, scenicInfoAddress, 
+    insert into scenic (scenicId, scenicName, cityId, scenicInfoAddress, 
       scenicIntroduction, isFree, scenicState
       )
-    values (#{scenicId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{scenicInfoAddress,jdbcType=VARCHAR}, 
+    values (#{scenicId,jdbcType=INTEGER}, #{scenicName,jdbcType=VARCHAR}, #{cityId,jdbcType=INTEGER}, #{scenicInfoAddress,jdbcType=VARCHAR}, 
       #{scenicIntroduction,jdbcType=VARCHAR}, #{isFree,jdbcType=BIT}, #{scenicState,jdbcType=BIT}
       )
   </insert>
@@ -39,6 +40,9 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="scenicId != null">
         scenicId,
+      </if>
+      <if test="scenicName != null">
+        scenicName,
       </if>
       <if test="cityId != null">
         cityId,
@@ -59,6 +63,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="scenicId != null">
         #{scenicId,jdbcType=INTEGER},
+      </if>
+       <if test="scenicName != null">
+        #{scenicName,jdbcType=VARCHAR},
       </if>
       <if test="cityId != null">
         #{cityId,jdbcType=INTEGER},
@@ -83,6 +90,9 @@
       <if test="cityId != null">
         cityId = #{cityId,jdbcType=INTEGER},
       </if>
+      <if test="scenicName != null">
+        scenicName = #{scenicName,jdbcType=VARCHAR},
+      </if>
       <if test="scenicInfoAddress != null">
         scenicInfoAddress = #{scenicInfoAddress,jdbcType=VARCHAR},
       </if>
@@ -100,7 +110,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Scenic">
     update scenic
-    set cityId = #{cityId,jdbcType=INTEGER},
+    set scenicName = #{scenicName,jdbcType=VARCHAR},
+   	  cityId = #{cityId,jdbcType=INTEGER},
       scenicInfoAddress = #{scenicInfoAddress,jdbcType=VARCHAR},
       scenicIntroduction = #{scenicIntroduction,jdbcType=VARCHAR},
       isFree = #{isFree,jdbcType=BIT},

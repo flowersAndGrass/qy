@@ -2,6 +2,7 @@ package com.etc.qy.entity;
 
 public class Scenic {
     private Integer scenicId;
+    private String scenicName;
 
     private Integer cityId;
 
@@ -17,10 +18,13 @@ public class Scenic {
 	}
     
 
-    public Scenic(Integer scenicId, Integer cityId, String scenicInfoAddress, String scenicIntroduction, Boolean isFree,
-			Boolean scenicState) {
+    
+
+	public Scenic(Integer scenicId, String scenicName, Integer cityId, String scenicInfoAddress,
+			String scenicIntroduction, Boolean isFree, Boolean scenicState) {
 		super();
 		this.scenicId = scenicId;
+		this.scenicName = scenicName;
 		this.cityId = cityId;
 		this.scenicInfoAddress = scenicInfoAddress;
 		this.scenicIntroduction = scenicIntroduction;
@@ -29,11 +33,23 @@ public class Scenic {
 	}
 
 
+
+
 	@Override
 	public String toString() {
-		return "Scenic [scenicId=" + scenicId + ", cityId=" + cityId + ", scenicInfoAddress=" + scenicInfoAddress
-				+ ", scenicIntroduction=" + scenicIntroduction + ", isFree=" + isFree + ", scenicState=" + scenicState
-				+ "]";
+		return "Scenic [scenicId=" + scenicId + ", scenicName=" + scenicName + ", cityId=" + cityId
+				+ ", scenicInfoAddress=" + scenicInfoAddress + ", scenicIntroduction=" + scenicIntroduction
+				+ ", isFree=" + isFree + ", scenicState=" + scenicState + "]";
+	}
+
+
+	public String getScenicName() {
+		return scenicName;
+	}
+
+
+	public void setScenicName(String scenicName) {
+		this.scenicName = scenicName;
 	}
 
 

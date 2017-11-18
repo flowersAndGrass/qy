@@ -16,6 +16,7 @@
 <link href="travelassistant_css/headerfoot_black.min.css"
 		rel="stylesheet">
 	<script src="travelassistant_js/headerfoot_black.min.js" async="async"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
 <style type="text/css">
 .zpui-head-ad {
 	position: relative;
@@ -219,85 +220,7 @@ $(function () {
 									data-bn-ipg="head-nav-bbs" title="穷游论坛"><i
 										class="iconfont icon-bbs1"></i> 旅行论坛 <i
 										class="iconfont icon-jiantouyou"></i></a>
-									<div class="q-layer q-layer-section">
-										<div class="q-layer">
-											<div class="section-title">
-												<a class="more" href="//bbs.qyer.com">全部版块<i
-													class="iconfont icon-jiantouyou"></i></a> <span>热门版块</span>
-											</div>
-
-
-											<dl class="section-item">
-												<dt>兴趣小组</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-2" href="#">结伴同游</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-3" href="#">签证</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-22" href="#">旅行摄影</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-88" href="#">潜水俱乐部</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-122" href="#">带孩子旅行</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-49" href="#">明信片</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-100" href="#">旅行购物</a>
-												</dd>
-											</dl>
-											<dl class="section-item">
-												<dt>穷游欧洲</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-14" href="#">法国/摩纳哥</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-12" href="#">德国</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-16" href="#">英国/爱尔兰</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-15" href="#">瑞士/列支敦士登</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-162" href="#">土耳其</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-25" href="#">挪威/瑞典/芬兰/丹麦/冰岛</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-13" href="#">意大利/梵蒂冈/圣马力诺/马耳他</a>
-												</dd>
-											</dl>
-											<dl class="section-item">
-												<dt>穷游亚洲</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-52" href="#">台湾</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-57" href="#">日本</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-106" href="#">泰国</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-164" href="#">新加坡</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-165" href="#">斯里兰卡</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-163" href="#">香港/澳门</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-108" href="#">马来西亚/文莱</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-175" href="#">柬埔寨</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-104" href="#">马尔代夫</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-177" href="#">缅甸</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-59" href="#">伊朗</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-103" href="#">印度/孟加拉</a>
-												</dd>
-											</dl>
-											<dl class="section-item">
-												<dt>穷游美洲</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-54" href="#">加拿大</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-53" href="#">美国</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-168" href="#">中美</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-55" href="#">南美/南极</a>
-												</dd>
-											</dl>
-											<dl class="section-item">
-												<dt>穷游大洋洲</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-56" href="#">澳大利亚</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-83" href="#">新西兰</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-178" href="#">太平洋海岛</a>
-												</dd>
-											</dl>
-											<dl class="section-item">
-												<dt>穷游非洲</dt>
-												<dd>
-													<a data-bn-ipg="index-head-bbs-hotboard-173" href="#">东非地区</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-174" href="#">非洲海岛</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-86" href="#">北非地区</a>
-													<a data-bn-ipg="index-head-bbs-hotboard-60" href="#">非洲其他国家</a>
-												</dd>
-											</dl>
-
-
-										</div>
-									</div></li>
+									</li>
 								<li><a href="#" data-bn-ipg="head-nav-ask" title="旅行问答"><i
 										class="iconfont icon-ask1"></i> 旅行问答</a></li>
 								<li><a href="#" data-bn-ipg="head-nav-qlab"
