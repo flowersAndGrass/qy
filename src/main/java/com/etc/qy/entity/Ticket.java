@@ -2,7 +2,8 @@ package com.etc.qy.entity;
 
 public class Ticket {
     private Integer ticketId;
-
+    private String ticketName;
+    private	Integer typeId;
     private Integer scenicId;
 
     private Integer ticketStock;
@@ -10,6 +11,49 @@ public class Ticket {
     private Integer ticketPrice;
 
     private String ticketIntroduction;
+    public Ticket() {
+		// TODO Auto-generated constructor stub
+	}
+    
+    
+    public Ticket(Integer ticketId, String ticketName, Integer typeId, Integer scenicId, Integer ticketStock,
+			Integer ticketPrice, String ticketIntroduction) {
+		super();
+		this.ticketId = ticketId;
+		this.ticketName = ticketName;
+		this.typeId = typeId;
+		this.scenicId = scenicId;
+		this.ticketStock = ticketStock;
+		this.ticketPrice = ticketPrice;
+		this.ticketIntroduction = ticketIntroduction;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Ticket [ticketId=" + ticketId + ", ticketName=" + ticketName + ", typeId=" + typeId + ", scenicId="
+				+ scenicId + ", ticketStock=" + ticketStock + ", ticketPrice=" + ticketPrice + ", ticketIntroduction="
+				+ ticketIntroduction + "]";
+	}
+
+
+	public String getTicketName() {
+		return ticketName;
+	}
+
+	public void setTicketName(String ticketName) {
+		this.ticketName = ticketName;
+	}
+
+	public Integer getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(Integer typeId) {
+		this.typeId = typeId;
+	}
+
+	
 
     public Integer getTicketId() {
         return ticketId;

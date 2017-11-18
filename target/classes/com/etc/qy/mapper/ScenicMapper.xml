@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.ScenicMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Scenic">
+    <id column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="cityId" jdbcType="INTEGER" property="cityId" />
+    <result column="scenicInfoAddress" jdbcType="VARCHAR" property="scenicInfoAddress" />
+    <result column="scenicIntroduction" jdbcType="VARCHAR" property="scenicIntroduction" />
+    <result column="isFree" jdbcType="BIT" property="isFree" />
+    <result column="scenicState" jdbcType="BIT" property="scenicState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    scenicId, cityId, scenicInfoAddress, scenicIntroduction, isFree, scenicState
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from scenic
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from scenic
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Scenic">
+    insert into scenic (scenicId, cityId, scenicInfoAddress, 
+      scenicIntroduction, isFree, scenicState
+      )
+    values (#{scenicId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, #{scenicInfoAddress,jdbcType=VARCHAR}, 
+      #{scenicIntroduction,jdbcType=VARCHAR}, #{isFree,jdbcType=BIT}, #{scenicState,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Scenic">
+    insert into scenic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scenicId != null">
+        scenicId,
+      </if>
+      <if test="cityId != null">
+        cityId,
+      </if>
+      <if test="scenicInfoAddress != null">
+        scenicInfoAddress,
+      </if>
+      <if test="scenicIntroduction != null">
+        scenicIntroduction,
+      </if>
+      <if test="isFree != null">
+        isFree,
+      </if>
+      <if test="scenicState != null">
+        scenicState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scenicId != null">
+        #{scenicId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicInfoAddress != null">
+        #{scenicInfoAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicIntroduction != null">
+        #{scenicIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="isFree != null">
+        #{isFree,jdbcType=BIT},
+      </if>
+      <if test="scenicState != null">
+        #{scenicState,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Scenic">
+    update scenic
+    <set>
+      <if test="cityId != null">
+        cityId = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicInfoAddress != null">
+        scenicInfoAddress = #{scenicInfoAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicIntroduction != null">
+        scenicIntroduction = #{scenicIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="isFree != null">
+        isFree = #{isFree,jdbcType=BIT},
+      </if>
+      <if test="scenicState != null">
+        scenicState = #{scenicState,jdbcType=BIT},
+      </if>
+    </set>
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Scenic">
+    update scenic
+    set cityId = #{cityId,jdbcType=INTEGER},
+      scenicInfoAddress = #{scenicInfoAddress,jdbcType=VARCHAR},
+      scenicIntroduction = #{scenicIntroduction,jdbcType=VARCHAR},
+      isFree = #{isFree,jdbcType=BIT},
+      scenicState = #{scenicState,jdbcType=BIT}
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.AreaMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.Area">
+    <id column="areaId" jdbcType="INTEGER" property="areaId" />
+    <result column="areaName" jdbcType="VARCHAR" property="areaName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    areaId, areaName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from area
+    where areaId = #{areaId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from area
+    where areaId = #{areaId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.Area">
+    insert into area (areaId, areaName)
+    values (#{areaId,jdbcType=INTEGER}, #{areaName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.Area">
+    insert into area
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="areaId != null">
+        areaId,
+      </if>
+      <if test="areaName != null">
+        areaName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.Area">
+    update area
+    <set>
+      <if test="areaName != null">
+        areaName = #{areaName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where areaId = #{areaId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Area">
+    update area
+    set areaName = #{areaName,jdbcType=VARCHAR}
+    where areaId = #{areaId,jdbcType=INTEGER}
+  </update>
+</mapper>

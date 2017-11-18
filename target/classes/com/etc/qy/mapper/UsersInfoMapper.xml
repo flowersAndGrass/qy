@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.UsersInfoMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.UsersInfo">
+    <id column="infoId" jdbcType="INTEGER" property="infoId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userSex" jdbcType="VARCHAR" property="userSex" />
+    <result column="userBirthday" jdbcType="DATE" property="userBirthday" />
+    <result column="userNowAddress" jdbcType="VARCHAR" property="userNowAddress" />
+    <result column="userBeforeAddress" jdbcType="VARCHAR" property="userBeforeAddress" />
+    <result column="userSignature" jdbcType="VARCHAR" property="userSignature" />
+    <result column="userTourPerecen" jdbcType="VARCHAR" property="userTourPerecen" />
+    <result column="userIntegral" jdbcType="INTEGER" property="userIntegral" />
+    <result column="userHeadPicture" jdbcType="VARCHAR" property="userHeadPicture" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    infoId, userId, userSex, userBirthday, userNowAddress, userBeforeAddress, userSignature, 
+    userTourPerecen, userIntegral, userHeadPicture
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from usersinfo
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from usersinfo
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.UsersInfo">
+    insert into usersinfo (infoId, userId, userSex, 
+      userBirthday, userNowAddress, userBeforeAddress, 
+      userSignature, userTourPerecen, userIntegral, 
+      userHeadPicture)
+    values (#{infoId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userSex,jdbcType=VARCHAR}, 
+      #{userBirthday,jdbcType=DATE}, #{userNowAddress,jdbcType=VARCHAR}, #{userBeforeAddress,jdbcType=VARCHAR}, 
+      #{userSignature,jdbcType=VARCHAR}, #{userTourPerecen,jdbcType=VARCHAR}, #{userIntegral,jdbcType=INTEGER}, 
+      #{userHeadPicture,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.UsersInfo">
+    insert into usersinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        infoId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="userSex != null">
+        userSex,
+      </if>
+      <if test="userBirthday != null">
+        userBirthday,
+      </if>
+      <if test="userNowAddress != null">
+        userNowAddress,
+      </if>
+      <if test="userBeforeAddress != null">
+        userBeforeAddress,
+      </if>
+      <if test="userSignature != null">
+        userSignature,
+      </if>
+      <if test="userTourPerecen != null">
+        userTourPerecen,
+      </if>
+      <if test="userIntegral != null">
+        userIntegral,
+      </if>
+      <if test="userHeadPicture != null">
+        userHeadPicture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        #{infoId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null">
+        #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userNowAddress != null">
+        #{userNowAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userBeforeAddress != null">
+        #{userBeforeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userSignature != null">
+        #{userSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="userTourPerecen != null">
+        #{userTourPerecen,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null">
+        #{userIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="userHeadPicture != null">
+        #{userHeadPicture,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.UsersInfo">
+    update usersinfo
+    <set>
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userSex != null">
+        userSex = #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null">
+        userBirthday = #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userNowAddress != null">
+        userNowAddress = #{userNowAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userBeforeAddress != null">
+        userBeforeAddress = #{userBeforeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userSignature != null">
+        userSignature = #{userSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="userTourPerecen != null">
+        userTourPerecen = #{userTourPerecen,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null">
+        userIntegral = #{userIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="userHeadPicture != null">
+        userHeadPicture = #{userHeadPicture,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.UsersInfo">
+    update usersinfo
+    set userId = #{userId,jdbcType=INTEGER},
+      userSex = #{userSex,jdbcType=VARCHAR},
+      userBirthday = #{userBirthday,jdbcType=DATE},
+      userNowAddress = #{userNowAddress,jdbcType=VARCHAR},
+      userBeforeAddress = #{userBeforeAddress,jdbcType=VARCHAR},
+      userSignature = #{userSignature,jdbcType=VARCHAR},
+      userTourPerecen = #{userTourPerecen,jdbcType=VARCHAR},
+      userIntegral = #{userIntegral,jdbcType=INTEGER},
+      userHeadPicture = #{userHeadPicture,jdbcType=VARCHAR}
+    where infoId = #{infoId,jdbcType=INTEGER}
+  </update>
+</mapper>

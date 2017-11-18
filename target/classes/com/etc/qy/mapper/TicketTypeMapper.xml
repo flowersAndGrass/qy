@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.TicketTypeMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.TicketType">
+    <id column="typeId" jdbcType="INTEGER" property="typeId" />
+    <result column="typeName" jdbcType="VARCHAR" property="typeName" />
+    <result column="typeDiscount" jdbcType="DOUBLE" property="typeDiscount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    typeId, typeName, typeDiscount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tickettype
+    where typeId = #{typeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tickettype
+    where typeId = #{typeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.TicketType">
+    insert into tickettype (typeId, typeName, typeDiscount
+      )
+    values (#{typeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR}, #{typeDiscount,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.TicketType">
+    insert into tickettype
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="typeName != null">
+        typeName,
+      </if>
+      <if test="typeDiscount != null">
+        typeDiscount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDiscount != null">
+        #{typeDiscount,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.TicketType">
+    update tickettype
+    <set>
+      <if test="typeName != null">
+        typeName = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDiscount != null">
+        typeDiscount = #{typeDiscount,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where typeId = #{typeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.TicketType">
+    update tickettype
+    set typeName = #{typeName,jdbcType=VARCHAR},
+      typeDiscount = #{typeDiscount,jdbcType=DOUBLE}
+    where typeId = #{typeId,jdbcType=INTEGER}
+  </update>
+</mapper>
