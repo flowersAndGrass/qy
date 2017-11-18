@@ -1,5 +1,7 @@
 package com.etc.qy.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.etc.qy.entity.Ticket;
 
 public interface TicketMapper {
@@ -14,4 +16,11 @@ public interface TicketMapper {
     int updateByPrimaryKeySelective(Ticket record);
 
     int updateByPrimaryKey(Ticket record);
+    
+    /**
+     * ¸ù¾Ý scenicId ²éÆ±
+     * @param scenicId
+     * @return
+     */
+    public Ticket selectByScenicId(@Param(value="scenicId") int scenicId);
 }

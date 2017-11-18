@@ -12,8 +12,32 @@ public class Scenic {
     private Boolean isFree;
 
     private Boolean scenicState;
+    public Scenic() {
+		// TODO Auto-generated constructor stub
+	}
+    
 
-    public Integer getScenicId() {
+    public Scenic(Integer scenicId, Integer cityId, String scenicInfoAddress, String scenicIntroduction, Boolean isFree,
+			Boolean scenicState) {
+		super();
+		this.scenicId = scenicId;
+		this.cityId = cityId;
+		this.scenicInfoAddress = scenicInfoAddress;
+		this.scenicIntroduction = scenicIntroduction;
+		this.isFree = isFree;
+		this.scenicState = scenicState;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Scenic [scenicId=" + scenicId + ", cityId=" + cityId + ", scenicInfoAddress=" + scenicInfoAddress
+				+ ", scenicIntroduction=" + scenicIntroduction + ", isFree=" + isFree + ", scenicState=" + scenicState
+				+ "]";
+	}
+
+
+	public Integer getScenicId() {
         return scenicId;
     }
 

@@ -6,8 +6,20 @@ public class ScenicPicture {
     private Integer scenicId;
 
     private String pictureAddress;
+    public ScenicPicture() {
+		// TODO Auto-generated constructor stub
+	}
+    
+    
+    public ScenicPicture(Integer pictureId, Integer scenicId, String pictureAddress) {
+		super();
+		this.pictureId = pictureId;
+		this.scenicId = scenicId;
+		this.pictureAddress = pictureAddress;
+	}
 
-    public Integer getPictureId() {
+
+	public Integer getPictureId() {
         return pictureId;
     }
 
@@ -30,4 +42,12 @@ public class ScenicPicture {
     public void setPictureAddress(String pictureAddress) {
         this.pictureAddress = pictureAddress == null ? null : pictureAddress.trim();
     }
+
+
+	@Override
+	public String toString() {
+		return "ScenicPicture [pictureId=" + pictureId + ", scenicId=" + scenicId + ", pictureAddress=" + pictureAddress
+				+ "]";
+	}
+    
 }

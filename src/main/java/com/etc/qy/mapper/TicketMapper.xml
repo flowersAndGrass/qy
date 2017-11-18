@@ -13,6 +13,15 @@
   <sql id="Base_Column_List">
     ticketId, scenicId,ticketName, typeId, ticketStock, ticketPrice, ticketIntroduction
   </sql>
+  
+  <!-- 根据景点id查票 -->
+   <select id="selectByScenicId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ticket
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
