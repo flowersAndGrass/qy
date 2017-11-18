@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,9 +15,9 @@
 	href="css/common/common_css_dc0f2871da7f4ad2b027ba846632c983.css">
 <script src="js/common/common_js_08e40206994b88dcce9260a6453dafce.js"></script>
 <link href="travelassistant_css/headerfoot_black.min.css"
-		rel="stylesheet">
-	<script src="travelassistant_js/headerfoot_black.min.js" async="async"></script>
-	<script src="js/jquery-2.1.4.min.js"></script>
+	rel="stylesheet">
+<script src="travelassistant_js/headerfoot_black.min.js" async="async"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
 <style type="text/css">
 .zpui-head-ad {
 	position: relative;
@@ -44,12 +45,12 @@
 }
 </style>
 
-	<div id="zpui-head-ad" class="zpui-head-ad">
-		<a href="#" target="_blank" class="bg"></a> <span
-			id="zpui-head-ad-close" class="close"></span>
-	</div>
+<div id="zpui-head-ad" class="zpui-head-ad">
+	<a href="#" target="_blank" class="bg"></a> <span
+		id="zpui-head-ad-close" class="close"></span>
+</div>
 
-	<style>
+<style>
 .tip_passport_bindmobile {
 	height: 40px;
 	line-height: 40px;
@@ -194,7 +195,7 @@ $(function () {
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBNTMyODU3OTU5OEExMUU3QTgwMUVFNzYzN0YwQkI1NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBNTMyODU3QTU5OEExMUU3QTgwMUVFNzYzN0YwQkI1NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE1MzI4NTc3NTk4QTExRTdBODAxRUU3NjM3RjBCQjU1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE1MzI4NTc4NTk4QTExRTdBODAxRUU3NjM3RjBCQjU1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jb9fzQAAAKlJREFUeNqckkEOwiAQRQc8GFvO0AULjNF4IKMx7aILz9AlHMdDGPyYT0MomzrJD014bwJMVQjhLSIL4o0xH+lUjPGAZUKsJuyQmRs9eCazZMEjL2RopQoeyHiVUmo3RuRE54kcCbt85J9QdXsQuFO4sMG53G8VKCksN4JC8Qp4hbTsrP+OtOvSGFz7dK506zyr05zgBs7Fb1fNacqCLZPs/RqVlBn7FWAASJhkb97XPw8AAAAASUVORK5CYII=" />
 		</div>
 	</div>
-	
+
 	<link href="css/headerfoot_black.min.css" rel="stylesheet" />
 	<script src="js/headerfoot_black.min.js" async="async"></script>
 
@@ -219,8 +220,7 @@ $(function () {
 								<li class="nav-list-layer"><a href="#"
 									data-bn-ipg="head-nav-bbs" title="穷游论坛"><i
 										class="iconfont icon-bbs1"></i> 旅行论坛 <i
-										class="iconfont icon-jiantouyou"></i></a>
-									</li>
+										class="iconfont icon-jiantouyou"></i></a></li>
 								<li><a href="#" data-bn-ipg="head-nav-ask" title="旅行问答"><i
 										class="iconfont icon-ask1"></i> 旅行问答</a></li>
 								<li><a href="#" data-bn-ipg="head-nav-qlab"
@@ -341,448 +341,172 @@ $(function () {
 
 
 	<div class="poiNavWrap">
-			<ul class="qyWrap poiNav clearfix fontYaHei">
-				<li class="country"><a class="text fontYaHei" href='#'
-					target='_blank' data-bn-ipg='place-poi-nav-cityname'> 香港 1111</a></li>
+		<ul class="qyWrap poiNav clearfix fontYaHei">
+			<li class="country"><a class="text fontYaHei" href='#'
+				target='_blank' data-bn-ipg='place-poi-nav-cityname'>${scenic.scenicName}</a></li>
 
-				<li class="line"></li>
+			<li class="line"></li>
 
-				<li class="menu"><a data-bn-ipg='place-poi-nav-cityprofile'
-					class='text' href="#"> 城市指南 </a> <span class="tab"></span>
-					<div class='menuList'>
-						<div class="plcMenuBarLay">
-							<div class="layContent">
-								<ul class="guideList">
-									<li class="list_overview"><em class="tit"><a href="#">目的地概况</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-目的地速写">目的地速写</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-当地人生活">当地人生活</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-历史">历史</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-环境">环境</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-书籍推荐">书籍推荐</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-电影推荐">电影推荐</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-语言帮助">语言帮助</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-文字标识">文字标识</a>
-										</p></li>
-									<li class="list_traffic"><em class="tit"><a href="#">城际交通</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-城际交通概述">城际交通概述</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-飞机">飞机</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-火车">火车</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-长途汽车">长途汽车</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-水运">水运</a>
-										</p></li>
-									<li class="list_domestic_traffic"><em class="tit"><a
-											href="#">市内交通</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-市内交通概述">市内交通概述</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-公交">公交</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-轨道交通">轨道交通</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-水运">水运</a> <span>｜</span>
-											<a href="#"place-poi-nav-出租车">出租车</a> <span>｜</span> <a
-												href="#" data-bn-ipg="place-poi-nav-车票">车票</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-租车">租车</a> <span>｜</span>
-										</p></li>
-									<li class="list_season"><em class="tit"><a href="#">旅行日历</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-旅行季节">旅行季节</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-当地节日">当地节日</a>
-										</p></li>
-									<li class="list_currency"><em class="tit"><a href="#">货币与花费</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-消费水平">消费水平</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-货币兑换">货币兑换</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-银联">银联</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-信用卡">信用卡</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-小费">小费</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-退税">退税</a> <span>｜</span>
-										</p></li>
-									<li class="list_information"><em class="tit"><a
-											href="#">实用信息</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-信息中心">信息中心</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-城市地图获取">城市地图获取</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-网络">网络</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-移动APP">移动APP</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-邮局">邮局</a> <span>｜</span>
-										</p></li>
-									<li class="list_notice"><em class="tit"><a href="#">旅行须知</a></em>
-										<p class="txt">
-											<a href="//place.qyer.com/hong-kong/advice/#cate_1916"
-												data-bn-ipg="place-poi-nav-穷游er忠告">穷游er忠告</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-负责任的旅行">负责任的旅行</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-安全">安全</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-紧急电话">紧急电话</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-医疗">医疗</a> <span>｜</span>
-											<a href="#" data-bn-ipg="place-poi-nav-中国驻该城市使领馆">中国驻该城市使领馆</a>
-										</p></li>
-									<li class="list_define"><em class="tit"><a href="#">港澳通行证</a></em>
-										<p class="txt">
-											<a href="#" data-bn-ipg="place-poi-nav-新版港澳通行证">新版港澳通行证</a> <span>｜</span>
-											<a href="#"place-poi-nav-个人旅游签注">个人旅游签注</a>
-										</p></li>
-								</ul>
+			<li class="menu"><a data-bn-ipg='place-poi-nav-cityprofile'
+				class='text' href="#"> 城市指南 </a> <span class="tab"></span>
+				<div class='menuList'>
+					<div class="plcMenuBarLay">
+						<div class="layContent">
+							<ul class="guideList">
+								<li class="list_overview"><em class="tit"><a href="#">目的地概况</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-目的地速写">目的地速写</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-当地人生活">当地人生活</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-历史">历史</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-环境">环境</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-书籍推荐">书籍推荐</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-电影推荐">电影推荐</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-语言帮助">语言帮助</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-文字标识">文字标识</a>
+									</p></li>
+								<li class="list_traffic"><em class="tit"><a href="#">城际交通</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-城际交通概述">城际交通概述</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-飞机">飞机</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-火车">火车</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-长途汽车">长途汽车</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-水运">水运</a>
+									</p></li>
+								<li class="list_domestic_traffic"><em class="tit"><a
+										href="#">市内交通</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-市内交通概述">市内交通概述</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-公交">公交</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-轨道交通">轨道交通</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-水运">水运</a> <span>｜</span>
+										<a href="#"place-poi-nav-出租车">出租车</a> <span>｜</span> <a
+											href="#" data-bn-ipg="place-poi-nav-车票">车票</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-租车">租车</a> <span>｜</span>
+									</p></li>
+								<li class="list_season"><em class="tit"><a href="#">旅行日历</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-旅行季节">旅行季节</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-当地节日">当地节日</a>
+									</p></li>
+								<li class="list_currency"><em class="tit"><a href="#">货币与花费</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-消费水平">消费水平</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-货币兑换">货币兑换</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-银联">银联</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-信用卡">信用卡</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-小费">小费</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-退税">退税</a> <span>｜</span>
+									</p></li>
+								<li class="list_information"><em class="tit"><a
+										href="#">实用信息</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-信息中心">信息中心</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-城市地图获取">城市地图获取</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-网络">网络</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-移动APP">移动APP</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-邮局">邮局</a> <span>｜</span>
+									</p></li>
+								<li class="list_notice"><em class="tit"><a href="#">旅行须知</a></em>
+									<p class="txt">
+										<a href="//place.qyer.com/hong-kong/advice/#cate_1916"
+											data-bn-ipg="place-poi-nav-穷游er忠告">穷游er忠告</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-负责任的旅行">负责任的旅行</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-安全">安全</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-紧急电话">紧急电话</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-医疗">医疗</a> <span>｜</span>
+										<a href="#" data-bn-ipg="place-poi-nav-中国驻该城市使领馆">中国驻该城市使领馆</a>
+									</p></li>
+								<li class="list_define"><em class="tit"><a href="#">港澳通行证</a></em>
+									<p class="txt">
+										<a href="#" data-bn-ipg="place-poi-nav-新版港澳通行证">新版港澳通行证</a> <span>｜</span>
+										<a href="#"place-poi-nav-个人旅游签注">个人旅游签注</a>
+									</p></li>
+							</ul>
 
 
-							</div>
 						</div>
-					</div></li>
+					</div>
+				</div></li>
 
-				<li class="menu"><a href='#' class="text"
-					data-bn-ipg='place-poi-nav-citytour'> 景点玩乐 </a> <span class="tab"></span>
-					<ul class="menuList menuNormal">
-						<li class="normalItem"><a href='#'
-							data-bn-ipg='place-poi-nav-citytour-sight'> 景点观光(1012) </a></li>
-						<li class="normalItem"><a href='#'
-							data-bn-ipg='place-poi-nav-citytour-shopping'> 购物(6677) </a></li>
-						<li class="normalItem"><a href='#'
-							data-bn-ipg='place-poi-nav-citytour-activity'> 休闲娱乐(2340) </a></li>
-						<li class="normalItem"><a href='#'
-							data-bn-ipg='place-poi-nav-citytour-mguide'> 特色主题推荐(134) </a></li>
-						<li class="normalItem"><a href='#'
-							data-bn-ipg='place-poi-nav-citytour-tourproduct'> 一日游/当地团(63)
-						</a></li>
-					</ul></li>
-				<li><a target='_blank' href="#" class="text"
-					data-bn-ipg='place-poi-nav-food'> 美食 </a></li>
-				<li><a target='_blank' href="#" class="text"
-					data-bn-ipg='place-poi-nav-hotel'> 酒店 </a></li>
-				<li class="menu"><a target='_blank' href="#" class="text"
-					data-bn-ipg='place-poi-nav-lm'> 旅行商城 </a> <span class="tab"></span>
+			<li class="menu"><a href='#' class="text"
+				data-bn-ipg='place-poi-nav-citytour'> 景点玩乐 </a> <span class="tab"></span>
+				<ul class="menuList menuNormal">
+					<li class="normalItem"><a href='#'
+						data-bn-ipg='place-poi-nav-citytour-sight'> 景点观光(1012) </a></li>
+					<li class="normalItem"><a href='#'
+						data-bn-ipg='place-poi-nav-citytour-shopping'> 购物(6677) </a></li>
+					<li class="normalItem"><a href='#'
+						data-bn-ipg='place-poi-nav-citytour-activity'> 休闲娱乐(2340) </a></li>
+					<li class="normalItem"><a href='#'
+						data-bn-ipg='place-poi-nav-citytour-mguide'> 特色主题推荐(134) </a></li>
+					<li class="normalItem"><a href='#'
+						data-bn-ipg='place-poi-nav-citytour-tourproduct'> 一日游/当地团(63)
+					</a></li>
+				</ul></li>
+			<li><a target='_blank' href="#" class="text"
+				data-bn-ipg='place-poi-nav-food'> 美食 </a></li>
+			<li><a target='_blank' href="#" class="text"
+				data-bn-ipg='place-poi-nav-hotel'> 酒店 </a></li>
+			<li class="menu"><a target='_blank' href="#" class="text"
+				data-bn-ipg='place-poi-nav-lm'> 旅行商城 </a> <span class="tab"></span>
 
-					<ul class="menuList menuNormal">
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-freetour'> 自由行(44) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-airticket'> 机票(68) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-visa'> 签证服务(8) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-insurance'> 保险(11) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-carservice'> 接送机/包车/拼车(3) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-travelticket'> 交通票(4) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-wifi'> WIFI/电话卡(41) </a></li>
-						<li class="normalItem"><a href='#' target='_blank'
-							data-bn-ipg='place-poi-nav-lm-local'> 城市玩乐(33) </a></li>
-					</ul></li>
-				<li class="line"></li>
+				<ul class="menuList menuNormal">
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-freetour'> 自由行(44) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-airticket'> 机票(68) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-visa'> 签证服务(8) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-insurance'> 保险(11) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-carservice'> 接送机/包车/拼车(3) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-travelticket'> 交通票(4) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-wifi'> WIFI/电话卡(41) </a></li>
+					<li class="normalItem"><a href='#' target='_blank'
+						data-bn-ipg='place-poi-nav-lm-local'> 城市玩乐(33) </a></li>
+				</ul></li>
+			<li class="line"></li>
 
-				<li><a target='_blank' href="#" class="text"
-					data-bn-ipg='place-poi-nav-travelnote'> 游记攻略 </a></li>
-				<li><a target='_blank' href="#" class="text"
-					data-bn-ipg='place-poi-nav-plan'> 行程路线 </a></li>
-				<li class="menu"><a target='_blank' href='#' class="text"
-					data-bn-ipg='place-poi-nav-forum'> 社区 </a> <span class="tab"></span>
-					<ul class="menuList menuNormal">
-						<li class="normalItem"><a href="#" target='_blank'
-							data-bn-ipg='place-poi-nav-forum-hookup'> 香港结伴111111 </a></li>
-						<li class="normalItem"><a href="#" target='_blank'
-							data-bn-ipg='place-poi-nav-forum-ask'> 旅行问答 </a></li>
-						<li class="normalItem"><a href="#" target='_blank'
-							data-bn-ipg='place-poi-nav-forum-album'> 香港照片 </a></li>
-					</ul></li>
-				<li class="menu menuStyle_1 rightFix menuDead" id="poiNavSearchMenu">
-					<span class="poiNavSearchIcon"> <img
-						src="images/poiNav-search.png" alt="">
-				</span>
-					<form action="" id="poiNavSearchForm" method="post" target="_blank">
-						<input type="text" name="poiNavSearchBox" id="poiNavSearchBox"
-							class="poiNavSearch ui3_input" autocomplete="off">
-					</form> <span class="tab" id="poiNavSearchBg"></span>
-					<ul class="menuList multipleList" id="poiNavSearchContainer">
-						<li class="tip">请输入搜索信息...</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+			<li><a target='_blank' href="#" class="text"
+				data-bn-ipg='place-poi-nav-travelnote'> 游记攻略 </a></li>
+			<li><a target='_blank' href="#" class="text"
+				data-bn-ipg='place-poi-nav-plan'> 行程路线 </a></li>
+			<li class="menu"><a target='_blank' href='#' class="text"
+				data-bn-ipg='place-poi-nav-forum'> 社区 </a> <span class="tab"></span>
+			</li>
+			<li class="menu menuStyle_1 rightFix menuDead" id="poiNavSearchMenu">
+				<span class="poiNavSearchIcon"> <img
+					src="images/poiNav-search.png" alt="">
+			</span>
+				<form action="" id="poiNavSearchForm" method="post" target="_blank">
+					<input type="text" name="poiNavSearchBox" id="poiNavSearchBox"
+						class="poiNavSearch ui3_input" autocomplete="off">
+				</form> <span class="tab" id="poiNavSearchBg"></span>
+				<ul class="menuList multipleList" id="poiNavSearchContainer">
+					<li class="tip">请输入搜索信息...</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 	</div>
 
 	<script src='js/poiNavigationBar.js'></script>
 
 
 
-	<div class="qyer_head_crumbg">
-		<div class="qyer_head_crumb">
-			<!-- 目的地面包屑 -->
-
-			<span class="text drop"> <a href="#" data-bn-ipg="3-2">目的地</a>
-				<em class="arrow" data="crumb_country"></em>
-			</span> <span class='space'>&gt;</span><span class='text drop'><a
-				href='#' data-bn-ipg='3-4'>中国</a><em class='arrow' data='crumb_city'></em></span><span
-				class='space'>&gt;</span><span class='text drop'><a href='#'>香港</a><em
-				class='arrow' data='crumb_cate'></em></span><span class='space'>&gt;</span><span
-				class='text drop'><a href='#'>香港景点观光</a><em class='arrow'
-				data='crumb_sub_poi'></em></span><span class='space'>&gt;</span>
-			<h1 class='current'>香港迪士尼乐园</h1>
-
-			<div class="qyer_head_crumb_pulldown crumb_country">
-
-
-				<ul>
-					<li><a href="#" data-bn-ipg="3-3-2">中国 China</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">泰国 Thailand</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">日本 Japan</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">韩国 South Korea</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">马来西亚 Malaysia</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">新加坡 Singapore</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">柬埔寨 Cambodia</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">越南 Vietnam</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">印度尼西亚 Indonesia</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">菲律宾 Philippines</a></li>
-				</ul>
-
-				<ul>
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">阿联酋 United Arab
-							Emirates</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">尼泊尔 Nepal</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">斯里兰卡 Sri Lanka</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">马尔代夫 Maldives</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">印度 India</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">缅甸 Myanmar</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">老挝 Laos</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">伊朗 Iran</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">卡塔尔 Qatar</a></li>
-
-
-
-					<li><a href="#" data-bn-ipg="3-3-2">以色列 Israel</a></li>
-				</ul>
-
-
-				<div class="cb"></div>
-				<p class="more">
-					<a href="#" data-bn-ipg="3-3-2">更多国家&gt;&gt;</a>
-				</p>
-			</div>
-
-
-
-
-
-
-
-			<div class="qyer_head_crumb_pulldown crumb_cate"
-				style="width: 160px;">
-
-
-				<ul>
-
-					<li><a href="#"> 香港景点 </a></li>
-
-
-
-
-
-					<li><a href="#"> 香港体验 </a></li>
-
-
-
-
-
-					<li><a href="#"> 香港交通 </a></li>
-
-
-
-
-
-					<li><a href="#"> 香港住宿 </a></li>
-
-
-
-
-
-					<li><a href="#"> 香港购物 </a></li>
-
-
-
-
-
-					<li><a href="#"> 香港美食 </a></li>
-
-
-
-				</ul>
-				<div class="cb"></div>
-
-			</div>
-
-
-			<div class="qyer_head_crumb_pulldown crumb_sub_poi">
-
-
-				<ul>
-					<li><a href="#">星光大道</a></li>
-
-
-
-					<li><a href="#">太平山</a></li>
-
-
-
-					<li><a href="#">香港海洋公园</a></li>
-
-
-
-					<li><a href="#">香港迪士尼乐园</a></li>
-
-
-
-					<li><a href="#">金紫荆广场</a></li>
-
-
-
-					<li><a href="#">弥敦道</a></li>
-
-
-
-					<li><a href="#">中银大厦</a></li>
-
-
-
-					<li><a href="#">兰桂坊</a></li>
-
-
-
-					<li><a href="#">中环至半山自动扶梯</a></li>
-
-
-
-					<li><a href="#">湾仔</a></li>
-				</ul>
-
-				<ul>
-
-
-					<li><a href="#">香港会议展览中心</a></li>
-
-
-
-					<li><a href="#">黄大仙祠</a></li>
-
-
-
-					<li><a href="#">香港杜莎夫人蜡像馆</a></li>
-
-
-
-					<li><a href="#">庙街夜市</a></li>
-
-
-
-					<li><a href="#">凌霄阁</a></li>
-
-
-
-					<li><a href="#">尖沙咀钟楼</a></li>
-
-
-
-					<li><a href="#">浅水湾</a></li>
-
-
-
-					<li><a href="#">重庆大厦</a></li>
-
-
-
-					<li><a href="#">旺角</a></li>
-
-
-
-					<li><a href="#">闲逛旺角、油麻地</a></li>
-				</ul>
-
-
-				<div class="cb"></div>
-				<p class="more">
-					<a href="#" data-bn-ipg="3-4-2">更多&gt;&gt;</a>
-				</p>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- 定义全局的js变量 -->
-	<script>
-		var __GLOBAL_DATA__ = {
-			fid : 51
-		}
-	</script>
-	<!-- end -->
-
 	<input type="hidden" id="poiid" value="59068" />
 	<div class="poi-bg clearfix">
 		<div class="poi-top">
-			<script>
-				var POINAME = "香港迪士尼乐园"
-			</script>
 			<div class="qyWrap">
 				<!--标题start-->
-				<div class="poi-largeTit">
-					<h1 class="en">
-						<a href="#" target="_blank"
-							data-bn-ipg="place-poi-title-poiNameEn"> Hong Kong Disneyland
-						</a>
-					</h1>
+				<div class="poi-largeTit" style="padding-top: 25px">
+
 					<h1 class="cn">
 						<a href="#" class="fontYaHei" target="_blank"
-							data-bn-ipg="place-poi-title-poiNameCn"> 香港迪士尼乐园 </a>
+							data-bn-ipg="place-poi-title-poiNameCn">${scenic.scenicName}</a>
 					</h1>
 				</div>
 				<!--标题end-->
@@ -796,70 +520,29 @@ $(function () {
 				<div class="poi-placeinfo clearfix">
 					<a href="#" target="_blank" data-bn-ipg="place-poi-detail-pic">
 						<p class="coverphoto">
-							<img src="images/300_200.jpg" /> <span><em>2670</em>张照片</span>
+							<img src="images/300_200.jpg" /> <span><em>267011</em>张照片</span>
 						</p>
 					</a>
 					<div class="infos" id="js-infobox">
-						<div style="height: 140px">
+						<div style="height: 140px; margin-left: 35%;">
 							<p class="points">
-								<span class="number"> 9.0 </span> <span class="unit">分</span> <em
-									class="icon" id="graph"></em>
+								<span class="number"> 9.011 </span> <span class="unit">分</span>
+								<em class="icon" id="graph"></em>
 							</p>
 							<p class="poi-stars" id="histogram" data-all="">
 								<span class='single-star full'></span><span
 									class='single-star full'></span><span class='single-star full'></span><span
 									class='single-star full'></span><span class='single-star'></span>
-								<span class="summery"> 暂无评分 </span>
+
 							</p>
-							<div class="view">
-								<h2>评论详情</h2>
-								<ul>
-									<li><span class="leveltitle"> 五星 </span> <em class="bar">
-											<i></i>
-									</em> <span class="number"> <b></b>%
-									</span></li>
-									<li><span class="leveltitle"> 四星 </span> <em class="bar">
-											<i></i>
-									</em> <span class="number"> <b></b>%
-									</span></li>
-									<li><span class="leveltitle"> 三星 </span> <em class="bar">
-											<i></i>
-									</em> <span class="number"> <b></b>%
-									</span></li>
-									<li><span class="leveltitle"> 二星 </span> <em class="bar">
-											<i></i>
-									</em> <span class="number"> <b></b>%
-									</span></li>
-									<li><span class="leveltitle"> 一星 </span> <em class="bar">
-											<i></i>
-									</em> <span class="number"> <b></b>%
-									</span></li>
-								</ul>
-								<p class="seefull">
-									<a href="#" target="_blank"
-										data-bn-ipg="place-poi-detail-hoverAllreviews"> 查看全部条点评 </a>
-								</p>
-							</div>
-							<ul>
-								<li class="rank">香港全部景点观光中排<span>第2名</span>
-								</li>
-							</ul>
 						</div>
-						<div class="js-inner-box place-loading"></div>
 					</div>
 				</div>
 
-				<!--封图及星级等信息end-->
 
-				<!--折扣标题 详情及各种提示和贴士 start-->
-
-				<!-- 折扣 -->
-				<!-- poi折扣以及优惠活动的详情 -->
-
-				<!-- 折扣 -->
 				<div class="poi-discount">
 					<h4>
-						<span class="fontYaHei"> <i class="tag"></i>香港迪士尼乐园可选折扣
+						<span class="fontYaHei"> <i class="tag"></i>${scenic.scenicName}可选折扣
 						</span> <span class="tip"> <a href="#" clas="fontYaHei"
 							target="_blank" data-bn-ipg="place-poi-lm-more"> 查看更多折扣<i
 								class="arrow"></i>
@@ -871,112 +554,121 @@ $(function () {
 							target="_blank">
 								<div class="wrap">
 									<div class="title">
-										<span class="tag"> 玩乐 </span> <span class="fontYaHei">
-											【梦幻童话世界】香港迪士尼乐园一日/ 两日门票(可定今日+无需打印) </span>
+										<span class="tag"> 玩乐 </span> <span class="fontYaHei">${ticket.ticketName}</span>
 									</div>
 									<div class="content">
-										亮点推荐：★踏进香港迪士尼乐园，童话故事实现童话人物来到你面前<br />
-										★乐园分为七大主题园区，代表不同年代不同时空的体验<br /> ★乐园每天更呈献巡游表演节目及烟花汇演
+										亮点推荐：${ticket.ticketIntroduction}
 									</div>
-									<span class="price fontYaHei"> <em>448</em>元起
+									<span class="price fontYaHei"> <em>${ticket.ticketPrice}</em>元起
 									</span>
 								</div>
 						</a></li>
-						<li><a href="#" class="link" data-bn-ipg="place-poi-lm-1"
-							target="_blank">
-								<div class="wrap">
-									<div class="title">
-										<span class="tag"> 玩乐 </span> <span class="fontYaHei">
-											【正宗粤味】香港迪士尼乐园PLAZA INN 广场饭店套餐券(短信电子票) </span>
-									</div>
-									<div class="content">
-										亮点推荐：室内设计糅合了美国、欧洲和清代的风格；<br /> 专诚请来精通广东和地方菜式的大厨；<br />
-										餐厅以迪斯尼动画电影“花木兰”的概念插图为餐厅特色
-									</div>
-									<span class="price fontYaHei"> <em>119</em>元起
-									</span>
-								</div>
-						</a></li>
+
 					</ul>
 				</div>
 
 				<!-- 显示优惠信息 -->
 
+				<!--------- 简介部分显示部分隐藏开始 ------>
+				<div id="box">
+					<div class="poi-detail">
+						${scenic.scenicIntroduction}
+						香港迪士尼乐园(Hong Kong
+						Disneyland)是全球第五座、亚洲第二座迪士尼乐园，位于香港新界的大屿山，占地约22.4公顷，由香港特区政府及华特迪士尼公司联营的香港国际主题乐园有限公司建设及营运。<br />
+						香港迪士尼乐园度假区由一个乐园和三家酒店（分别为香港迪士尼乐园酒店，迪士尼好莱坞酒店及迪士尼探索家度假酒店）组成，为旅行者提供独一无二的奇妙迪士尼体验，成为亚洲区其中一个最受欢迎的旅游热点。
+						<div class="poi-showtar">
 
-				<div class="poi-detail">
-					香港迪士尼乐园(Hong Kong
-					Disneyland)是全球第五座、亚洲第二座迪士尼乐园，位于香港新界的大屿山，占地约22.4公顷，由香港特区政府及华特迪士尼公司联营的香港国际主题乐园有限公司建设及营运。<br />
-					香港迪士尼乐园度假区由一个乐园和三家酒店（分别为香港迪士尼乐园酒店，迪士尼好莱坞酒店及迪士尼探索家度假酒店）组成，为旅行者提供独一无二的奇妙迪士尼体验，成为亚洲区其中一个最受欢迎的旅游热点。
-					<div class="poi-showtar">
+							<p>
+								香港迪士尼乐园目前拥有七大主题园区包括：“美国小镇大街”，“明日世界”，“幻想世界”，“反斗奇兵大本营”，“迷离庄园”，“灰熊山谷”，“探险世界”。2016年增添“星球大战：入侵明日世界”主题游乐设施，带领宾客投入星战前线，化身成机师，抵抗组织英雄或绝地武士，参与这一场哄动整个银河系的惊险对决。2017年迪士尼乐园首个漫威主题游乐设施─“铁甲奇侠飞行之旅”，于香港迪士尼乐园的明日世界登场。被科技天才托尼斯塔克选为设置“史达科技展”的地点，并将‘斯塔克工业公司’最强的创新科技呈献眼前。宾客更有机会亲身体验并登上科技展特别版‘铁甲号’飞行车，飞越香港上空。<br />
+								晚上的“迪士尼光影汇”夜间巡游，由7组主题花车组成的全LED灯花车巡游。由日至夜，乐园都呈现出一派让人意想不到的景象！<br />
+								度假区内的各式商店及餐厅选择，使宾客可尽情享受购物及饮食乐趣。乐园于不同节日更特别呈献多姿多彩的节庆及主题活动，与宾客共度每个欢乐时刻。
 
-						<p>
-							香港迪士尼乐园目前拥有七大主题园区包括：“美国小镇大街”，“明日世界”，“幻想世界”，“反斗奇兵大本营”，“迷离庄园”，“灰熊山谷”，“探险世界”。2016年增添“星球大战：入侵明日世界”主题游乐设施，带领宾客投入星战前线，化身成机师，抵抗组织英雄或绝地武士，参与这一场哄动整个银河系的惊险对决。2017年迪士尼乐园首个漫威主题游乐设施─“铁甲奇侠飞行之旅”，于香港迪士尼乐园的明日世界登场。被科技天才托尼斯塔克选为设置“史达科技展”的地点，并将‘斯塔克工业公司’最强的创新科技呈献眼前。宾客更有机会亲身体验并登上科技展特别版‘铁甲号’飞行车，飞越香港上空。<br />
-							晚上的“迪士尼光影汇”夜间巡游，由7组主题花车组成的全LED灯花车巡游。由日至夜，乐园都呈现出一派让人意想不到的景象！<br />
-							度假区内的各式商店及餐厅选择，使宾客可尽情享受购物及饮食乐趣。乐园于不同节日更特别呈献多姿多彩的节庆及主题活动，与宾客共度每个欢乐时刻。
+
+							
+						</div>
 					</div>
+					<div class="poi-showall">
+					</div>
+					<ul class="poi-tips">
+						<li><span class="title"> 地址： </span>
+							<div class="content">
+								<p>
+									香港大屿山<a href="javascript:lookmap()"
+										data-bn-ipg="place-poi-detail-map">(查看地图)</a>
+								</p>
+
+							</div></li>
+						<li><span class="title"> 到达方式： </span>
+							<div class="content">
+								<p>建议乘坐非常有特色的港铁迪士尼线；还有R8巴士全天来往于Lantau Link Toll
+									Plaza和迪士尼之间；另外在深圳皇岗上午还有跨境大巴发车。</p>
+
+							</div></li>
+						<li><span class="title"> <!--其他-->开放时间：
+						</span>
+							<div class="content">
+								<p>
+									10：30-20：00（每日开放时间可有变动，建议出行前在网上查询）<br />
+								</p>
+
+								<p>2017年11月16日起至2018年1月1日，香港迪士尼乐园度假区呈献“A Disney
+									Christmas香港迪士尼乐园 圣诞时刻”
+									，漫天飘雪、悠扬歌韵、闪亮灯饰把冬日乐园装点得温馨欢腾，充满传统圣诞气氛。米奇与好友换上圣诞新装，诚邀宾客出席热闹的圣诞舞会，参与一系列圣诞庆祝活动。香港迪士尼更推出圣诞佳肴及精美商品，打造完美的迪士尼圣诞享乐大赏！</p>
+							</div></li>
+						<li><span class="title"> <!--其他-->门票：
+						</span>
+							<div class="content">
+								<p>
+									1日票，成人港币589元，3-11岁儿童419元，65岁以上长者100元11。<br />
+									2日票，成人港币759元，3-11岁以下儿童539元，65岁以上长者170元。
+								</p>
+
+							</div></li>
+						<li><span class="title"> 电话： </span>
+							<div class="content">
+								<p>+852-3550-3388</p>
+							</div></li>
+						<li><span class="title"> 网址： </span>
+							<div class="content">
+								<a href="#" target="_blank" rel="nofollow"
+									data-bn-ipg="place-poi-detail-website"><p>https://www.hongkongdisneyland.com/zh-hk/destinations/theme-park/</p>
+								</a>
+							</div></li>
+
+
+
+					</ul>
+
 				</div>
-				<div class="poi-showall">
-					<span>展开全部简介</span>
-				</div>
-				<ul class="poi-tips">
-					<li><span class="title"> 地址： </span>
-						<div class="content">
-							<p>
-								香港大屿山<a href="javascript:lookmap()"
-									data-bn-ipg="place-poi-detail-map">(查看地图)</a>
-							</p>
 
-						</div></li>
-					<li><span class="title"> 到达方式： </span>
-						<div class="content">
-							<p>建议乘坐非常有特色的港铁迪士尼线；还有R8巴士全天来往于Lantau Link Toll
-								Plaza和迪士尼之间；另外在深圳皇岗上午还有跨境大巴发车。</p>
+				<script>
+function show(){
+var box = document.getElementById("box");
+var text = box.innerHTML;
+var newBox = document.createElement("div");
+var btn = document.createElement("a");
+newBox.innerHTML = text.substring(0,200);
+btn.innerHTML = text.length > 200 ? "...显示全部" : "";
+btn.href = "###";
+btn.onclick = function(){
+if (btn.innerHTML == "...显示全部"){
+btn.innerHTML = "收起";
+newBox.innerHTML = text;
+}else{
+btn.innerHTML = "...显示全部";
+newBox.innerHTML = text.substring(0,200);
+}
+}
+box.innerHTML = "";
+box.appendChild(newBox);
+box.appendChild(btn);
+}
+show();
+</script>
+				<!--------- 简介部分显示部分隐藏结束 ------>
 
-						</div></li>
-					<li><span class="title"> <!--其他-->开放时间：
-					</span>
-						<div class="content">
-							<p>
-								10：30-20：00（每日开放时间可有变动，建议出行前在网上查询）<br />
-							</p>
 
-							<p>2017年11月16日起至2018年1月1日，香港迪士尼乐园度假区呈献“A Disney
-								Christmas香港迪士尼乐园 圣诞时刻”
-								，漫天飘雪、悠扬歌韵、闪亮灯饰把冬日乐园装点得温馨欢腾，充满传统圣诞气氛。米奇与好友换上圣诞新装，诚邀宾客出席热闹的圣诞舞会，参与一系列圣诞庆祝活动。香港迪士尼更推出圣诞佳肴及精美商品，打造完美的迪士尼圣诞享乐大赏！</p>
-						</div></li>
-					<li><span class="title"> <!--其他-->门票：
-					</span>
-						<div class="content">
-							<p>
-								1日票，成人港币589元，3-11岁儿童419元，65岁以上长者100元。<br />
-								2日票，成人港币759元，3-11岁以下儿童539元，65岁以上长者170元。
-							</p>
 
-						</div></li>
-					<li><span class="title"> 电话： </span>
-						<div class="content">
-							<p>+852-3550-3388</p>
-						</div></li>
-					<li><span class="title"> 网址： </span>
-						<div class="content">
-							<a href="#" target="_blank" rel="nofollow"
-								data-bn-ipg="place-poi-detail-website"><p>https://www.hongkongdisneyland.com/zh-hk/destinations/theme-park/</p>
-							</a>
-						</div></li>
-
-					<!-- 需要隐藏所属分类 -->
-					<!--
-                <li>
-            <span class="title">
-                所属分类：
-            </span>
-            <div class="content">
-                                <a href="//place.qyer.com/hong-kong/theme-park/" target="_blank" data-bn-ipg="place-poi-detail-CateList">主题公园/游乐场/民俗村</a><span class="gap"> ｜ </span><a href="//place.qyer.com/hong-kong//" target="_blank" data-bn-ipg="place-poi-detail-CateList"></a><span class="gap"> ｜ </span><a href="//place.qyer.com/hong-kong//" target="_blank" data-bn-ipg="place-poi-detail-CateList"></a>
-                            </div>
-        </li>
-                -->
-
-				</ul>
 				<div class="poi-tipContent">
 					<h4>小贴士</h4>
 					<div class="content">

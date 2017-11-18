@@ -42,6 +42,6 @@ public class DetailController {
 		model.addAttribute("scenic", scenic);
 		model.addAttribute("ticket", ticket);
 		model.addAttribute("pictureList", pictureList);
-		return "forwad:/detail.jsp";
+		return "/detail";
 	}
 }
