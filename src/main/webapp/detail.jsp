@@ -341,10 +341,9 @@ $(function () {
 
 
 	<div class="poiNavWrap">
-		<div class="poiNavBox" id="poiNavBox">
 			<ul class="qyWrap poiNav clearfix fontYaHei">
 				<li class="country"><a class="text fontYaHei" href='#'
-					target='_blank' data-bn-ipg='place-poi-nav-cityname'> 香港 </a></li>
+					target='_blank' data-bn-ipg='place-poi-nav-cityname'> 香港 1111</a></li>
 
 				<li class="line"></li>
 
@@ -479,7 +478,7 @@ $(function () {
 					data-bn-ipg='place-poi-nav-forum'> 社区 </a> <span class="tab"></span>
 					<ul class="menuList menuNormal">
 						<li class="normalItem"><a href="#" target='_blank'
-							data-bn-ipg='place-poi-nav-forum-hookup'> 香港结伴 </a></li>
+							data-bn-ipg='place-poi-nav-forum-hookup'> 香港结伴111111 </a></li>
 						<li class="normalItem"><a href="#" target='_blank'
 							data-bn-ipg='place-poi-nav-forum-ask'> 旅行问答 </a></li>
 						<li class="normalItem"><a href="#" target='_blank'
