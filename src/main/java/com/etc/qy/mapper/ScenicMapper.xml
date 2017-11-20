@@ -23,6 +23,15 @@
   </select>
   
   
+  <!-- 模糊查找景点 -->
+  <select id="selectByscenicName" resultMap="BaseResultMap">
+   select 
+    <include refid="Base_Column_List" />
+    from scenic
+    where scenicName like concat('%',#{scenicName},'%')
+  </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from scenic
     where scenicId = #{scenicId,jdbcType=INTEGER}

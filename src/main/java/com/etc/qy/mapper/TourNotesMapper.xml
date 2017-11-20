@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.TourNotesMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.TourNotes">
+    <id column="tourNoteId" jdbcType="INTEGER" property="tourNoteId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="tourId" jdbcType="INTEGER" property="tourId" />
+    <result column="tourNoteTitle" jdbcType="VARCHAR" property="tourNoteTitle" />
+    <result column="tourNoteContent" jdbcType="VARCHAR" property="tourNoteContent" />
+    <result column="tourNoteCreatDate" jdbcType="DATE" property="tourNoteCreatDate" />
+    <result column="tourNoteUpdateDate" jdbcType="DATE" property="tourNoteUpdateDate" />
+    <result column="tourNoteState" jdbcType="BIT" property="tourNoteState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    tourNoteId, userId, tourId, tourNoteTitle, tourNoteContent, tourNoteCreatDate, tourNoteUpdateDate, 
+    tourNoteState
+  </sql>
+  
+  
+  <!-- 模糊查询游记 -->
+  <select id="selectBytournoteName" resultMap="BaseResultMap">
+  select 
+    <include refid="Base_Column_List" />
+    from tournotes
+    where tourNoteTitle like concat('%',#{tourNoteTitle},'%')
+  </select>
+  
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tournotes
+    where tourNoteId = #{tourNoteId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tournotes
+    where tourNoteId = #{tourNoteId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.TourNotes">
+    insert into tournotes (tourNoteId, userId, tourId, 
+      tourNoteTitle, tourNoteContent, tourNoteCreatDate, 
+      tourNoteUpdateDate, tourNoteState)
+    values (#{tourNoteId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{tourId,jdbcType=INTEGER}, 
+      #{tourNoteTitle,jdbcType=VARCHAR}, #{tourNoteContent,jdbcType=VARCHAR}, #{tourNoteCreatDate,jdbcType=DATE}, 
+      #{tourNoteUpdateDate,jdbcType=DATE}, #{tourNoteState,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.TourNotes">
+    insert into tournotes
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tourNoteId != null">
+        tourNoteId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="tourId != null">
+        tourId,
+      </if>
+      <if test="tourNoteTitle != null">
+        tourNoteTitle,
+      </if>
+      <if test="tourNoteContent != null">
+        tourNoteContent,
+      </if>
+      <if test="tourNoteCreatDate != null">
+        tourNoteCreatDate,
+      </if>
+      <if test="tourNoteUpdateDate != null">
+        tourNoteUpdateDate,
+      </if>
+      <if test="tourNoteState != null">
+        tourNoteState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tourNoteId != null">
+        #{tourNoteId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="tourId != null">
+        #{tourId,jdbcType=INTEGER},
+      </if>
+      <if test="tourNoteTitle != null">
+        #{tourNoteTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="tourNoteContent != null">
+        #{tourNoteContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tourNoteCreatDate != null">
+        #{tourNoteCreatDate,jdbcType=DATE},
+      </if>
+      <if test="tourNoteUpdateDate != null">
+        #{tourNoteUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="tourNoteState != null">
+        #{tourNoteState,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.TourNotes">
+    update tournotes
+    <set>
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="tourId != null">
+        tourId = #{tourId,jdbcType=INTEGER},
+      </if>
+      <if test="tourNoteTitle != null">
+        tourNoteTitle = #{tourNoteTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="tourNoteContent != null">
+        tourNoteContent = #{tourNoteContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tourNoteCreatDate != null">
+        tourNoteCreatDate = #{tourNoteCreatDate,jdbcType=DATE},
+      </if>
+      <if test="tourNoteUpdateDate != null">
+        tourNoteUpdateDate = #{tourNoteUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="tourNoteState != null">
+        tourNoteState = #{tourNoteState,jdbcType=BIT},
+      </if>
+    </set>
+    where tourNoteId = #{tourNoteId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.TourNotes">
+    update tournotes
+    set userId = #{userId,jdbcType=INTEGER},
+      tourId = #{tourId,jdbcType=INTEGER},
+      tourNoteTitle = #{tourNoteTitle,jdbcType=VARCHAR},
+      tourNoteContent = #{tourNoteContent,jdbcType=VARCHAR},
+      tourNoteCreatDate = #{tourNoteCreatDate,jdbcType=DATE},
+      tourNoteUpdateDate = #{tourNoteUpdateDate,jdbcType=DATE},
+      tourNoteState = #{tourNoteState,jdbcType=BIT}
+    where tourNoteId = #{tourNoteId,jdbcType=INTEGER}
+  </update>
+</mapper>

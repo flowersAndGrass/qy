@@ -1,5 +1,7 @@
 package com.etc.qy.dao;
 
+import java.util.List;
+
 import com.etc.qy.entity.Area;
 
 public interface AreaMapper {
@@ -14,4 +16,9 @@ public interface AreaMapper {
     int updateByPrimaryKeySelective(Area record);
 
     int updateByPrimaryKey(Area record);
+    
+    /**
+     * 显示所有地区
+     */
+    List<Area> selectall();
 }

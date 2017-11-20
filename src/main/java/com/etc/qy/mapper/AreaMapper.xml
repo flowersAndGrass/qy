@@ -8,6 +8,17 @@
   <sql id="Base_Column_List">
     areaId, areaName
   </sql>
+  
+  
+  <!-- 显示所有地区 -->
+  <select id="selectall" resultMap="BaseResultMap">
+   select 
+    <include refid="Base_Column_List" />
+    from area
+  </select>
+  
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.qy.dao.CityMapper">
+  <resultMap id="BaseResultMap" type="com.etc.qy.entity.City">
+    <id column="cityId" jdbcType="INTEGER" property="cityId" />
+    <result column="areaId" jdbcType="INTEGER" property="areaId" />
+    <result column="cityName" jdbcType="VARCHAR" property="cityName" />
+    <result column="cityPicture" jdbcType="VARCHAR" property="cityPicture" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cityId, areaId, cityName, cityPicture
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from city
+    where cityId = #{cityId,jdbcType=INTEGER}
+  </select>
+  
+  
+  
+  <!-- 根据地区id -->
+  <select id="selectByAreaId" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List" />
+    from city
+    where areaId = #{areaId}
+  </select>
+  
+  
+  
+  <!-- 跟据城市名字模糊查找 -->
+  <select id="selectBycityName" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List" />
+    from city
+    where cityName like concat('%',#{cityName},'%')
+  </select>
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from city
+    where cityId = #{cityId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.etc.qy.entity.City">
+    insert into city (cityId, areaId, cityName, 
+      cityPicture)
+    values (#{cityId,jdbcType=INTEGER}, #{areaId,jdbcType=INTEGER}, #{cityName,jdbcType=VARCHAR}, 
+      #{cityPicture,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.qy.entity.City">
+    insert into city
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cityId != null">
+        cityId,
+      </if>
+      <if test="areaId != null">
+        areaId,
+      </if>
+      <if test="cityName != null">
+        cityName,
+      </if>
+      <if test="cityPicture != null">
+        cityPicture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null">
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityPicture != null">
+        #{cityPicture,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.qy.entity.City">
+    update city
+    <set>
+      <if test="areaId != null">
+        areaId = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null">
+        cityName = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityPicture != null">
+        cityPicture = #{cityPicture,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cityId = #{cityId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.City">
+    update city
+    set areaId = #{areaId,jdbcType=INTEGER},
+      cityName = #{cityName,jdbcType=VARCHAR},
+      cityPicture = #{cityPicture,jdbcType=VARCHAR}
+    where cityId = #{cityId,jdbcType=INTEGER}
+  </update>
+</mapper>

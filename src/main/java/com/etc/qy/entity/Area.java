@@ -22,7 +22,17 @@ public class Area {
         return areaName;
     }
 
-    public void setAreaName(String areaName) {
+    public Area(int areaId, String areaName) {
+		super();
+		this.areaId = areaId;
+		this.areaName = areaName;
+	}
+
+	public void setAreaName(String areaName) {
         this.areaName = areaName == null ? null : areaName.trim();
     }
+
+	public Area() {
+		super();
+	}
 }

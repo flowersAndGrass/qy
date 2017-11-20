@@ -4,35 +4,59 @@
   <resultMap id="BaseResultMap" type="com.etc.qy.entity.Ticket">
     <id column="ticketId" jdbcType="INTEGER" property="ticketId" />
     <result column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <result column="ticketName" jdbcType="VARCHAR" property="ticketName" />
+    <result column="typeId" jdbcType="INTEGER" property="typeId" />
     <result column="ticketStock" jdbcType="INTEGER" property="ticketStock" />
     <result column="ticketPrice" jdbcType="INTEGER" property="ticketPrice" />
     <result column="ticketIntroduction" jdbcType="VARCHAR" property="ticketIntroduction" />
   </resultMap>
   <sql id="Base_Column_List">
-    ticketId, scenicId, ticketStock, ticketPrice, ticketIntroduction
+    ticketId, scenicId,ticketName, typeId, ticketStock, ticketPrice, ticketIntroduction
   </sql>
+  
+  <!-- 根据景点id查票 -->
+   <select id="selectByScenicId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ticket
+    where scenicId = #{scenicId,jdbcType=INTEGER}
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from ticket
     where ticketId = #{ticketId,jdbcType=INTEGER}
   </select>
+  
+  <!-- 删除 -->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from ticket
     where ticketId = #{ticketId,jdbcType=INTEGER}
   </delete>
+  <!-- 插入 -->
   <insert id="insert" parameterType="com.etc.qy.entity.Ticket">
-    insert into ticket (ticketId, scenicId, ticketStock, 
+    insert into ticket (ticketId, ticketName, typeId, scenicId, ticketStock, 
       ticketPrice, ticketIntroduction)
-    values (#{ticketId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{ticketStock,jdbcType=INTEGER}, 
+    values (#{ticketId,jdbcType=INTEGER}, #{ticketName,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, #{scenicId,jdbcType=INTEGER}, #{ticketStock,jdbcType=INTEGER}, 
       #{ticketPrice,jdbcType=INTEGER}, #{ticketIntroduction,jdbcType=VARCHAR})
   </insert>
+  
   <insert id="insertSelective" parameterType="com.etc.qy.entity.Ticket">
     insert into ticket
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="ticketId != null">
         ticketId,
       </if>
+      
+       <if test="ticketName != null">
+        ticketName,
+      </if>
+      
+      <if test="typeId != null">
+        typeId,
+      </if>
+      
       <if test="scenicId != null">
         scenicId,
       </if>
@@ -49,6 +73,12 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="ticketId != null">
         #{ticketId,jdbcType=INTEGER},
+      </if>
+      <if test="ticketName != null">
+        #{ticketName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
       </if>
       <if test="scenicId != null">
         #{scenicId,jdbcType=INTEGER},
@@ -70,6 +100,12 @@
       <if test="scenicId != null">
         scenicId = #{scenicId,jdbcType=INTEGER},
       </if>
+      <if test="ticketName != null">
+        ticketName = #{ticketName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        typeId = #{typeId,jdbcType=INTEGER},
+      </if>
       <if test="ticketStock != null">
         ticketStock = #{ticketStock,jdbcType=INTEGER},
       </if>
@@ -85,6 +121,8 @@
   <update id="updateByPrimaryKey" parameterType="com.etc.qy.entity.Ticket">
     update ticket
     set scenicId = #{scenicId,jdbcType=INTEGER},
+      ticketName = #{ticketName,jdbcType=VARCHAR},
+      typeId = #{typeId,jdbcType=INTEGER},
       ticketStock = #{ticketStock,jdbcType=INTEGER},
       ticketPrice = #{ticketPrice,jdbcType=INTEGER},
       ticketIntroduction = #{ticketIntroduction,jdbcType=VARCHAR}

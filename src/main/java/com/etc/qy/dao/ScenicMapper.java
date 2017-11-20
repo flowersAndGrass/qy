@@ -1,5 +1,7 @@
 package com.etc.qy.dao;
 
+import java.util.List;
+
 import com.etc.qy.entity.Scenic;
 
 public interface ScenicMapper {
@@ -19,4 +21,11 @@ public interface ScenicMapper {
     int updateByPrimaryKeySelective(Scenic record);
 
     int updateByPrimaryKey(Scenic record);
+    
+    /**
+     * Ä£ºý²éÕÒ
+     * @param scenicName
+     * @return
+     */
+    List<Scenic> selectByscenicName(String scenicName);
 }
