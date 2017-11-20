@@ -1,33 +1,27 @@
 package com.etc.qy.entity;
 
 public class City {
-    @Override
-	public String toString() {
-		return "City [cityId=" + cityId + ", areaId=" + areaId + ", cityName=" + cityName + ", cityPictureId="
-				+ cityPictureId + "]";
-	}
+    private Integer cityId;
 
-	private int cityId;
-
-    private int areaId;
+    private Integer areaId;
 
     private String cityName;
 
-    private int cityPictureId;
+    private String cityPicture;
 
-    public int getCityId() {
+    public Integer getCityId() {
         return cityId;
     }
 
-    public void setCityId(int cityId) {
+    public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 
-    public int getAreaId() {
+    public Integer getAreaId() {
         return areaId;
     }
 
-    public void setAreaId(int areaId) {
+    public void setAreaId(Integer areaId) {
         this.areaId = areaId;
     }
 
@@ -39,11 +33,11 @@ public class City {
         this.cityName = cityName == null ? null : cityName.trim();
     }
 
-    public int getCityPictureId() {
-        return cityPictureId;
+    public String getCityPicture() {
+        return cityPicture;
     }
 
-    public void setCityPictureId(int cityPictureId) {
-        this.cityPictureId = cityPictureId;
+    public void setCityPicture(String cityPicture) {
+        this.cityPicture = cityPicture == null ? null : cityPicture.trim();
     }
 }
