@@ -18,8 +18,32 @@ public class TourNotes {
     private Date tourNoteUpdateDate;
 
     private Boolean tourNoteState;
+    
+    private String tourNoteCover;
 
-    public Integer getTourNoteId() {
+    public TourNotes(Integer tourNoteId, Integer userId, Integer tourId, String tourNoteTitle, String tourNoteContent,
+			Date tourNoteCreatDate, Date tourNoteUpdateDate, Boolean tourNoteState, String tourNoteCover) {
+		super();
+		this.tourNoteId = tourNoteId;
+		this.userId = userId;
+		this.tourId = tourId;
+		this.tourNoteTitle = tourNoteTitle;
+		this.tourNoteContent = tourNoteContent;
+		this.tourNoteCreatDate = tourNoteCreatDate;
+		this.tourNoteUpdateDate = tourNoteUpdateDate;
+		this.tourNoteState = tourNoteState;
+		this.tourNoteCover = tourNoteCover;
+	}
+
+	public String getTourNoteCover() {
+		return tourNoteCover;
+	}
+
+	public void setTourNoteCover(String tourNoteCover) {
+		this.tourNoteCover = tourNoteCover;
+	}
+
+	public Integer getTourNoteId() {
         return tourNoteId;
     }
 
@@ -83,19 +107,7 @@ public class TourNotes {
         this.tourNoteState = tourNoteState;
     }
 
-	public TourNotes(Integer tourNoteId, Integer userId, Integer tourId, String tourNoteTitle, String tourNoteContent,
-			Date tourNoteCreatDate, Date tourNoteUpdateDate, Boolean tourNoteState) {
-		super();
-		this.tourNoteId = tourNoteId;
-		this.userId = userId;
-		this.tourId = tourId;
-		this.tourNoteTitle = tourNoteTitle;
-		this.tourNoteContent = tourNoteContent;
-		this.tourNoteCreatDate = tourNoteCreatDate;
-		this.tourNoteUpdateDate = tourNoteUpdateDate;
-		this.tourNoteState = tourNoteState;
-	}
-
+	
 	public TourNotes() {
 		super();
 	}
@@ -104,6 +116,9 @@ public class TourNotes {
 	public String toString() {
 		return "TourNotes [tourNoteId=" + tourNoteId + ", userId=" + userId + ", tourId=" + tourId + ", tourNoteTitle="
 				+ tourNoteTitle + ", tourNoteContent=" + tourNoteContent + ", tourNoteCreatDate=" + tourNoteCreatDate
-				+ ", tourNoteUpdateDate=" + tourNoteUpdateDate + ", tourNoteState=" + tourNoteState + "]";
+				+ ", tourNoteUpdateDate=" + tourNoteUpdateDate + ", tourNoteState=" + tourNoteState + ", tourNoteCover="
+				+ tourNoteCover + "]";
 	}
+
+	
 }

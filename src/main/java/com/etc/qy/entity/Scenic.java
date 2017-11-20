@@ -13,15 +13,37 @@ public class Scenic {
     private Boolean isFree;
 
     private Boolean scenicState;
-    public Scenic() {
+    
+    private String cityName;
+   
+    
+    public String getCityName() {
+		return cityName;
+	}
+
+
+
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+
+
+
+	public Scenic() {
 		// TODO Auto-generated constructor stub
 	}
     
 
     
 
+
+
+
+
 	public Scenic(Integer scenicId, String scenicName, Integer cityId, String scenicInfoAddress,
-			String scenicIntroduction, Boolean isFree, Boolean scenicState) {
+			String scenicIntroduction, Boolean isFree, Boolean scenicState, String cityName) {
 		super();
 		this.scenicId = scenicId;
 		this.scenicName = scenicName;
@@ -30,6 +52,7 @@ public class Scenic {
 		this.scenicIntroduction = scenicIntroduction;
 		this.isFree = isFree;
 		this.scenicState = scenicState;
+		this.cityName = cityName;
 	}
 
 

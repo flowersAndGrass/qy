@@ -33,4 +33,29 @@ public class ScenicDaoTest {
 		
 		
 	}
+	@Test
+	public void testselectByhot(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml","mybatis-config.xml");
+		ScenicMapper scenicMapper = context.getBean(ScenicMapper.class);
+		List<Scenic> list = scenicMapper.selectbyhotscenic();
+		for (Scenic scenic : list) {
+			System.out.println(scenic);
+		}
+			
+		
+		
+	}
+	
+	@Test
+	public void testselectByrecomm(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml","mybatis-config.xml");
+		ScenicMapper scenicMapper = context.getBean(ScenicMapper.class);
+		List<Scenic> list = scenicMapper.selectByrecomm();
+		for (Scenic scenic : list) {
+			System.out.println(scenic);
+		}
+			
+		
+		
+	}
 }

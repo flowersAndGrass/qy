@@ -2,13 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.etc.qy.dao.ScenicMapper">
   <resultMap id="BaseResultMap" type="com.etc.qy.entity.Scenic">
-    <id column="scenicId" jdbcType="INTEGER" property="scenicId" />
+    <id column="scenicId" jdbcType="INTEGER" property="scenic.scenicId" />
     <result column="scenicName" jdbcType="VARCHAR" property="scenicName" />
     <result column="cityId" jdbcType="INTEGER" property="cityId" />
     <result column="scenicInfoAddress" jdbcType="VARCHAR" property="scenicInfoAddress" />
     <result column="scenicIntroduction" jdbcType="VARCHAR" property="scenicIntroduction" />
     <result column="isFree" jdbcType="BIT" property="isFree" />
     <result column="scenicState" jdbcType="BIT" property="scenicState" />
+    
+    <association property="city" column="cityId" javaType="com.etc.qy.entity.City">
+    	<id column="cityId" property="cityId"/>
+    	<result column="areaId" property="areaId"/>
+    	<result column="cityName" property="cityName"/>
+    	<result column="cityPictureId" property="cityPictureId"/>
+    </association> 
   </resultMap>
   <sql id="Base_Column_List">
     scenicId, scenicName, cityId, scenicInfoAddress, scenicIntroduction, isFree, scenicState
@@ -16,11 +23,9 @@
   
   <!-- 根据id查找景点 -->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from scenic
-    where scenicId = #{scenicId,jdbcType=INTEGER}
-  </select>
+    select * from scenic,city
+    where scenicId = #{scenicId,jdbcType=INTEGER} and scenic.cityId=city.cityId
+  </select> 
   
   
   <!-- 模糊查找景点 -->
@@ -29,6 +34,14 @@
     <include refid="Base_Column_List" />
     from scenic
     where scenicName like concat('%',#{scenicName},'%')
+  </select>
+  
+  
+  <!-- 多表查询 -->
+  <select id="selectByrecomm" resultMap="BaseResultMap">
+  select scenicId, scenicName,cityName
+  from scenic,city
+  where city.cityId = scenic.cityId
   </select>
   
   

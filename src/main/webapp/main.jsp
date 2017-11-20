@@ -98,14 +98,74 @@
 		</style>
 		<script type="text/javascript">
 			$(function() {
-				$("#head_bss").mouseover(function() {
+				//搜索栏点击出现热门城市
+				$(".placesearch_txt").focus(function(){
+					
+					$(".q-layer-history").css("display","block");
+				})
+				//失去焦点热门城市消失
+					$(".placesearch_txt").blur(function(){
+					
+					$(".q-layer-history").css("display","none");
+				})
+				
+				//热门景点拼接
+				$.get("hotscenic",function(mydata,status){
+					//alert(mydata)
+					$.each(mydata,function(index,hotscenic){
+						//console.log(hotscenic)
+						//alert(hotscenic.scenicName)
+						$(".history-cont").append("<a data-bn-ipg='index-top-placeCity-"+index+"' href='/showDetial/"+hotscenic.scenicId+"' target='_blank'>"+hotscenic.scenicName+"</a>");
+						
+					})
+				})
+				
+				//今日推荐拼接
+				$.get("recommed",function(mydata,status){
+					$.each(mydata,function(index,reco){
+						$(".recommend").append("<ul class='gradually_col4_show'><li><div data-type='bbs' class='item'><div class='img"+index+"'>"
+						+"</div><div class='info'><a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'>"
+						+"<div class='subtitle'><p>"+reco.scenicName+"</p></div><div class='bottom'><span class='fr"+index+"'></span><span class='f14'>"+reco.cityName+"</span></div>"
+						+"</a></div></div></li></ul>");
+							//单独出来查询一次图片
+									$.get("img",function(mydata,status){
+										$.each(mydata,function(index,img){
+											$(".img"+index+"").append("<a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'><img width='275' height='185' src='"+reco.pictureAddress+"' lazy='loading'>"
+													+"<div class='tag'><span class='bt'>景点</span></div></a>");
+										})
+									})
+						//根据scenic点评次数
+						$.get("times",function(mydata,status){
+							$.each(mydata,function(index,times){
+								$(".fr"+index+"").append(times.count+"评论过");
+							})
+						})
+									
+								
+								
+									
+										
+											
+										
+										
+									
+								
+							
+						
+					})
+					
+				})
+				
+				
+				
+				/* $("#head_bss").mouseover(function() {
 					//$("#bss_1").css("display","block");
 					alert(0)
 					$("#bss_1").next("ul").slideDown(500);
 				})
 				$("#head_bss").mouseleave(function() {
 					$("#bss_1").css("display", "none");
-				})
+				}) */
 				//游记分类显示
 				$.get("areatype",function(mydata,status){
 				$.each(mydata.list,function(type,index){
@@ -318,7 +378,7 @@
 								<div class="q-header-user-wrapper">
 									<div class="q-header-search">
 									<!-- 模糊查询 -->
-										<form action="search" method="get"><input name="wd" type="text" autocomplete="off" value="" class="txt-search"><button type="submit" class="btn-search"><i class="iconfont icon-sousuo"></i><span>搜索</span></button></form>
+										<form action="search" method="post" enctype="multipart/form-data"><input name="wd" type="text" autocomplete="off" value="" class="txt-search"><button type="submit" class="btn-search"><i class="iconfont icon-sousuo"></i><span>搜索</span></button></form>
 										<div class="q-layer q-layer-sitesearch-history" style="display:none;">
 											<ul></ul>
 											<div class="history-clear">
@@ -408,7 +468,7 @@
 									<div class="panel-cont">
 										<div class="panel-item">
 											<div class="form-control">
-												<form action="http://place.qyer.com/morocco/" target="_blank" method="post"><input type="text" placeholder="摩洛哥" autocomplete="off" value="" class="txt focus placesearch_txt"><button type="submit" data-bn-ipg="index-top-place-search" class="btn">搜索</button></form>
+												<form action="search" enctype="multipart/form-data" target="_blank" method="post"><input type="text" name="wd" placeholder="摩洛哥" autocomplete="off" value="" class="txt focus placesearch_txt"><button type="submit" data-bn-ipg="index-top-place-search" class="btn">搜索</button></form>
 											</div>
 										</div>
 										<div class="panel-item" style="display:none;">
@@ -442,28 +502,9 @@
 							</div>
 							<div class="q-layer q-layer-history" style="display:none;">
 								<!---->
-								<div class="history-title"><span>热门城市</span></div>
+								<div class="history-title"><span>热门景点</span></div>
 								<div class="history-cont">
-									<a data-bn-ipg="index-top-placeCity-0" href="//place.qyer.com/hong-kong/" target="_blank">香港</a>
-									<a data-bn-ipg="index-top-placeCity-1" href="//place.qyer.com/bangkok/" target="_blank">曼谷</a>
-									<a data-bn-ipg="index-top-placeCity-2" href="//place.qyer.com/tokyo/" target="_blank">东京</a>
-									<a data-bn-ipg="index-top-placeCity-3" href="//place.qyer.com/macau/" target="_blank">澳门</a>
-									<a data-bn-ipg="index-top-placeCity-4" href="//place.qyer.com/seoul/" target="_blank">首尔</a>
-									<a data-bn-ipg="index-top-placeCity-5" href="//place.qyer.com/kyoto/" target="_blank">京都</a>
-									<a data-bn-ipg="index-top-placeCity-6" href="//place.qyer.com/osaka/" target="_blank">大阪</a>
-									<a data-bn-ipg="index-top-placeCity-7" href="//place.qyer.com/taiwan/" target="_blank">台湾</a>
-									<a data-bn-ipg="index-top-placeCity-8" href="//place.qyer.com/paris/" target="_blank">巴黎</a>
-									<a data-bn-ipg="index-top-placeCity-9" href="//place.qyer.com/rome/" target="_blank">罗马</a>
-									<a data-bn-ipg="index-top-placeCity-10" href="//place.qyer.com/chiang-mai/" target="_blank">清迈</a>
-									<a data-bn-ipg="index-top-placeCity-11" href="//place.qyer.com/singapore/" target="_blank">新加坡</a>
-									<a data-bn-ipg="index-top-placeCity-12" href="//place.qyer.com/taipei/" target="_blank">台北</a>
-									<a data-bn-ipg="index-top-placeCity-13" href="//place.qyer.com/kuala-lumpur/" target="_blank">吉隆坡</a>
-									<a data-bn-ipg="index-top-placeCity-14" href="//place.qyer.com/venice/" target="_blank">威尼斯</a>
-									<a data-bn-ipg="index-top-placeCity-15" href="//place.qyer.com/phuket-island/" target="_blank">普吉岛</a>
-									<a data-bn-ipg="index-top-placeCity-16" href="//place.qyer.com/florence/" target="_blank">佛罗伦萨</a>
-									<a data-bn-ipg="index-top-placeCity-17" href="//place.qyer.com/los-angeles/" target="_blank">洛杉矶</a>
-									<a data-bn-ipg="index-top-placeCity-18" href="//place.qyer.com/milan/" target="_blank">米兰</a>
-									<a data-bn-ipg="index-top-placeCity-19" href="//place.qyer.com/nara/" target="_blank">奈良</a>
+									
 								</div>
 							</div>
 							<div class="q-layer q-layer-search-autocomplete" style="display:none;">
@@ -502,142 +543,9 @@
 						<div class="wrapper">
 							<h2 class="title">今日推荐</h2>
 							<div class="recommend">
-								<ul class="gradually_col4_show">
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-bbs-p1" href="http://bbs.qyer.com/thread-2793215-1.html" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">游记</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-bbs-p1" href="http://bbs.qyer.com/thread-2793215-1.html" target="_blank">
-													<div class="subtitle">
-														<p>【CORAIN &amp; OSKAR】僧伽罗——上帝的乐土，未知的世界尽头</p>
-													</div>
-													<div class="bottom"><span class="fr">1681人浏览过</span><span class="f14">corain君</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-lm-p2" href="http://z.qyer.com/deal/77087/" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">折扣</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-lm-p2" href="http://z.qyer.com/deal/77087/" target="_blank">
-													<div class="subtitle">
-														<p>天津直飞冲绳4-5天往返含税机票（+99元升级三年签证）</p>
-													</div>
-													<div class="bottom"><span class="fr"><em>1850</em>元起</span><span class="f14">天津</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-bbs-p3" href="http://bbs.qyer.com/thread-2862342-1.html" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">游记</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-bbs-p3" href="http://bbs.qyer.com/thread-2862342-1.html" target="_blank">
-													<div class="subtitle">
-														<p>行走的力量，山南秘境间，找寻心的觉醒</p>
-													</div>
-													<div class="bottom"><span class="fr">31820人浏览过</span><span class="f14">小布行路上</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="login">
-											<div class="login-title">
-												<h3>让我们更懂你</h3>
-												<p>拥有穷游账号，获得更准确的推荐</p>
-											</div>
-											<div class="login-link" style="text-align: center;">
-												<a data-bn-ipg="index-guess-un-register" href="javascript:;" class="register-btn register-phone">立即注册</a><span>已有帐号？<a data-bn-ipg="index-guess-un-login" href="javascript:;" class="login-mail">登录</a></span></div>
-											<div class="auth-login" style="text-align: center;">
-												<a data-bn-ipg="index-guess-un-qq" href="https://passport.qyer.com/oauth?using=qq&amp;ref=http%3A%2F%2Fhome.qyer.com%2F" class="login-auth iconfont-home icon-cir-qq"></a>
-												<a data-bn-ipg="index-guess-un-weibo" href="https://passport.qyer.com/oauth?using=weibo&amp;ref=http%3A%2F%2Fhome.qyer.com%2F" class="login-auth iconfont-home icon-cir-weibo"></a>
-												<a data-bn-ipg="index-guess-un-wechat" href="https://passport.qyer.com/oauth?using=weixin&amp;ref=http%3A%2F%2Fhome.qyer.com%2F" class="login-auth iconfont-home icon-cir-weixin"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-lm-p5" href="http://z.qyer.com/deal/110611/" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">折扣</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-lm-p5" href="http://z.qyer.com/deal/110611/" target="_blank">
-													<div class="subtitle">
-														<p>杭州直飞沙巴5日往返含税机票（元旦预售+亚洲航空+赠20KG行李托运+可代订酒店/当地游/接送机/签证）</p>
-													</div>
-													<div class="bottom"><span class="fr"><em>899</em>元起</span><span class="f14">杭州</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-mguide-p6" href="http://place.qyer.com/mguide/4070" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">微锦囊</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-mguide-p6" href="http://place.qyer.com/mguide/4070" target="_blank">
-													<div class="subtitle">
-														<p>巴黎隐藏巷中的极致甜品店</p>
-													</div>
-													<div class="bottom"><span class="fr">推荐了11个目的地</span><span class="f14">喵星人暴走</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-bbs-p7" href="http://bbs.qyer.com/thread-2805519-1.html" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">游记</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-bbs-p7" href="http://bbs.qyer.com/thread-2805519-1.html" target="_blank">
-													<div class="subtitle">
-														<p>莫斯科市民推荐最值得一去的莫市景点系列——1个留俄10多年的莫漂大叔带你走遍莫斯科。</p>
-													</div>
-													<div class="bottom"><span class="fr">28613人浏览过</span><span class="f14">漂在莫斯科13年</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div data-type="bbs" class="item">
-											<div class="img">
-												<a data-bn-ipg="index-guess-bbs-p8" href="http://bbs.qyer.com/thread-2835096-1.html" target="_blank"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading">
-													<div class="tag"><span class="bt">游记</span></div>
-												</a>
-											</div>
-											<div class="info">
-												<a data-bn-ipg="index-guess-bbs-p8" href="http://bbs.qyer.com/thread-2835096-1.html" target="_blank">
-													<div class="subtitle">
-														<p>你在水族箱里看风景，看风景的人在外面看你（纪念我在亚特兰大的日子，2015.9周末游、2016.12-2017.6常驻）</p>
-													</div>
-													<div class="bottom"><span class="fr">1600人浏览过</span><span class="f14">Rosie小R</span></div>
-												</a>
-											</div>
-										</div>
-									</li>
-								</ul>
+								
+									
+								
 							</div>
 						</div>
 					</div>

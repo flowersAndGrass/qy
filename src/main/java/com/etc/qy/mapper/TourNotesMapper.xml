@@ -7,12 +7,14 @@
     <result column="tourId" jdbcType="INTEGER" property="tourId" />
     <result column="tourNoteTitle" jdbcType="VARCHAR" property="tourNoteTitle" />
     <result column="tourNoteContent" jdbcType="VARCHAR" property="tourNoteContent" />
+    <result column="tourNoteCover" jdbcType="VARCHAR" property="tourNoteCover"/>
     <result column="tourNoteCreatDate" jdbcType="DATE" property="tourNoteCreatDate" />
     <result column="tourNoteUpdateDate" jdbcType="DATE" property="tourNoteUpdateDate" />
     <result column="tourNoteState" jdbcType="BIT" property="tourNoteState" />
+    
   </resultMap>
   <sql id="Base_Column_List">
-    tourNoteId, userId, tourId, tourNoteTitle, tourNoteContent, tourNoteCreatDate, tourNoteUpdateDate, 
+    tourNoteId, userId, tourId, tourNoteTitle, tourNoteContent, tourNoteCover,tourNoteCreatDate, tourNoteUpdateDate, 
     tourNoteState
   </sql>
   

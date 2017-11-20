@@ -28,4 +28,16 @@ public interface ScenicMapper {
      * @return
      */
     List<Scenic> selectByscenicName(String scenicName);
+    
+    
+    /**
+     * 热门景点
+     */
+    List<Scenic> selectbyhotscenic();
+    
+    /**
+     * 多表查询
+     * 显示城市
+     */
+    List<Scenic> selectByrecomm();
 }

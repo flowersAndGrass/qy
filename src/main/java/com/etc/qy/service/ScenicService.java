@@ -1,5 +1,7 @@
 package com.etc.qy.service;
 
+import java.util.List;
+
 import com.etc.qy.entity.Scenic;
 
 /**
@@ -14,4 +16,14 @@ public interface ScenicService {
 	 * @return
 	 */
 	public Scenic selectByPrimaryKey(Integer scenicId);
+	
+	
+	
+	/**
+	 * Ä£ºý²éÕÒ
+	 * @param scenicName
+	 * @return
+	 * ÄßÉº
+	 */
+	public List<Scenic> selectByscenicName(String scenicName);
 }

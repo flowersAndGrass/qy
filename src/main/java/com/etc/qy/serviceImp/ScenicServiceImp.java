@@ -1,5 +1,7 @@
 package com.etc.qy.serviceImp;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +21,11 @@ public class ScenicServiceImp implements ScenicService{
 	public Scenic selectByPrimaryKey(Integer scenicId) {
 		// TODO Auto-generated method stub
 		return sm.selectByPrimaryKey(scenicId);
+	}
+
+	public List<Scenic> selectByscenicName(String scenicName) {
+		// TODO Auto-generated method stub
+		return sm.selectByscenicName(scenicName);
 	}
 
 }
