@@ -14,4 +14,10 @@ public interface AvaluateMapper {
     int updateByPrimaryKeySelective(Avaluate record);
 
     int updateByPrimaryKey(Avaluate record);
+    
+    /**
+     * 查询景点的评论数
+     * @return
+     */
+    int selectcount(int scenicId);
 }

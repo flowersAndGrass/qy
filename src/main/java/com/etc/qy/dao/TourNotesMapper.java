@@ -24,4 +24,10 @@ public interface TourNotesMapper {
  * @return
  */
     List<TourNotes> selectBytournoteName(String tourNoteName);
+    
+    /**
+     * 热门游记
+     * @return
+     */
+    List<TourNotes> hottourNote();
 }

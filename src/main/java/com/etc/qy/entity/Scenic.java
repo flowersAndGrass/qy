@@ -14,19 +14,59 @@ public class Scenic {
 
     private Boolean scenicState;
     
-    private String cityName;
+    private City city;
+    
+    private Scenic scenic;
+    
+    //private Scenic scenic;
+  
    
     
-    public String getCityName() {
-		return cityName;
+
+
+
+
+
+	public Scenic getScenic() {
+		return scenic;
 	}
 
 
 
 
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
+
+
+
+
+	public void setScenic(Scenic scenic) {
+		this.scenic = scenic;
 	}
+
+
+
+
+
+
+
+
+	public City getCity() {
+		return city;
+	}
+
+
+
+
+
+
+
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+
+
+
 
 
 
@@ -42,8 +82,13 @@ public class Scenic {
 
 
 
+
+
+
+
+
 	public Scenic(Integer scenicId, String scenicName, Integer cityId, String scenicInfoAddress,
-			String scenicIntroduction, Boolean isFree, Boolean scenicState, String cityName) {
+			String scenicIntroduction, Boolean isFree, Boolean scenicState, City city) {
 		super();
 		this.scenicId = scenicId;
 		this.scenicName = scenicName;
@@ -52,18 +97,31 @@ public class Scenic {
 		this.scenicIntroduction = scenicIntroduction;
 		this.isFree = isFree;
 		this.scenicState = scenicState;
-		this.cityName = cityName;
+		this.city = city;
 	}
 
 
+
+
+
+
+
+
+	
 
 
 	@Override
 	public String toString() {
 		return "Scenic [scenicId=" + scenicId + ", scenicName=" + scenicName + ", cityId=" + cityId
 				+ ", scenicInfoAddress=" + scenicInfoAddress + ", scenicIntroduction=" + scenicIntroduction
-				+ ", isFree=" + isFree + ", scenicState=" + scenicState + "]";
+				+ ", isFree=" + isFree + ", scenicState=" + scenicState + ", city=" + city + "]";
 	}
+
+
+
+
+
+
 
 
 	public String getScenicName() {

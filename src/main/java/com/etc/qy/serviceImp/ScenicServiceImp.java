@@ -28,4 +28,9 @@ public class ScenicServiceImp implements ScenicService{
 		return sm.selectByscenicName(scenicName);
 	}
 
+	public List<Scenic> selectByrecomm() {
+		// TODO Auto-generated method stub
+		return sm.selectByrecomm() ;
+	}
+
 }

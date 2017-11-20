@@ -19,5 +19,9 @@ public class TourNoteServiceImpl implements TourNoteService {
 		// TODO Auto-generated method stub
 		return tnm.selectBytournoteName(tourNoteName);
 	}
+	public List<TourNotes> hottourNote() {
+		// TODO Auto-generated method stub
+		return tnm.hottourNote();
+	}
 
 }

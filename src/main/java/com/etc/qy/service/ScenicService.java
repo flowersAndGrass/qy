@@ -26,4 +26,11 @@ public interface ScenicService {
 	 * 倪珊
 	 */
 	public List<Scenic> selectByscenicName(String scenicName);
+	
+	/**
+	 * 多表联合查询
+	 * 今日推荐景点
+	 * @return
+	 */
+	public List<Scenic> selectByrecomm();
 }

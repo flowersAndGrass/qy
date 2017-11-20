@@ -11,6 +11,13 @@
   <sql id="Base_Column_List">
     avaluateId, scenicId, userId, avaluateContent, avaluateState
   </sql>
+  
+  
+  <!-- 景点点评条数 -->
+  <select id="selectcount" resultMap="BaseResultMap">
+  select count(1) from avaluate where scenicId = #{scenicId}
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

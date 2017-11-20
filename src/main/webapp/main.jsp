@@ -128,19 +128,51 @@
 						+"<div class='subtitle'><p>"+reco.scenicName+"</p></div><div class='bottom'><span class='fr"+index+"'></span><span class='f14'>"+reco.cityName+"</span></div>"
 						+"</a></div></div></li></ul>");
 							//单独出来查询一次图片
-									$.get("img",function(mydata,status){
+									$.get("img?scenicId="+reco.scenicId,function(mydata,status){
 										$.each(mydata,function(index,img){
 											$(".img"+index+"").append("<a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'><img width='275' height='185' src='"+reco.pictureAddress+"' lazy='loading'>"
 													+"<div class='tag'><span class='bt'>景点</span></div></a>");
 										})
 									})
 						//根据scenic点评次数
-						$.get("times",function(mydata,status){
+						$.get("times?scenicId="+reco.scenicId,function(mydata,status){
 							$.each(mydata,function(index,times){
 								$(".fr"+index+"").append(times.count+"评论过");
 							})
 						})
 									
+						
+						
+						//热门游记拼接
+						$.get("hottoutnote",function(mydata,status){
+							$.each(mydata,function(index,hot){
+								$(".slider-inner").append("<div class='item gradually_col4_show'><ul><li><div title='"+hot.tourNoteTitle+"' class='thread'>"
+										+"<div class='pic'><a data-bn-ipg='index-hotThread-pic-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'><img width='275' height='185' src='"+hot.tourNoteCover+"' lazy='loading'></a>"
+										+"<div class='like total_replies'><i class='iconfont-home icon-huifu'></i><span>9</span></div></div><div class='inner'>"
+										+"<div class='info clearfix"+index+"'></div><div class='caption'><a data-bn-ipg='index-hotThread-title-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'>"+hot.tourNoteTitle+"</a></div></div></div></li></ul>")
+							
+										$.get("hottourusers?userId="+hot.userId,function(mydata,stastus){
+								$.each(mydata,function(index,users){
+									$(".clearfix"+index).append("<span class='avatar'><a data-bn-ipg='index-hotThread-writerPic-00' href='#' target='_blank'><img src='"+users.userHeadPicture+"' lazy='loading'></a></span><span class='txt'><a data-bn-ipg='index-hotThread-name-00' href='#' target='_blank'>"+users.userName+"</a>"
+											+"<span class='q-auth-avatar auth s'><i class='q-auth-icon qyer'></i></span></span>");
+								})
+							})
+						
+							})
+						})
+						
+														
+													
+												
+												<!---->
+											
+										
+													
+												
+												
+													
+													
+													
 								
 								
 									
@@ -923,24 +955,7 @@
 							<div class="hotthread">
 								<div class="slider">
 									<div class="slider-inner">
-										<div class="item gradually_col4_show">
-											<ul>
-												<li>
-													<div title="今日话题|你遇到最惊喜的酒店服务是什么？" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-00" href="//bbs.qyer.com/thread-2863507-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2863507"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>9</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-00" href="//www.qyer.com/u/1212089" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-00" href="//www.qyer.com/u/1212089" target="_blank">穷游大秘书</a><span class="q-auth-avatar auth s"><i class="q-auth-icon qyer"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-00" href="//bbs.qyer.com/thread-2863507-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2863507">今日话题|你遇到最惊喜的酒店服务是什么？</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
+										
 												<li>
 													<div title="原来，你是这样的新加坡——2017暑假8日超详细亲子游记&amp;amp;攻略（完结）" class="thread">
 														<div class="pic">

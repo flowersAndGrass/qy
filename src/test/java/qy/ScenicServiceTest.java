@@ -31,4 +31,13 @@ public class ScenicServiceTest {
 		List<Scenic> list = scenicService.selectByscenicName("Çø");
 		System.out.println(list.get(0));
 	}
+	
+	public  void test2(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml","mybatis-config.xml");
+		ScenicService scenicService = context.getBean(ScenicService.class);
+		List<Scenic> list = scenicService.selectByrecomm();
+		for (Scenic scenic : list) {
+			System.out.println(scenic);
+		}
+	}
 }

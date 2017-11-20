@@ -27,6 +27,12 @@
     where tourNoteTitle like concat('%',#{tourNoteTitle},'%')
   </select>
   
+  <!-- 热门游记 -->
+  <select id="hottourNote" resultMap="BaseResultMap">
+select <include refid="Base_Column_List" />
+from tournotes
+  </select>
+  
   
   
   
