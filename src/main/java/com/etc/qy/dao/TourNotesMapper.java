@@ -2,6 +2,8 @@ package com.etc.qy.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.etc.qy.entity.TourNotes;
 
 public interface TourNotesMapper {
@@ -29,5 +31,11 @@ public interface TourNotesMapper {
      * 热门游记
      * @return
      */
-    List<TourNotes> hottourNote();
+    List<TourNotes> hottourNote(@Param(value = "start") int start,@Param(value = "pageSize")int pageSize);
+
+    /**
+     * 获得总记录数
+     * @return
+     */
+    int gettotal();
 }

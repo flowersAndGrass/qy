@@ -123,70 +123,111 @@
 				//今日推荐拼接
 				$.get("recommed",function(mydata,status){
 					$.each(mydata,function(index,reco){
-						$(".recommend").append("<ul class='gradually_col4_show'><li><div data-type='bbs' class='item'><div class='img"+index+"'>"
+						if(index<8){
+						$(".recommend").append("<ul class='gradually_col4_show'><li><div data-type='bbs' class='item'><div class='img"+reco.scenicId+"'>"
 						+"</div><div class='info'><a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'>"
-						+"<div class='subtitle'><p>"+reco.scenicName+"</p></div><div class='bottom'><span class='fr"+index+"'></span><span class='f14'>"+reco.cityName+"</span></div>"
+						+"<div class='subtitle'><p>"+reco.scenicName+"</p></div><div class='bottom'><span class='fr"+reco.scenicId+"'></span><span class='f14'>"+reco.cityName+"</span></div>"
 						+"</a></div></div></li></ul>");
 							//单独出来查询一次图片
+							//alert(reco.scenicId)
 									$.get("img?scenicId="+reco.scenicId,function(mydata,status){
+										
 										$.each(mydata,function(index,img){
-											$(".img"+index+"").append("<a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'><img width='275' height='185' src='"+reco.pictureAddress+"' lazy='loading'>"
+											if(index<8){
+											$(".img"+reco.scenicId+"").append("<a data-bn-ipg='index-guess-bbs-p1' href='#' target='_blank'><img width='275' height='185' src='"+reco.pictureAddress+"' lazy='loading'>"
 													+"<div class='tag'><span class='bt'>景点</span></div></a>");
-										})
+											}
+											})
 									})
 						//根据scenic点评次数
 						$.get("times?scenicId="+reco.scenicId,function(mydata,status){
 							$.each(mydata,function(index,times){
-								$(".fr"+index+"").append(times.count+"评论过");
-							})
+								if(index<8){
+								$(".fr"+reco.scenicId+"").append(times.count+"评论过");
+								}
+								})
+					
 						})
+						}
+})
+					
+				})
 									
 						
 						
 						//热门游记拼接
-						$.get("hottoutnote",function(mydata,status){
-							$.each(mydata,function(index,hot){
-								$(".slider-inner").append("<div class='item gradually_col4_show'><ul><li><div title='"+hot.tourNoteTitle+"' class='thread'>"
-										+"<div class='pic'><a data-bn-ipg='index-hotThread-pic-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'><img width='275' height='185' src='"+hot.tourNoteCover+"' lazy='loading'></a>"
-										+"<div class='like total_replies'><i class='iconfont-home icon-huifu'></i><span>9</span></div></div><div class='inner'>"
-										+"<div class='info clearfix"+index+"'></div><div class='caption'><a data-bn-ipg='index-hotThread-title-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'>"+hot.tourNoteTitle+"</a></div></div></div></li></ul>")
-							
-										$.get("hottourusers?userId="+hot.userId,function(mydata,stastus){
-								$.each(mydata,function(index,users){
-									$(".clearfix"+index).append("<span class='avatar'><a data-bn-ipg='index-hotThread-writerPic-00' href='#' target='_blank'><img src='"+users.userHeadPicture+"' lazy='loading'></a></span><span class='txt'><a data-bn-ipg='index-hotThread-name-00' href='#' target='_blank'>"+users.userName+"</a>"
-											+"<span class='q-auth-avatar auth s'><i class='q-auth-icon qyer'></i></span></span>");
-								})
-							})
+						/* $.get("hottoutnote/page/1",function(mydata,status){
+							showData(mydata,status)
+						})
 						
+						
+						//点击分页跳转
+						$("#page1").on("click",function(){
+							$.get("hottoutnote/page/1",function(mydata,status){
+								showData(mydata,status)
 							})
 						})
+						
+						//点击分页跳转
+						$("#page2").on("click",function(){
+							$.get("hottoutnote/page/2",function(mydata,status){
+								showData(mydata,status)
+							})
+						})
+						
+						//点击分页跳转
+						$("#page3").on("click",function(){
+							$.get("hottoutnote/page/3",function(mydata,status){
+								showData(mydata,status)
+							})
+						})
+						
+						//点击分页跳转
+						$("#page4").on("click",function(){
+							$.get("hottoutnote/page/4",function(mydata,status){
+								showData(mydata,status)
+							})
+						})
+						
+						//点击分页跳转
+						$("#page5").on("click",function(){
+							$.get("hottoutnote/page/5",function(mydata,status){
+								showData(mydata,status)
+							})
+						})
+						function showData(mydata,status){
+								
+										//清除 ul中分页有关的部分
+										$(".gradually_col4_show ul li").remove();
+										 if(mydata.totalPage != 0){
+										$.each(mydata,function(index,hot){
+											$(".slider-inner").append("<div class='item gradually_col4_show'><ul><li><div title='"+hot.tourNoteTitle+"' class='thread'>"
+													+"<div class='pic'><a data-bn-ipg='index-hotThread-pic-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'><img width='275' height='185' src='"+hot.tourNoteCover+"' lazy='loading'></a>"
+													+"<div class='like total_replies'><i class='iconfont-home icon-huifu'></i><span>9</span></div></div><div class='inner'>"
+													+"<div class='info clearfix"+index+"'></div><div class='caption'><a data-bn-ipg='index-hotThread-title-00' href='#' target='_blank' data-ra_arg='c4911c27fcf42ead6f03f08a396c5302b319894b|2863507'>"+hot.tourNoteTitle+"</a></div></div></div></li></ul>")
+										
+													$.get("hottourusers?userId="+hot.userId,function(mydata,stastus){
+											$.each(mydata,function(index,users){
+												$(".clearfix"+index).append("<span class='avatar'><a data-bn-ipg='index-hotThread-writerPic-00' href='#' target='_blank'><img src='"+users.userHeadPicture+"' lazy='loading'></a></span><span class='txt'><a data-bn-ipg='index-hotThread-name-00' href='#' target='_blank'>"+users.userName+"</a>"
+														+"<span class='q-auth-avatar auth s'><i class='q-auth-icon qyer'></i></span></span>");
+											
+											})
+										})
+										$(".gradually_col4_show").append(thing);
+									
+										})
+										 }
+							} */
+							
 						
 														
 													
 												
-												<!---->
-											
-										
-													
 												
-												
-													
-													
-													
-								
-								
-									
-										
-											
-										
-										
-									
 								
 							
 						
-					})
 					
-				})
 				
 				
 				
@@ -199,7 +240,7 @@
 					$("#bss_1").css("display", "none");
 				}) */
 				//游记分类显示
-				$.get("areatype",function(mydata,status){
+			/* 	$.get("areatype",function(mydata,status){
 				$.each(mydata.list,function(type,index){
 				$(".section-title").append("<a href='#' class='more'>全部版块<i class='iconfont icon-jiantouyou'></i></a><span>热门版块</span></div>"
 						+"<dl class='section-item'><dt>"+type.areaName+"</dt></dl>");	
@@ -211,7 +252,7 @@
 				})
 				})
 					
-				})
+				}) */
 			})
 		</script>
 	</head>
@@ -936,11 +977,11 @@
 										</div>
 									</div>
 									<div class="slider-control">
-										<a data-bn-ipg="index-world-page" href="javascript:;" class="current"></a>
-										<a data-bn-ipg="index-world-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-world-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-world-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-world-page" href="javascript:;" class=""></a>
+										<a data-bn-ipg="index-world-page" href="javascript:;" class="current" id="page1"></a>
+										<a data-bn-ipg="index-world-page" href="javascript:;" class="" id="page2"></a>
+										<a data-bn-ipg="index-world-page" href="javascript:;" class="" id="page3"></a>
+										<a data-bn-ipg="index-world-page" href="javascript:;" class="" id="page4"></a>
+										<a data-bn-ipg="index-world-page" href="javascript:;" class="" id="page5"></a>
 									</div>
 								</div>
 								<div class="more">
@@ -955,563 +996,15 @@
 							<div class="hotthread">
 								<div class="slider">
 									<div class="slider-inner">
-										
-												<li>
-													<div title="原来，你是这样的新加坡——2017暑假8日超详细亲子游记&amp;amp;攻略（完结）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-01" href="//bbs.qyer.com/thread-2824709-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2824709"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>14</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-01" href="//www.qyer.com/u/5907302" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-01" href="//www.qyer.com/u/5907302" target="_blank">myamnesia</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-01" href="//bbs.qyer.com/thread-2824709-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2824709">原来，你是这样的新加坡——2017暑假8日超详细亲子游记&amp;攻略（完结）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【十万公里的蜜月IV】阿根廷，别为我哭泣（巴塔哥尼亚、布宜、伊瓜苏、复活节岛）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-02" href="//bbs.qyer.com/thread-2537083-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2537083"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>93</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-02" href="//www.qyer.com/u/1482916" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-02" href="//www.qyer.com/u/1482916" target="_blank">Circean龙二喵</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-02" href="//bbs.qyer.com/thread-2537083-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2537083">【十万公里的蜜月IV】阿根廷，别为我哭泣（巴塔哥尼亚、布宜、伊瓜苏、复活节岛）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【盒饭看世界】在最美的秋日遇见你，独行升龙道赏枫（伊势、名古屋、高山、白川、金泽、犬山），美图攻略，最美京都枫叶和服彩蛋" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-03" href="//bbs.qyer.com/thread-2642783-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2642783"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>1071</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-03" href="//www.qyer.com/u/2361080" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-03" href="//www.qyer.com/u/2361080" target="_blank">小盒饭</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-03" href="//bbs.qyer.com/thread-2642783-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2642783">【盒饭看世界】在最美的秋日遇见你，独行升龙道赏枫（伊势、名古屋、高山、白川、金泽、犬山），美图攻略，最美京都枫叶和服彩蛋</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【西门の任意门】怪你过分美丽 中土世界南北双行累死仙人的求婚自由行(千图九万字 精美干货攻略奉上)" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-04" href="//bbs.qyer.com/thread-1074271-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|1074271"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>914</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-04" href="//www.qyer.com/u/1672055" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-04" href="//www.qyer.com/u/1672055" target="_blank">ryan不在家</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-04" href="//bbs.qyer.com/thread-1074271-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|1074271">【西门の任意门】怪你过分美丽 中土世界南北双行累死仙人的求婚自由行(千图九万字 精美干货攻略奉上)</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【温哥华周边】温哥华岛 Tofino/Ucluelet/Nanaimo/Parksville（上岛渡轮详细攻略）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-05" href="//bbs.qyer.com/thread-2806603-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2806603"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>217</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-05" href="//www.qyer.com/u/1211811" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-05" href="//www.qyer.com/u/1211811" target="_blank">小孩一个人在家</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-05" href="//bbs.qyer.com/thread-2806603-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2806603">【温哥华周边】温哥华岛 Tofino/Ucluelet/Nanaimo/Parksville（上岛渡轮详细攻略）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="除夕，在非洲大陆西北偏北【已完结】" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-06" href="//bbs.qyer.com/thread-2546322-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2546322"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>116</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-06" href="//www.qyer.com/u/1414311" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-06" href="//www.qyer.com/u/1414311" target="_blank">白宇</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-06" href="//bbs.qyer.com/thread-2546322-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2546322">除夕，在非洲大陆西北偏北【已完结】</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【2年多次英国签证攻略】老司机手把手教你出签（内含详细步骤，纯干货）​" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-07" href="//bbs.qyer.com/thread-2850074&#13;&#10;-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850074
-"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>213</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-07" href="//www.qyer.com/u/9695152" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-07" href="//www.qyer.com/u/9695152" target="_blank">mini_eagle</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-07" href="//bbs.qyer.com/thread-2850074&#13;&#10;-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850074
-">【2年多次英国签证攻略】老司机手把手教你出签（内含详细步骤，纯干货）​</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-											</ul>
-										</div>
-										<div class="item" style="display: none;">
-											<ul>
-												<li>
-													<div title="盛夏的圣诞季——澳洲墨尔本、塔斯马尼亚、大洋路自驾路书与景点索引" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-10" href="//bbs.qyer.com/thread-2819544-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2819544"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>92</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-10" href="//www.qyer.com/u/6915534" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-10" href="//www.qyer.com/u/6915534" target="_blank">空心大哥</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-10" href="//bbs.qyer.com/thread-2819544-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2819544">盛夏的圣诞季——澳洲墨尔本、塔斯马尼亚、大洋路自驾路书与景点索引</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【加西冰原大道+加东枫叶大道】1座瀑布看磅礴、2个省立公园赏枫叶、3个国家公园玩湖泊、4座城市享人文，加拿大15天自驾游" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-11" href="//bbs.qyer.com/thread-2850744-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850744"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>34</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-11" href="//www.qyer.com/u/7880555" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-11" href="//www.qyer.com/u/7880555" target="_blank">刀刀7904</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-11" href="//bbs.qyer.com/thread-2850744-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850744">【加西冰原大道+加东枫叶大道】1座瀑布看磅礴、2个省立公园赏枫叶、3个国家公园玩湖泊、4座城市享人文，加拿大15天自驾游</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="毕业很久之后的旅行【东瀛漫游  其一  大阪、京都、奈良】（已完结）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-12" href="//bbs.qyer.com/thread-2853072-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2853072"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>43</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-12" href="//www.qyer.com/u/2710400" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-12" href="//www.qyer.com/u/2710400" target="_blank">zafkiel1982</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-12" href="//bbs.qyer.com/thread-2853072-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2853072">毕业很久之后的旅行【东瀛漫游 其一 大阪、京都、奈良】（已完结）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="CQ7|外高加索，绝佳的节假日旅游目的地(自驾过境)" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-13" href="//bbs.qyer.com/thread-2849003-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2849003"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>21</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-13" href="//www.qyer.com/u/1528979" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-13" href="//www.qyer.com/u/1528979" target="_blank">CQ7</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-13" href="//bbs.qyer.com/thread-2849003-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2849003">CQ7|外高加索，绝佳的节假日旅游目的地(自驾过境)</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="原来，你是这样的新加坡——2017暑假8日超详细亲子游记&amp;amp;攻略（完结）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-14" href="//bbs.qyer.com/thread-2824709-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2824709"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>14</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-14" href="//www.qyer.com/u/5907302" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-14" href="//www.qyer.com/u/5907302" target="_blank">myamnesia</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-14" href="//bbs.qyer.com/thread-2824709-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2824709">原来，你是这样的新加坡——2017暑假8日超详细亲子游记&amp;攻略（完结）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="Incredible !ndia--德里、阿格拉、拉贾斯坦四色之城北印十天行摄之旅" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-15" href="//bbs.qyer.com/thread-2853788-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2853788"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>22</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-15" href="//www.qyer.com/u/827961" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-15" href="//www.qyer.com/u/827961" target="_blank">bxalice</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-15" href="//bbs.qyer.com/thread-2853788-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2853788">Incredible !ndia--德里、阿格拉、拉贾斯坦四色之城北印十天行摄之旅</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="和最爱的人，去最美的地方，我们的马尔代夫蜜月" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-16" href="//bbs.qyer.com/thread-2833026-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2833026"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>63</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-16" href="//www.qyer.com/u/5006463" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-16" href="//www.qyer.com/u/5006463" target="_blank">我来自东方</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-16" href="//bbs.qyer.com/thread-2833026-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2833026">和最爱的人，去最美的地方，我们的马尔代夫蜜月</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="混搭西班牙（一半欧洲、一半摩尔）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-17" href="//bbs.qyer.com/thread-2847941-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2847941"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>19</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-17" href="//www.qyer.com/u/1192844" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-17" href="//www.qyer.com/u/1192844" target="_blank">饅頭-何</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-17" href="//bbs.qyer.com/thread-2847941-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2847941">混搭西班牙（一半欧洲、一半摩尔）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-											</ul>
-										</div>
-										<div class="item" style="display: none;">
-											<ul>
-												<li>
-													<div title="在九州等风来 在宫岛盼日落 （干货攻略+海量美图 附九州第一花火大会攻略）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-20" href="//bbs.qyer.com/thread-2850031-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850031"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>16</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-20" href="//www.qyer.com/u/5646020" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-20" href="//www.qyer.com/u/5646020" target="_blank">星际飞扬</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-20" href="//bbs.qyer.com/thread-2850031-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850031">在九州等风来 在宫岛盼日落 （干货攻略+海量美图 附九州第一花火大会攻略）</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="枫叶国国庆自驾游-加西经典线路，雪山森林冰川湖泊还有极光！！（全文更新完毕！）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-21" href="//bbs.qyer.com/thread-2849640-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2849640"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>17</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-21" href="//www.qyer.com/u/6330911" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-21" href="//www.qyer.com/u/6330911" target="_blank">mihokomastu</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-21" href="//bbs.qyer.com/thread-2849640-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2849640">枫叶国国庆自驾游-加西经典线路，雪山森林冰川湖泊还有极光！！（全文更新完毕！）</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="狄大人精品--《史上第一篇混血攻略》助你玩转大都会博物馆（内含一丢丢王者攻略）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-22" href="//bbs.qyer.com/thread-2836673-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2836673"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>183</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-22" href="//www.qyer.com/u/8292297" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-22" href="//www.qyer.com/u/8292297" target="_blank">浪子丶狄仁杰阿</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-22" href="//bbs.qyer.com/thread-2836673-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2836673">狄大人精品--《史上第一篇混血攻略》助你玩转大都会博物馆（内含一丢丢王者攻略）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="在路上   因为看见   所以欢喜
-     ——2017年暑假初探英伦（英国自驾行 科兹沃尔德深度游） 更新至第13天" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-23" href="//bbs.qyer.com/thread-2845533-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2845533"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>90</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-23" href="//www.qyer.com/u/9125839" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-23" href="//www.qyer.com/u/9125839" target="_blank">雪菠萝</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-23" href="//bbs.qyer.com/thread-2845533-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2845533">在路上 因为看见 所以欢喜 ——2017年暑假初探英伦（英国自驾行 科兹沃尔德深度游） 更新至第13天</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="【再次出发★多了一个娃】带着九个半月糖豆游越南岘港（baby出行干货指南+美图记录）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-24" href="//bbs.qyer.com/thread-2833372-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2833372"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>31</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-24" href="//www.qyer.com/u/1236796" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-24" href="//www.qyer.com/u/1236796" target="_blank">璎珞格格</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-24" href="//bbs.qyer.com/thread-2833372-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2833372">【再次出发★多了一个娃】带着九个半月糖豆游越南岘港（baby出行干货指南+美图记录）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="返夏丨南十字星下跨年，许我一个多情的澳大利亚（已完结）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-25" href="//bbs.qyer.com/thread-2817806-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2817806"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>72</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-25" href="//www.qyer.com/u/7621307" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-25" href="//www.qyer.com/u/7621307" target="_blank">掰二雷</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-25" href="//bbs.qyer.com/thread-2817806-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2817806">返夏丨南十字星下跨年，许我一个多情的澳大利亚（已完结）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="斯里兰卡 | 坐着火车唱着歌，去往那世界的尽头（锡兰环线行程安排+景点推荐+交通选择+带父母旅行）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-26" href="//bbs.qyer.com/thread-2829314-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2829314"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>6</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-26" href="//www.qyer.com/u/1128073" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-26" href="//www.qyer.com/u/1128073" target="_blank">卡卡的小人儿书</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-26" href="//bbs.qyer.com/thread-2829314-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2829314">斯里兰卡 | 坐着火车唱着歌，去往那世界的尽头（锡兰环线行程安排+景点推荐+交通选择+带父母旅行）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【遇见.全世界】之佛国的微笑--走走停停在缅甸" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-27" href="//bbs.qyer.com/thread-2850575-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850575"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>9</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-27" href="//www.qyer.com/u/747254" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-27" href="//www.qyer.com/u/747254" target="_blank">kitty2462</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-27" href="//bbs.qyer.com/thread-2850575-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2850575">【遇见.全世界】之佛国的微笑--走走停停在缅甸</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-											</ul>
-										</div>
-										<div class="item" style="display: none;">
-											<ul>
-												<li>
-													<div title="曾经下吕难为水、除却高山不是云——之日本中部行" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-30" href="//bbs.qyer.com/thread-2840201-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2840201"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>24</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-30" href="//www.qyer.com/u/3032398" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-30" href="//www.qyer.com/u/3032398" target="_blank">zhucuilei</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-30" href="//bbs.qyer.com/thread-2840201-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2840201">曾经下吕难为水、除却高山不是云——之日本中部行</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="生命中一场极致的体验  2017美国内华达火人节亲历（美国自驾）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-31" href="//bbs.qyer.com/thread-2826627-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2826627"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>74</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-31" href="//www.qyer.com/u/348295" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-31" href="//www.qyer.com/u/348295" target="_blank">ttcui</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-31" href="//bbs.qyer.com/thread-2826627-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2826627">生命中一场极致的体验 2017美国内华达火人节亲历（美国自驾）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="有一种信仰叫以色列——8天9夜，高温下的暴走。" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-32" href="//bbs.qyer.com/thread-2847288-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2847288"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>13</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-32" href="//www.qyer.com/u/9014084" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-32" href="//www.qyer.com/u/9014084" target="_blank">游向蓝天的鱼520</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-32" href="//bbs.qyer.com/thread-2847288-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2847288">有一种信仰叫以色列——8天9夜，高温下的暴走。</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="〖爱双双出品〗法国巴黎卢瓦尔河谷波尔多（行走9座城堡14间教堂、体验6家酒店8家餐厅、自驾、住城堡、追将爱、三刷卢浮宫）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-33" href="//bbs.qyer.com/thread-2777386-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2777386"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>120</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-33" href="//www.qyer.com/u/6195201" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-33" href="//www.qyer.com/u/6195201" target="_blank">爱双双</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-33" href="//bbs.qyer.com/thread-2777386-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2777386">〖爱双双出品〗法国巴黎卢瓦尔河谷波尔多（行走9座城堡14间教堂、体验6家酒店8家餐厅、自驾、住城堡、追将爱、三刷卢浮宫）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【中国老司机 自驾游全球】&amp;quot;兰&amp;quot;行布拉格 &amp;quot;英&amp;quot;眼看东欧" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-34" href="//bbs.qyer.com/thread-2807364-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2807364"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>45</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-34" href="//www.qyer.com/u/6551791" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-34" href="//www.qyer.com/u/6551791" target="_blank">根深</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-34" href="//bbs.qyer.com/thread-2807364-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2807364">【中国老司机 自驾游全球】"兰"行布拉格 "英"眼看东欧</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="愿世界和平，两只猫的以约之行（2017最新自由行，以色列，约旦,全程交通信息，纯干货）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-35" href="//bbs.qyer.com/thread-2805860-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2805860"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>31</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-35" href="//www.qyer.com/u/9658571" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-35" href="//www.qyer.com/u/9658571" target="_blank">juju_hui</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-35" href="//bbs.qyer.com/thread-2805860-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2805860">愿世界和平，两只猫的以约之行（2017最新自由行，以色列，约旦,全程交通信息，纯干货）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="意大利废墟奇景旅行" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-36" href="//bbs.qyer.com/thread-2820736-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2820736"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>13</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-36" href="//www.qyer.com/u/833223" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-36" href="//www.qyer.com/u/833223" target="_blank">inhiu</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-36" href="//bbs.qyer.com/thread-2820736-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2820736">意大利废墟奇景旅行</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="【中国老司机 自驾游全球】新西兰自驾省钱攻略" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-37" href="//bbs.qyer.com/thread-2780124-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2780124"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>141</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-37" href="//www.qyer.com/u/1287155" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-37" href="//www.qyer.com/u/1287155" target="_blank">汉月</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-37" href="//bbs.qyer.com/thread-2780124-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2780124">【中国老司机 自驾游全球】新西兰自驾省钱攻略</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-											</ul>
-										</div>
-										<div class="item" style="display: none;">
-											<ul>
-												<li>
-													<div title="关西盛夏--二度寻访的记忆碎片" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-40" href="//bbs.qyer.com/thread-2823887-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2823887"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>17</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-40" href="//www.qyer.com/u/5933984" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-40" href="//www.qyer.com/u/5933984" target="_blank">Cinderella囡囡</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-40" href="//bbs.qyer.com/thread-2823887-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2823887">关西盛夏--二度寻访的记忆碎片</a>
-															</div>
-														</div>
-														<!---->
-													</div>
-												</li>
-												<li>
-													<div title="穿过三月的小雨，信步芬芳的台湾……（台北-礁溪-花莲-台东-知本-高雄-台南-嘉义-台北）（全篇完）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-41" href="//bbs.qyer.com/thread-2828387-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2828387"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>88</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-41" href="//www.qyer.com/u/2147158" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-41" href="//www.qyer.com/u/2147158" target="_blank">依旧青山</a><span class="q-auth-avatar auth s"><i class="q-auth-icon member"></i></span></span>
-															</div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-41" href="//bbs.qyer.com/thread-2828387-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2828387">穿过三月的小雨，信步芬芳的台湾……（台北-礁溪-花莲-台东-知本-高雄-台南-嘉义-台北）（全篇完）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【跟着汉堡包包玩香港】学在地人在香港过周末（穷首攻略型游记+小众人像外拍推荐地+HK隐藏级CP值超高美食+港铁特惠）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-42" href="//bbs.qyer.com/thread-2779330-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2779330"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>51</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-42" href="//www.qyer.com/u/1760479" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-42" href="//www.qyer.com/u/1760479" target="_blank">大喊包Tequila</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-42" href="//bbs.qyer.com/thread-2779330-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2779330">【跟着汉堡包包玩香港】学在地人在香港过周末（穷首攻略型游记+小众人像外拍推荐地+HK隐藏级CP值超高美食+港铁特惠）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【暴走女第五季】一趟贯穿首尔+庆州+釜山的韩国全景MIX之旅" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-43" href="//bbs.qyer.com/thread-2799035-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2799035"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>18</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-43" href="//www.qyer.com/u/3695657" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-43" href="//www.qyer.com/u/3695657" target="_blank">钦蛋</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-43" href="//bbs.qyer.com/thread-2799035-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2799035">【暴走女第五季】一趟贯穿首尔+庆州+釜山的韩国全景MIX之旅</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【中国老司机自驾游全国】心之所向，星月以往—英语小白带你19天玩转土耳其" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-44" href="//bbs.qyer.com/thread-2812044-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2812044"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>38</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-44" href="//www.qyer.com/u/8965513" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-44" href="//www.qyer.com/u/8965513" target="_blank">珏珏宝贝儿</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-44" href="//bbs.qyer.com/thread-2812044-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2812044">【中国老司机自驾游全国】心之所向，星月以往—英语小白带你19天玩转土耳其</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="泰国普吉岛初见 斯米兰群岛 皇帝岛 8日深度游（来自Zoe摄影师的旅行拍摄-多图）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-45" href="//bbs.qyer.com/thread-2788102-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2788102"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>28</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-45" href="//www.qyer.com/u/1187595" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-45" href="//www.qyer.com/u/1187595" target="_blank">zoestyle</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-45" href="//bbs.qyer.com/thread-2788102-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2788102">泰国普吉岛初见 斯米兰群岛 皇帝岛 8日深度游（来自Zoe摄影师的旅行拍摄-多图）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【中国老司机 自驾游全球】6天4000公里美西国家公园自驾游，附最新The wave攻略（全文完）" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-46" href="//bbs.qyer.com/thread-2809537-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2809537"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>23</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-46" href="//www.qyer.com/u/3753109" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-46" href="//www.qyer.com/u/3753109" target="_blank">路001</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-46" href="//bbs.qyer.com/thread-2809537-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2809537">【中国老司机 自驾游全球】6天4000公里美西国家公园自驾游，附最新The wave攻略（全文完）</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-												<li>
-													<div title="【小葛游世界】约旦，以色列，巴勒斯坦，俄罗斯四国大冒险" class="thread">
-														<div class="pic">
-															<a data-bn-ipg="index-hotThread-pic-47" href="//bbs.qyer.com/thread-2800740-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2800740"><img width="275" height="185" src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a>
-															<div class="like total_replies"><i class="iconfont-home icon-huifu"></i><span>26</span></div>
-														</div>
-														<div class="inner">
-															<div class="info clearfix"><span class="avatar"><a data-bn-ipg="index-hotThread-writerPic-47" href="//www.qyer.com/u/1598220" target="_blank"><img src="//common1.qyerstatic.com/zworld/m/common/images/placehold.png" lazy="loading"></a></span><span class="txt"><a data-bn-ipg="index-hotThread-name-47" href="//www.qyer.com/u/1598220" target="_blank">葛俊良</a><!----></span></div>
-															<div class="caption">
-																<a data-bn-ipg="index-hotThread-title-47" href="//bbs.qyer.com/thread-2800740-1.html" target="_blank" data-ra_arg="c4911c27fcf42ead6f03f08a396c5302b319894b|2800740">【小葛游世界】约旦，以色列，巴勒斯坦，俄罗斯四国大冒险</a>
-															</div>
-														</div><em class="tip">精华</em></div>
-												</li>
-											</ul>
+										<!-- 遍历热门游记 -->
 										</div>
 									</div>
 									<div class="slider-control">
 										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class="current"></a>
-										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class=""></a>
-										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class=""></a>
+										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class="current"></a>
+										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class="current"></a>
+										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class="current"></a>
+										<a data-bn-ipg="index-hotThread-page" href="javascript:;" class="current"></a>
 									</div>
 								</div>
 								<div class="more">

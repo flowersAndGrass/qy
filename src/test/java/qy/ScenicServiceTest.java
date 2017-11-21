@@ -32,6 +32,7 @@ public class ScenicServiceTest {
 		System.out.println(list.get(0));
 	}
 	
+	@Test
 	public  void test2(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml","mybatis-config.xml");
 		ScenicService scenicService = context.getBean(ScenicService.class);

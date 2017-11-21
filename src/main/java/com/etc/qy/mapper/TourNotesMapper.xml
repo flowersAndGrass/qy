@@ -30,7 +30,14 @@
   <!-- 热门游记 -->
   <select id="hottourNote" resultMap="BaseResultMap">
 select <include refid="Base_Column_List" />
-from tournotes
+from tournotes limit #{start},#{pagesize}
+  </select>
+  
+  <!-- 查询总页数 -->
+  <select id="gettotal" resultMap="BaseResultMap">
+  select count(1)
+  from 
+  tournotes
   </select>
   
   
